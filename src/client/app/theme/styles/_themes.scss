@@ -1,0 +1,20 @@
+// @nebular theming framework
+@import '../../../../../node_modules/@nebular/theme/styles/theming';
+// @nebular out of the box themes
+@import '../../../../../node_modules/@nebular/theme/styles/themes';
+// Enable default theme
+$nb-enabled-themes: (default, cosmic, corporate);
+// Register default theme
+$nb-themes: nb-register-theme(( // Color 
+color-primary: #1eb19d, // Layout 
+layout-content-width: 1400px, // Sidebar 
+sidebar-header-gap: 2rem, sidebar-header-height: initial, // Menu 
+menu-icon-font-size: 1.5rem !important, menu-icon-margin: 0 1.5rem 0 !important, // Font 
+font-main: Roboto, font-secondary: Roboto, // Switcher 
+switcher-background: #ebeff5, switcher-background-percentage: 50%, // Smart Table 
+smart-table-header-font-size: 1rem !important, smart-table-font-size: 1.5 rem !important, // Chat summary 
+chart-panel-summary-box-shadow: none, chart-panel-summary-background-color: #ecf2f5, chart-panel-summary-border-color: #ebeff1, chart-panel-summary-border-width: 1px, ), default, default);
+
+$nb-themes: nb-register-theme(( ), cosmic, cosmic);
+
+$nb-themes: nb-register-theme(( ), corporate, corporate);

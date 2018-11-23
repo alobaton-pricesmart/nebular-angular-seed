@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* NOTE: use full path for scss and css imports */
+@import './themes';
+// Framework component styles which will use our themes
+@import '../../../../../node_modules/@nebular/theme/styles/globals';
+@import '../../../../../node_modules/@nebular/bootstrap/styles/globals';
+// @nebular prebuilt styles
+@import '../../../../../node_modules/@nebular/theme/styles/prebuilt/default.scss';
+@import '../../../../../node_modules/@nebular/theme/styles/prebuilt/corporate.scss';
+@import '../../../../../node_modules/@nebular/theme/styles/prebuilt/cosmic.scss';
+// @nebular auth styles
+@import '../../../../../node_modules/@nebular/auth/styles/all';
+// Global app font size
+@import './font-size.scss';
+@import './bootstrap-rtl.scss';
+// Append the install mixin inside of the nb-install
+@include nb-install() {
+   @include nb-theme-global();
+  @include nb-auth-global();
+  @include nb-bootstrap-global();
+
+  .custom-control .custom-control-indicator {
+    border-radius: 50%;
+  }
+  @include bootstrap-rtl();
+}

@@ -1,0 +1,14 @@
+@import '../../../theme/styles/themes';
+@import '../../../../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../../../../node_modules/@nebular/theme/styles/global/breakpoints';
+@include nb-install-component() {
+    .chart-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2.125rem;
+        align-items: center;
+    }
+    .dropdown {
+        min-width: 8.125rem;
+    }
+}

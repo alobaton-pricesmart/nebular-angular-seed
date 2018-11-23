@@ -1,0 +1,20 @@
+<nb-card>
+  <nb-tabset fullWidth (changeTab)="changeTab($event)">
+    <nb-tab tabTitle="Ventas">
+      <div class="chart-container">
+        <app-chart-summary [summary]="summary"></app-chart-summary>
+        <app-chart-header [period]="period" (periodChange)="onPeriodChange($event)">
+        </app-chart-header>
+        <app-sales-chart #salesChart [sales]="sales"></app-sales-chart>
+      </div>
+    </nb-tab>
+    <nb-tab tabTitle="Ganancias" [lazyLoad]="true">
+      <div class="chart-container">
+        <app-chart-summary [summary]="summary"></app-chart-summary>
+        <app-chart-header [period]="period" (periodChange)="onPeriodChange($event)">
+        </app-chart-header>
+        <app-profit-chart #profitChart [profits]="profits"></app-profit-chart>
+      </div>
+    </nb-tab>
+  </nb-tabset>
+</nb-card>
