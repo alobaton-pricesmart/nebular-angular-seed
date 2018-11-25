@@ -1,5 +1,4 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ChartsComponent } from './components/charts/charts.component';
 import { ChartSummaryComponent } from './components/chart-summary/chart-summary.component';

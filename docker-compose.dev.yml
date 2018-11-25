@@ -7,10 +7,10 @@ services:
       context: .
       dockerfile: ./.docker/Dockerfile_dev
     command: npm start
-    container_name: angular-seed-dev
-    image: angular-seed/dev
+    container_name: nebular-angular-seed-dev
+    image: nebular-angular-seed/dev
     volumes:
-      - ./src:/home/node/angular-seed/src
+      - ./src:/home/node/nebular-angular-seed/src
     networks:
       - dev-network
     ports:

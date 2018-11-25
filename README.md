@@ -11,7 +11,7 @@ In order to start the seed use:
 
 ```bash
 $ git clone --depth 1 https://github.com/alobaton/nebular-angular-seed.git
-$ cd angular-seed
+$ cd nebular-angular-seed
 
 # install the project's dependencies
 $ npm install
@@ -131,7 +131,7 @@ git pull upstream master
 
 ## Contributing
 
-Please see the [CONTRIBUTING](https://github.com/mgechev/angular-seed/blob/master/.github/CONTRIBUTING.md) file for guidelines.
+Please see the [CONTRIBUTING](https://github.com/alobaton/nebular-angular-seed/blob/master/.github/CONTRIBUTING.md) file for guidelines.
 
 ## Directory Structure
 
@@ -308,10 +308,10 @@ Please see the [CONTRIBUTING](https://github.com/mgechev/angular-seed/blob/maste
 
 ## Contributors
 
-[<img alt="mgechev" src="https://avatars1.githubusercontent.com/u/9356067?s=460&v=4" width="117">](https://github.com/alobaton)
+[<img alt="alobaton" src="https://avatars1.githubusercontent.com/u/9356067?s=460&v=4" width="117">](https://github.com/alobaton)
 
 ## Change Log
 
-# License
+## License
 
 MIT

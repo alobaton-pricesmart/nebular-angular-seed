@@ -31,7 +31,7 @@ export function watch(taskname: string, root: string = Config.APP_SRC) {
 
       // Resolves issue in IntelliJ and other IDEs/text editors which
       // save multiple files at once.
-      // https://github.com/mgechev/angular-seed/issues/1615 for more details.
+      // https://github.com/alobaton/nebular-angular-seed/issues/1615 for more details.
       setTimeout(() => {
 
         runSequence(taskname, () => {

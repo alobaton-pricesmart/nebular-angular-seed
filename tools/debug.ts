@@ -10,7 +10,7 @@ if (!TASK) {
 }
 
 console.log('**********************');
-console.log('* angular-seed tools ');
+console.log('* nebular-angular-seed tools ');
 console.log('* debugging task:', TASK);
 console.log('**********************');
 

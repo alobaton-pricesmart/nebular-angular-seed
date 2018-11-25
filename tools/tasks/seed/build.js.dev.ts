@@ -60,7 +60,7 @@ export = class BuildJsDev extends TypeScriptTask {
       result.js
         .pipe(plugins.sourcemaps.write())
         // Use for debugging with Webstorm/IntelliJ
-        // https://github.com/mgechev/angular-seed/issues/1220
+        // https://github.com/alobaton/nebular-angular-seed/issues/1220
         //    .pipe(plugins.sourcemaps.write('.', {
         //      includeContent: false,
         //      sourceRoot: (file: any) =>

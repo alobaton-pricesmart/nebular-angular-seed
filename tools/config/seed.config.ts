@@ -22,8 +22,8 @@ import {
  * same name in "./projects". For further information take a
  * look at the documentation:
  *
- * 1) https://github.com/mgechev/angular-seed/tree/master/tools
- * 2) https://github.com/mgechev/angular-seed/wiki
+ * 1) https://github.com/alobaton/nebular-angular-seed/tree/master/tools
+ * 2) https://github.com/alobaton/nebular-angular-seed/wiki
  *
  *****************************************************************/
 

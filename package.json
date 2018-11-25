@@ -4,7 +4,7 @@
   "description": "Modular starter project for Angular 2 (and beyond) with statically typed build and AoT compilation",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mgechev/angular-seed"
+    "url": "https://github.com/alobaton/angular-seed"
   },
   "scripts": {
     "build.tools": "tsc && gulp build.tools --color",
@@ -38,7 +38,7 @@
     "compodoc": "./node_modules/.bin/compodoc -p src/client/tsconfig.json",
     "serve.compodoc": "./node_modules/.bin/compodoc -s"
   },
-  "author": "Minko Gechev <mgechev>",
+  "author": "Alvaro Lobaton <alobaton>",
   "license": "MIT",
   "engines": {
     "node": ">=6.9.0",

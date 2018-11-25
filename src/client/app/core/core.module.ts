@@ -6,13 +6,13 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CoreComponent } from './components/core/core.component';
 import { CoreRoutingModule } from './core-routing.module';
 
-const BACKOFFICE_MODULES = [
+const CORE_MODULES = [
   CoreRoutingModule,
   SharedModule.forRoot(),
   ThemeModule.forRoot(),
 ];
 
-const BACKOFFICE_COMPONENTS = [
+const CORE_COMPONENTS = [
   CoreComponent,
   HeaderComponent,
   SidebarComponent,
@@ -20,10 +20,10 @@ const BACKOFFICE_COMPONENTS = [
 
 @NgModule({
   imports: [
-    ...BACKOFFICE_MODULES,
+    ...CORE_MODULES,
   ],
   declarations: [
-    ...BACKOFFICE_COMPONENTS,
+    ...CORE_COMPONENTS,
   ]
 })
 export class CoreModule {

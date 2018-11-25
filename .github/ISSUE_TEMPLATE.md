@@ -6,7 +6,7 @@ IF YOU DON'T FILL OUT THE FOLLOWING INFORMATION WE MIGHT CLOSE YOUR ISSUE WITHOU
 ```
 [ ] bug report => search github for a similar issue or PR before submitting
 [ ] feature request
-[ ] support request => Please do not submit support request here, instead see use [gitter](https://gitter.im/mgechev/angular2-seed) or [stackoverflow](https://stackoverflow.com/questions/tagged/angular2)
+[ ] support request => Please do not submit support request here, instead see use [gitter](https://gitter.im/alobaton/nebular-angular-seed) or [stackoverflow](https://stackoverflow.com/questions/tagged/angular2)
 ```
 
 **Current behavior**
@@ -28,6 +28,6 @@ please provide the *STEPS TO REPRODUCE* and if possible a *MINIMAL DEMO* of the 
 <!-- Operating system, IDE, package manager, HTTP server, ... -->
 
 * **Angular Seed Version:** `aaaaf75`
-<!-- Check which is the hash of the last commit from angular-seed that you have locally -->
+<!-- Check which is the hash of the last commit from nebular-angular-seed that you have locally -->
 
 * **Node:** `node --version` =

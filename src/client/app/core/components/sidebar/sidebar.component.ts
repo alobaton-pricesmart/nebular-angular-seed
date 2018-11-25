@@ -5,16 +5,16 @@ const SIDEBAR_ITEMS: NbMenuItem[] = [
   {
     title: 'Tablero Administrativo',
     icon: 'far fa-clipboard',
-    link: '/backoffice/dashboard',
+    link: '/core/dashboard',
     home: false,
   },
 ];
 
 @Component({
   moduleId: module.id,
-  selector: 'app-backoffice-sidebar',
-  templateUrl: 'backoffice-sidebar.component.html',
-  styleUrls: ['backoffice-sidebar.component.css']
+  selector: 'app-sidebar',
+  templateUrl: 'sidebar.component.html',
+  styleUrls: ['sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
 
