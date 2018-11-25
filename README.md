@@ -175,10 +175,73 @@ Please see the [CONTRIBUTING](https://github.com/alobaton/nebular-angular-seed/b
 │   │   │   ├── i18n.providers.ts
 │   │   │   ├── main-prod.ts
 │   │   │   ├── main.ts
-│   │   │   └── shared
-│   │   │       ├── config
-│   │   │       │   └── env.config.ts
-│   │   │       ├── shared.module.ts
+|   |   |   ├── business
+│   │   │   |   ├── services
+│   │   │   |   └── business.module.ts
+|   |   |   ├── core
+│   │   │   |   ├── components
+|   |   |   |   |   ├── core
+|   |   |   |   |   |   ├── core.component.html
+|   |   |   |   |   |   ├── core.component.scss
+|   |   |   |   |   |   └── core.component.ts
+|   |   |   |   |   ├── header
+|   |   |   |   |   |   ├── header.component.html
+|   |   |   |   |   |   ├── header.component.scss
+|   |   |   |   |   |   └── header.component.ts
+|   |   |   |   |   └── sidebar
+|   |   |   |   |       ├── sidebar.component.html
+|   |   |   |   |       ├── sidebar.component.scss
+|   |   |   |   |       └── sidebar.component.ts
+|   |   |   |   ├── core-routing.module.ts
+│   │   │   |   └── core.module.ts
+|   |   |   ├── dashboard
+│   │   │   |   ├── components
+|   |   |   |   |   ├── chart-header
+|   |   |   |   |   |   ├── chart-header.component.html
+|   |   |   |   |   |   ├── chart-header.component.scss
+|   |   |   |   |   |   └── chart-header.component.ts
+|   |   |   |   |   ├── chart-summary
+|   |   |   |   |   |   ├── chart-summary.component.html
+|   |   |   |   |   |   ├── chart-summary.component.scss
+|   |   |   |   |   |   └── chart-summary.component.ts
+|   |   |   |   |   ├── charts
+|   |   |   |   |   |   ├── charts.component.html
+|   |   |   |   |   |   ├── charts.component.scss
+|   |   |   |   |   |   └── charts.component.ts
+|   |   |   |   |   ├── profit-chart
+|   |   |   |   |   |   ├── profit-chart.component.html
+|   |   |   |   |   |   ├── profit-chart.component.scss
+|   |   |   |   |   |   └── profit-chart.component.ts
+|   |   |   |   |   └── sales-chart
+|   |   |   |   |       ├── sales-chart.component.html
+|   |   |   |   |       ├── sales-chart.component.scss
+|   |   |   |   |       └── sales-chart.component.ts
+|   |   |   |   ├── dashboard-routing.module.ts
+│   │   │   |   └── dashboard.module.ts
+|   |   |   ├── security
+│   │   │   |   ├── guards
+|   |   |   |   |   └── auth
+|   |   |   |   |       └── auth.guard.ts
+│   │   │   |   ├── services
+|   |   |   |   |   └── role
+|   |   |   |   |       └── role.service.ts
+|   |   |   |   ├── security-routing.module.ts
+│   │   │   |   └── security.module.ts
+│   │   │   ├── shared
+│   │   │   |   ├── config
+│   │   │   |   │   └── env.config.ts
+│   │   │   |   └── shared.module.ts <- configure shared dependencies
+|   |   |   └── theme
+|   |   |       ├── styles
+|   |   |       |   ├── _styles.scss <- global application styles
+|   |   |       |   ├── _themes.scss <- configure nebular themes
+|   |   |       |   ├── bootstrap-rtl.scss
+|   |   |       |   ├── font-size.scss
+|   |   |       |   ├── theme-corporate.ts <- corporate theme variables
+|   |   |       |   ├── theme-cosmic.ts <- cosmic theme variables
+|   |   |       |   └── theme-default.ts <- default theme variables
+|   |   |       ├── theme.module.spec.ts
+|   |   |       └── theme.module.ts
 │   │   ├── assets
 │   │   │   ├── favicon
 │   │   │   │   ├── favicon-DEV.ico
@@ -187,6 +250,8 @@ Please see the [CONTRIBUTING](https://github.com/alobaton/nebular-angular-seed/b
 │   │   │       └── more.svg
 │   │   ├── css
 │   │   │   └── main.scss
+│   │   ├── libs
+│   │   │   └── fontawsome-free-5.5.0-web
 │   │   ├── index.html
 │   │   ├── ngsw-config.json
 │   │   ├── system-config.ts
