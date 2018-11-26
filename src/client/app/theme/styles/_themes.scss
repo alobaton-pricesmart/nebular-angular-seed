@@ -54,3 +54,8 @@ $nb-themes: nb-register-theme((), corporate, corporate);
 .nb-theme-corporate nb-menu .menu-item a:hover .menu-icon {
   color: white !important;
 }
+.nb-theme-default nb-menu .menu-item a.active .menu-icon,
+.nb-theme-cosmic nb-menu .menu-item a.active .menu-icon,
+.nb-theme-corporate nb-menu .menu-item a.active .menu-icon {
+  color: white !important;
+}
