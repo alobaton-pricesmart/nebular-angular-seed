@@ -18,12 +18,24 @@ const CORE_COMPONENTS = [
   SidebarComponent,
 ];
 
+const EXPORTS_CORE_COMPONENTS = [
+  CoreComponent,
+  HeaderComponent,
+  SidebarComponent,
+];
+
 @NgModule({
   imports: [
     ...CORE_MODULES,
   ],
   declarations: [
     ...CORE_COMPONENTS,
+  ],
+  exports: [
+    ...EXPORTS_CORE_COMPONENTS,
+  ],
+  entryComponents: [
+    ...EXPORTS_CORE_COMPONENTS,
   ]
 })
 export class CoreModule {

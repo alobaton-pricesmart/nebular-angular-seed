@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 import { SecurityModule } from './security/security.module';
-import { CoreRoutingModule } from './core/core-routing.module';
+import { CoreModule } from './core/core.module';
 
 const config: ExtraOptions = {
     useHash: true,
@@ -14,7 +14,7 @@ export const routes: Routes = [
     },
     {
         path: 'core',
-        loadChildren: () => CoreRoutingModule,
+        loadChildren: () => CoreModule,
     },
 ];
 
