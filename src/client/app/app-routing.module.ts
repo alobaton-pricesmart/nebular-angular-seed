@@ -16,6 +16,10 @@ export const routes: Routes = [
         path: 'core',
         loadChildren: () => CoreModule,
     },
+    {
+        path: '**',
+        redirectTo: 'core/404',
+    },
 ];
 
 @NgModule({
