@@ -7,6 +7,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ChartModule } from 'angular2-chartjs';
 import { CookieModule } from 'ngx-cookie';
 import { LangService } from './services/lang/lang.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 const IMPORTS_BASE_MODULES = [
   CommonModule,
@@ -38,6 +39,7 @@ const IMPORTS_SHARED_MODULE = [
 ];
 
 const EXPORTS_SHARED_MODULE = [
+  TranslateModule,
   FontAwesomeModule,
   Ng2SmartTableModule,
   ChartModule,

@@ -6,6 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './theme/theme.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { TranslateModule } from '@ngx-translate/core';
+
+
 
 const IMPORTS_BASE_MODULES = [
   BrowserModule,
@@ -21,6 +24,7 @@ const IMPORTS_APP_MODULES = [
   AppRoutingModule,
   SharedModule.forRoot(),
   ThemeModule.forRoot(),
+  TranslateModule.forRoot(),
 ];
 
 @NgModule({

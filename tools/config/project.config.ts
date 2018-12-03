@@ -174,8 +174,11 @@ export class ProjectConfig extends SeedConfig {
       {
         name: '@nguniversal/express-engine/tokens',
         path: 'node_modules/@nguniversal/express-engine/bundles/express-engine-tokens.umd.js'
+      },
+      {
+        name: '@ngx-translate/core',
+        path: 'node_modules/@ngx-translate/core/bundles/ngx-translate-core.umd.js'
       }
-
     ];
 
     this.addPackagesBundles(additionalPackages);
