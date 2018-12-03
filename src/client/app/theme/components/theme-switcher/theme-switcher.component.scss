@@ -23,7 +23,7 @@
       border-radius: 50%;
       position: relative;
       @include nb-for-theme(default) {
-        color: nb-theme(color-primary);
+        color: #2a2a2a;
       }
       @include nb-for-theme(cosmic) {
         color: white;
