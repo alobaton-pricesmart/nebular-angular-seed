@@ -35,16 +35,6 @@ export class ProjectConfig extends SeedConfig {
 
     // Add `local` third-party libraries to be injected/bundled.
     this.APP_ASSETS = [
-      {
-        src: `${this.LIBS_SRC}/fontawesome-free-5.5.0-web/css/all.css`,
-        inject: true,
-        vendor: false
-      },
-      {
-        src: `${this.LIBS_SRC}/fontawesome-free-5.5.0-web/js/fontawesome.min.js`,
-        inject: true,
-        vendor: false
-      },
       // {src: `${this.CSS_SRC}/path-to-lib/test-lib.css`, inject: true, vendor: false},
     ];
 

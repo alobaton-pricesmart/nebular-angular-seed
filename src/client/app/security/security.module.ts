@@ -13,7 +13,7 @@ import { SharedModule } from '../shared/shared.module';
 const socialLinks: NbAuthSocialLink[] = [];
 
 const IMPORTS_SECURITY_MODULES = [
-  SharedModule,
+  SharedModule.forRoot(),
   SecurityRoutingModule,
 ];
 

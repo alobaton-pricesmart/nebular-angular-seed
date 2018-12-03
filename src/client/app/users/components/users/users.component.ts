@@ -20,10 +20,10 @@ export class UsersComponent implements OnInit {
             position: 'right'
         },
         edit: {
-            editButtonContent: '<i class="far fa-edit"></i>',
+            editButtonContent: '<fa-icon [icon]="[\'far\', \'edit\']"></fa-icon>',
         },
         delete: {
-            deleteButtonContent: '<i class="fas fa-trash-alt"></i>',
+            deleteButtonContent: '<fa-icon [icon]="[\'fas\', \'trash-alt\']"></fa-icon>',
         },
         columns: {
             id: {

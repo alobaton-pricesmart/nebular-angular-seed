@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './theme/theme.module';
 import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 const IMPORTS_BASE_MODULES = [
   BrowserModule,
@@ -12,7 +13,8 @@ const IMPORTS_BASE_MODULES = [
 const IMPORTS_APP_MODULES = [
   CoreModule,
   AppRoutingModule,
-  ThemeModule,
+  SharedModule.forRoot(),
+  ThemeModule.forRoot(),
 ];
 
 @NgModule({
