@@ -6,6 +6,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ChartModule } from 'angular2-chartjs';
 import { CookieModule } from 'ngx-cookie';
+import { LangService } from './services/lang/lang.service';
 
 const IMPORTS_BASE_MODULES = [
   CommonModule,
@@ -43,6 +44,10 @@ const EXPORTS_SHARED_MODULE = [
   CookieModule,
 ];
 
+const SHARED_MODULE_PROVIDERS = [
+  LangService,
+];
+
 @NgModule({
   imports: [
     ...IMPORTS_BASE_MODULES,
@@ -50,6 +55,7 @@ const EXPORTS_SHARED_MODULE = [
     ...IMPORTS_SHARED_MODULE,
   ],
   providers: [
+    ...SHARED_MODULE_PROVIDERS,
   ],
   exports: [
     ...EXPORTS_BASE_MODULES,
@@ -67,6 +73,7 @@ export class SharedModule {
     return {
       ngModule: SharedModule,
       providers: [
+        ...SHARED_MODULE_PROVIDERS,
       ]
     };
   }

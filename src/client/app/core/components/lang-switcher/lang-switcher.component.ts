@@ -1,7 +1,7 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { NbPopoverDirective } from '@nebular/theme';
 import { LangSwitcherListComponent } from '../lang-switcher-list/lang-switcher-list.component';
-import { LangService } from '../../services/lang/lang.service';
+import { LangService } from '../../../shared/services/lang/lang.service';
 
 @Component({
     moduleId: module.id,

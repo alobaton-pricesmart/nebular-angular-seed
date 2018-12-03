@@ -6,7 +6,6 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CoreComponent } from './components/core/core.component';
 import { CoreRoutingModule } from './core-routing.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { LangService } from './services/lang/lang.service';
 
 const CORE_MODULES = [
   CoreRoutingModule,
@@ -28,9 +27,7 @@ const EXPORTS_CORE_COMPONENTS = [
   NotFoundComponent,
 ];
 
-const CORE_MODULE_PROVIDERS = [
-  LangService,
-];
+const CORE_MODULE_PROVIDERS: [] = [];
 
 @NgModule({
   imports: [
