@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie';
+import { TranslateService } from '@ngx-translate/core';
 
-const DEFAULT_LANG = 'es-ES';
+export const DEFAULT_LANG = 'es-ES';
 
 @Injectable()
 export class LangService {
 
-    constructor(private cookie: CookieService) {
+    constructor(private cookie: CookieService, private translate: TranslateService) {
+        this.setDefault(DEFAULT_LANG);
     }
 
     /**
@@ -23,5 +25,12 @@ export class LangService {
      */
     set(lang: string) {
         this.cookie.put('lang', lang);
+        this.translate.use(lang);
     }
+
+    setDefault(lang: string) {
+        this.cookie.put('lang', lang);
+        this.translate.setDefaultLang(DEFAULT_LANG);
+    }
+
 }
