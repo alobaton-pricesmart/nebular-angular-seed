@@ -6,7 +6,23 @@ const SIDEBAR_ITEMS: NbMenuItem[] = [
     title: 'Tablero Administrativo',
     icon: 'far fa-clipboard',
     link: '/core/dashboard',
+    home: true,
+  },
+  {
+    title: 'Usuarios',
+    icon: 'fas fa-user',
     home: false,
+    expanded: true,
+    children: [
+      {
+        title: 'Usuarios',
+        link: '/core/users',
+      },
+      {
+        title: 'Crear Usuario',
+        link: '/core/users/create',
+      },
+    ]
   },
 ];
 

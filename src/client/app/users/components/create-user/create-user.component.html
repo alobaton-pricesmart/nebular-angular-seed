@@ -1,0 +1,28 @@
+<nb-card>
+    <nb-card-header>
+        <span>Crear Usuario</span>
+        <button class="close" aria-label="Close" (click)="closeModal()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </nb-card-header>
+    <nb-card-body>
+        <form class="form-horizontal">
+            <div class="form-group row">
+                <label for="inputFirstName" class="col-sm-3 form-control-label">
+                    Primer Nombre
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="inputFirstName" placeholder="Primer Nombre">
+                </div>
+            </div>
+        </form>
+    </nb-card-body>
+    <nb-card-footer>
+        <button nbButton class="btn-secondary" (click)="closeModal()">
+            Cerrar
+        </button>
+        <button nbButton>
+            Crear
+        </button>
+    </nb-card-footer>
+</nb-card>
