@@ -163,6 +163,10 @@ export class ProjectConfig extends SeedConfig {
       {
         name: 'intersection-observer',
         path: 'node_modules/intersection-observer/intersection-observer.js'
+      },
+      {
+        name: 'ngx-cookie',
+        path: 'node_modules/ngx-cookie/bundles/ngx-cookie.umd.js'
       }
     ];
 

@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ChartModule } from 'angular2-chartjs';
+import { CookieModule } from 'ngx-cookie';
 
 const IMPORTS_BASE_MODULES = [
   CommonModule,
@@ -32,12 +33,14 @@ const IMPORTS_SHARED_MODULE = [
   FontAwesomeModule,
   Ng2SmartTableModule,
   ChartModule,
+  CookieModule.forRoot(),
 ];
 
 const EXPORTS_SHARED_MODULE = [
   FontAwesomeModule,
   Ng2SmartTableModule,
   ChartModule,
+  CookieModule,
 ];
 
 @NgModule({
