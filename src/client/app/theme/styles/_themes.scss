@@ -1,7 +1,9 @@
 @import "../../../../../node_modules/bootstrap/scss/functions";
 @import "../../../../../node_modules/bootstrap/scss/variables";
 // Override Boootstrap variables here...
+// Use http://scg.ar-ch.org/ for pallet
 $custom-primary: #1eb19d;
+$custom-primary-light: #22c7b0;
 $theme-colors: (
   primary: $custom-primary
 );
@@ -33,6 +35,8 @@ $nb-themes: nb-register-theme(
     menu-icon-font-size: 1.5rem !important,
     menu-icon-margin: 0 1.5rem 0 !important,
     menu-submenu-active-border-color: color-primary,
+    menu-submenu-active-fg: white !important,
+    menu-submenu-active-bg: color-primary !important,
     menu-submenu-hover-fg: white !important,
     menu-submenu-hover-bg: color-primary,
     menu-submenu-item-border-radius: 0,
@@ -79,6 +83,8 @@ $nb-themes: nb-register-theme(
     menu-icon-font-size: 1.5rem !important,
     menu-icon-margin: 0 1.5rem 0 !important,
     menu-submenu-active-border-color: color-primary,
+    menu-submenu-active-fg: white !important,
+    menu-submenu-active-bg: color-primary,
     menu-submenu-hover-fg: white !important,
     menu-submenu-hover-bg: color-primary,
     menu-submenu-item-border-radius: 0,
@@ -119,6 +125,8 @@ $nb-themes: nb-register-theme(
     menu-icon-font-size: 1.5rem !important,
     menu-icon-margin: 0 1.5rem 0 !important,
     menu-submenu-active-border-color: color-primary,
+    menu-submenu-active-fg: white !important,
+    menu-submenu-active-bg: color-primary,
     menu-submenu-hover-fg: white !important,
     menu-submenu-hover-bg: color-primary,
     menu-submenu-item-border-radius: 0,
@@ -145,6 +153,22 @@ $nb-themes: nb-register-theme(
   &:hover .menu-icon,
   &.active .menu-icon {
     color: white !important;
+  }
+}
+/deep/ .nb-theme-default nb-menu .menu-item .menu-items .menu-item,
+/deep/ .nb-theme-cosmic nb-menu .menu-item .menu-items .menu-item,
+/deep/ .nb-theme-corporate nb-menu .menu-item .menu-items .menu-item {
+  margin: 0px !important;
+  padding-right: 0px;
+}
+/deep/ .nb-theme-default nb-menu .menu-item .menu-items .menu-item a,
+/deep/ .nb-theme-cosmic nb-menu .menu-item .menu-items .menu-item a,
+/deep/ .nb-theme-corporate nb-menu .menu-item .menu-items .menu-item a {
+  &:hover,
+  &.active {
+    background-color: $custom-primary-light;
+    color: white !important;
+    border-color: transparent;
   }
 }
 .nb-theme-cosmic .dropdown.show .dropdown-menu.show,

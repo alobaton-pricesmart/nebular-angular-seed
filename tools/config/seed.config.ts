@@ -222,12 +222,6 @@ export class SeedConfig {
   SCSS_SRC = `${this.APP_SRC}/scss`;
 
   /**
-   * The folder of the application local libs.
-   * @type {string}
-   */
-  LIBS_SRC = `${this.APP_SRC}/libs`;
-
-  /**
    * The directory of the applications tools
    * @type {string}
    */

@@ -17,7 +17,9 @@ import { COSMIC_THEME } from './styles/theme-cosmic';
 import { CORPORATE_THEME } from './styles/theme-corporate';
 import { ThemeSwitcherComponent } from './components/theme-switcher/theme-switcher.component';
 import { ThemeSwitcherListComponent } from './components/theme-switcher-list/theme-switcher-list.component';
-import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FONT_AWSOME_ICONS } from './styles/icons';
 
 const IMPORTS_NB_MODULES = [
   NbThemeModule.forRoot(
@@ -52,6 +54,10 @@ const EXPORTS_NB_MODULES = [
   NbPopoverModule,
 ];
 
+const IMPORTS_THEME_MODULE = [
+  SharedModule.forRoot(),
+];
+
 const NB_THEME_PROVIDERS = [
   ...NbThemeModule.forRoot(
     {
@@ -70,8 +76,8 @@ const THEME_COMPONENTS = [
 
 @NgModule({
   imports: [
+    ...IMPORTS_THEME_MODULE,
     ...IMPORTS_NB_MODULES,
-    CommonModule,
   ],
   declarations: [
     ...THEME_COMPONENTS,
@@ -93,5 +99,9 @@ export class ThemeModule {
       ngModule: ThemeModule,
       providers: [...NB_THEME_PROVIDERS],
     };
+  }
+
+  constructor() {
+    library.add(...FONT_AWSOME_ICONS);
   }
 }

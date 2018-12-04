@@ -27,10 +27,12 @@ export class ProjectConfig extends SeedConfig {
       { src: 'jquery/dist/jquery.min.js', inject: 'libs' },
       { src: 'popper.js/dist/umd/popper.min.js', inject: 'libs' },
       { src: 'bootstrap/dist/js/bootstrap.min.js', inject: 'libs' },
+      { src: '@fortawesome/fontawesome-free/js/fontawesome.min.js', inject: 'libs' },
       { src: 'bootstrap/dist/css/bootstrap.min.css', inject: true },
       { src: '@nebular/theme/styles/prebuilt/default.css', inject: true },
       { src: '@nebular/theme/styles/prebuilt/corporate.css', inject: true },
       { src: '@nebular/theme/styles/prebuilt/cosmic.css', inject: true },
+      { src: '@fortawesome/fontawesome-free/css/fontawesome.min.css', inject: true },
     ];
 
     // Add `local` third-party libraries to be injected/bundled.
@@ -65,6 +67,10 @@ export class ProjectConfig extends SeedConfig {
       {
         name: '@fortawesome/fontawesome-svg-core',
         path: 'node_modules/@fortawesome/fontawesome-svg-core/index.js'
+      },
+      {
+        name: '@fortawesome/free-solid-svg-icons',
+        path: 'node_modules/@fortawesome/free-solid-svg-icons/index.js'
       },
       {
         name: 'ng2-smart-table',
