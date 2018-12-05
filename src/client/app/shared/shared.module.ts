@@ -8,6 +8,7 @@ import { ChartModule } from 'angular2-chartjs';
 import { CookieModule } from 'ngx-cookie';
 import { LangService } from './services/lang/lang.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { TitleService } from './services/title/title.service';
 
 const IMPORTS_BASE_MODULES = [
   CommonModule,
@@ -48,6 +49,7 @@ const EXPORTS_SHARED_MODULE = [
 
 const SHARED_MODULE_PROVIDERS = [
   LangService,
+  TitleService,
 ];
 
 @NgModule({
