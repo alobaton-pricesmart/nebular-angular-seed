@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -53,7 +53,11 @@ const EXPORTS_SHARED_MODULE = [
     ...EXPORTS_NGB_MODULES,
     ...EXPORTS_SHARED_MODULE,
   ],
-  declarations: []
+  declarations: [],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA,
+  ]
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders {

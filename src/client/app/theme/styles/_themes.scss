@@ -1,7 +1,9 @@
 @import "../../../../../node_modules/bootstrap/scss/functions";
 @import "../../../../../node_modules/bootstrap/scss/variables";
 // Override Boootstrap variables here...
+// Use http://scg.ar-ch.org/ for pallet
 $custom-primary: #1eb19d;
+$custom-primary-light: #22c7b0;
 $theme-colors: (
   primary: $custom-primary
 );
@@ -28,11 +30,14 @@ $nb-themes: nb-register-theme(
     form-control-selected-border-color: color-primary,
     layout-content-width: 1400px,
     link-color: color-primary,
+    link-color-hover: $custom-primary-light,
     menu-active-fg: white !important,
     menu-active-bg: color-primary,
-    menu-icon-font-size: 1.5rem !important,
-    menu-icon-margin: 0 1.5rem 0 !important,
+    menu-icon-font-size: 2rem !important,
+    menu-icon-margin: 0 0.5rem 0 !important,
     menu-submenu-active-border-color: color-primary,
+    menu-submenu-active-fg: white !important,
+    menu-submenu-active-bg: color-primary !important,
     menu-submenu-hover-fg: white !important,
     menu-submenu-hover-bg: color-primary,
     menu-submenu-item-border-radius: 0,
@@ -74,11 +79,14 @@ $nb-themes: nb-register-theme(
     layout-fg: #a4abb3,
     layout-window-mode-bg: #243447,
     link-color: color-primary,
+    link-color-hover: $custom-primary-light,
     menu-active-fg: white !important,
     menu-active-bg: color-primary,
-    menu-icon-font-size: 1.5rem !important,
-    menu-icon-margin: 0 1.5rem 0 !important,
+    menu-icon-font-size: 2rem !important,
+    menu-icon-margin: 0 0.5rem 0 !important,
     menu-submenu-active-border-color: color-primary,
+    menu-submenu-active-fg: white !important,
+    menu-submenu-active-bg: color-primary,
     menu-submenu-hover-fg: white !important,
     menu-submenu-hover-bg: color-primary,
     menu-submenu-item-border-radius: 0,
@@ -114,11 +122,14 @@ $nb-themes: nb-register-theme(
     form-control-selected-border-color: color-primary,
     layout-content-width: 1400px,
     link-color: color-primary,
+    link-color-hover: $custom-primary-light,
     menu-active-fg: white !important,
     menu-active-bg: color-primary,
-    menu-icon-font-size: 1.5rem !important,
-    menu-icon-margin: 0 1.5rem 0 !important,
+    menu-icon-font-size: 2rem !important,
+    menu-icon-margin: 0 0.5rem 0 !important,
     menu-submenu-active-border-color: color-primary,
+    menu-submenu-active-fg: white !important,
+    menu-submenu-active-bg: color-primary,
     menu-submenu-hover-fg: white !important,
     menu-submenu-hover-bg: color-primary,
     menu-submenu-item-border-radius: 0,
@@ -147,6 +158,18 @@ $nb-themes: nb-register-theme(
     color: white !important;
   }
 }
+/deep/ .nb-theme-default nb-menu .menu-item .menu-items .menu-item,
+/deep/ .nb-theme-cosmic nb-menu .menu-item .menu-items .menu-item,
+/deep/ .nb-theme-corporate nb-menu .menu-item .menu-items .menu-item {
+  margin: 0px !important;
+  padding: 0px;
+  & a:hover,
+  & a.active {
+    background-color: $custom-primary-light;
+    color: white !important;
+    border-color: transparent;
+  }
+}
 .nb-theme-cosmic .dropdown.show .dropdown-menu.show,
 .nb-theme-cosmic .dropup.show .dropdown-menu.show {
   background: #141d26;
@@ -157,4 +180,13 @@ $nb-themes: nb-register-theme(
   &:hover {
     background: $custom-primary;
   }
+}
+.nb-theme-default .breadcrumb {
+  background: white;
+}
+.nb-theme-cosmic .breadcrumb {
+  background: #141d26;
+}
+.nb-theme-corporate .breadcrumb {
+  background: #e3e9ee;
 }

@@ -1,0 +1,21 @@
+<nb-card>
+    <nb-card-header>
+        <div class="row show-grid">
+            <div class="col-md-10">
+                <h2>
+                    Usuarios
+                </h2>
+            </div>
+            <div class="col-md-2">
+                <button nbButton class="float-right btn" [routerLink]="['/core/users/create']">
+                    <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+                    Crear Usuario
+                </button>
+            </div>
+        </div>
+    </nb-card-header>
+    <nb-card-body>
+        <ng2-smart-table [settings]="settings" [source]="source" (edit)="onEdit($event)" (delete)="onDelete($event)">
+        </ng2-smart-table>
+    </nb-card-body>
+</nb-card>

@@ -20,7 +20,7 @@ $icon-top-color-corporate: #e9e8eb;
       &:hover span {
         opacity: 0.5;
       }
-      i {
+      fa-icon {
         font-size: 1.5rem;
         &.drop-icon-default {
           color: $icon-color-default; // Hack for IE11, IE11 should not set background
