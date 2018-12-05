@@ -10,17 +10,19 @@ const SIDEBAR_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Usuarios',
-    icon: 'fas fa-user',
+    icon: 'fas fa-users',
     home: false,
-    expanded: true,
+    expanded: false,
     pathMatch: '/core/users',
     children: [
       {
         title: 'Usuarios',
+        icon: 'fas fa-users',
         link: '/core/users',
       },
       {
         title: 'Crear Usuario',
+        icon: 'fas fa-user-plus',
         link: '/core/users/create',
       },
     ]

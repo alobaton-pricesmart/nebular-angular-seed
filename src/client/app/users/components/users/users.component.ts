@@ -30,28 +30,16 @@ export class UsersComponent implements OnInit {
                 title: 'ID',
                 type: 'number',
             },
-            username: {
-                title: 'Nombre de Usuario',
+            name: {
+                title: 'Nombres',
                 type: 'string',
             },
-            firstName: {
-                title: 'Primer Nombre',
-                type: 'string',
-            },
-            secondName: {
-                title: 'Primer Nombre',
-                type: 'string',
-            },
-            firstLastName: {
-                title: 'Primer Apellido',
-                type: 'string',
-            },
-            secondLastName: {
-                title: 'Segundo Apellido',
+            lastName: {
+                title: 'Apellidos',
                 type: 'string',
             },
             email: {
-                title: 'E-Mail',
+                title: 'Correo Electronico',
                 type: 'string',
             },
         },

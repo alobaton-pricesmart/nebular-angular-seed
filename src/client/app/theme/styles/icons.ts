@@ -4,7 +4,9 @@ import {
     faMagic,
     faPlus,
     faSignOutAlt,
-    faUser
+    faUser,
+    faUsers,
+    faUserPlus
 } from '@fortawesome/free-solid-svg-icons';
 
 export const FONT_AWSOME_ICONS = [
@@ -14,5 +16,7 @@ export const FONT_AWSOME_ICONS = [
     faPlus,
     faSignOutAlt,
     faUser,
+    faUsers,
+    faUserPlus
 ];
 
