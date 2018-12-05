@@ -1,16 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NbMenuItem, NbSidebarService, NbMenuService } from '@nebular/theme';
-
-const USER_MENU_ITEMS: NbMenuItem[] = [
-  {
-    title: 'Perfil',
-    icon: 'fas fa-user'
-  },
-  {
-    title: 'Cerrar Sesión',
-    icon: 'fas fa-sign-out-alt'
-  }
-];
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   moduleId: module.id,
@@ -20,11 +10,12 @@ const USER_MENU_ITEMS: NbMenuItem[] = [
 })
 export class HeaderComponent implements OnInit {
 
-  userMenu = USER_MENU_ITEMS;
+  userMenu: NbMenuItem[] = [];
 
-  constructor(private sidebarService: NbSidebarService, private menuService: NbMenuService) { }
+  constructor(private sidebarService: NbSidebarService, private menuService: NbMenuService, private translate: TranslateService) { }
 
   ngOnInit() {
+    this.loadMenu();
   }
 
   toggleSidebar(): boolean {
@@ -36,4 +27,13 @@ export class HeaderComponent implements OnInit {
     this.menuService.navigateHome();
   }
 
+  loadMenu() {
+    this.translate.get('users.profile').subscribe(reply => {
+      this.userMenu.push({ title: reply, icon: 'fas fa-user' });
+    });
+
+    this.translate.get('auth.logOut').subscribe(reply => {
+      this.userMenu.push({ title: reply, icon: 'fas fa-sign-out-alt' });
+    });
+  }
 }

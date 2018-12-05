@@ -1,3 +1,42 @@
 {
-    "title": "nebular-angular-seed"
+    "title": "nebular-angular-seed",
+    "general": {
+        "create": "Crear",
+        "close": "Cerrar"
+    },
+    "theme": {
+        "themes": "Temas",
+        "default": "Claro",
+        "cosmic": "Oscuro",
+        "corporate": "Corporativo"
+    },
+    "auth": {
+        "logOut": "Cerrar Sesión"
+    },
+    "dashboard": {
+        "dashboard": "Tablero Administrativo"
+    },
+    "users": {
+        "users": "Usuarios",
+        "user": "User",
+        "profile": "Perfil",
+        "view": {
+            "id": "ID",
+            "name": "Nombres",
+            "lastName": "Apellidos",
+            "email": "Correo Electronico",
+            "emailConfirm": "Confirmar Correo Electronico",
+            "password": "Contraseña",
+            "passwordConfirm": "Confirmar Contraseña"
+        },
+        "create": {
+            "title": "Crear Usuario"
+        },
+        "update": {
+            "title": "Actualizar Usuario"
+        },
+        "delete": {
+            "title": "Eliminar Usuario"
+        }
+    }
 }
