@@ -178,6 +178,10 @@ export class ProjectConfig extends SeedConfig {
       {
         name: '@ngx-translate/core',
         path: 'node_modules/@ngx-translate/core/bundles/ngx-translate-core.umd.js'
+      },
+      {
+        name: '@ngx-translate/http-loader',
+        path: 'node_modules/@ngx-translate/http-loader/bundles/ngx-translate-http-loader.umd.js'
       }
     ];
 
