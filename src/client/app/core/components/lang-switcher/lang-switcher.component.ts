@@ -20,6 +20,6 @@ export class LangSwitcherComponent implements OnInit {
     constructor(private langService: LangService) { }
 
     ngOnInit() {
-        this.lang = this.langService.get();
+        this.lang = this.langService.get({ translated: true });
     }
 }

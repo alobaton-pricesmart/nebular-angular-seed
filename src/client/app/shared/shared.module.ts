@@ -9,6 +9,7 @@ import { CookieModule } from 'ngx-cookie';
 import { LangService } from './services/lang/lang.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { TitleService } from './services/title/title.service';
+import { MenuService } from './services/menu/menu.service';
 
 const IMPORTS_BASE_MODULES = [
   CommonModule,
@@ -50,6 +51,7 @@ const EXPORTS_SHARED_MODULE = [
 const SHARED_MODULE_PROVIDERS = [
   LangService,
   TitleService,
+  MenuService,
 ];
 
 @NgModule({

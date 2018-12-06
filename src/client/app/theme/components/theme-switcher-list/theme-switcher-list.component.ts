@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NbPopoverDirective, NbThemeService } from '@nebular/theme';
+import { NbPopoverDirective, NbThemeService, NbMenuItem } from '@nebular/theme';
 import { NbJSThemeOptions } from '@nebular/theme/services/js-themes/theme.options';
-import { TranslateService } from '@ngx-translate/core';
+import { MenuService } from '../../../shared/services/menu/menu.service';
 
 @Component({
     moduleId: module.id,
@@ -15,28 +15,20 @@ export class ThemeSwitcherListComponent implements OnInit {
 
     theme: NbJSThemeOptions;
 
-    themes: any[] = [];
+    themes: NbMenuItem[] = [
+        { title: 'theme.default', data: 'default' },
+        { title: 'theme.cosmic', data: 'cosmic' },
+        { title: 'theme.corporate', data: 'corporate' }
+    ];
 
-    constructor(private themeService: NbThemeService, private translate: TranslateService) { }
+    constructor(private themeService: NbThemeService, private menu: MenuService) { }
+
+    ngOnInit() {
+        this.menu.translateMenuItems(this.themes);
+    }
 
     onToggleTheme(theme: string) {
         this.themeService.changeTheme(theme);
         this.popover.hide();
-    }
-
-    ngOnInit() {
-        this.loadThemes();
-    }
-
-    loadThemes() {
-        this.translate.get('default').subscribe(reply => {
-            this.themes.push({ title: reply, key: 'default' });
-        });
-        this.translate.get('cosmic').subscribe(reply => {
-            this.themes.push({ title: reply, key: 'cosmic' });
-        });
-        this.translate.get('corporate').subscribe(reply => {
-            this.themes.push({ title: reply, key: 'corporate' });
-        });
     }
 }

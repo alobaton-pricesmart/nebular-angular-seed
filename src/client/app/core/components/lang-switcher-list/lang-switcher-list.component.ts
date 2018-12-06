@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NbPopoverDirective } from '@nebular/theme';
+import { LANGS, LangService } from '../../../shared/services/lang/lang.service';
 
 @Component({
     moduleId: module.id,
@@ -11,16 +12,12 @@ export class LangSwitcherListComponent {
     @Input()
     popover: NbPopoverDirective;
 
-    langs = [
-        {
-            title: 'es-ES',
-            key: 'es-ES',
-        }
-    ];
+    langs = LANGS;
 
-    constructor() { }
+    constructor(private lang: LangService) { }
 
-    onToggleLang(lang: string) {
+    onToggleLang(l: string) {
+        this.lang.set(l);
         this.popover.hide();
     }
 }
