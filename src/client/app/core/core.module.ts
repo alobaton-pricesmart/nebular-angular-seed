@@ -6,6 +6,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CoreComponent } from './components/core/core.component';
 import { CoreRoutingModule } from './core-routing.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { LangSwitcherComponent } from './components/lang-switcher/lang-switcher.component';
+import { LangSwitcherListComponent } from './components/lang-switcher-list/lang-switcher-list.component';
 
 const CORE_MODULES = [
   CoreRoutingModule,
@@ -18,6 +20,8 @@ const CORE_COMPONENTS = [
   HeaderComponent,
   SidebarComponent,
   NotFoundComponent,
+  LangSwitcherComponent,
+  LangSwitcherListComponent,
 ];
 
 const EXPORTS_CORE_COMPONENTS = [
@@ -25,7 +29,11 @@ const EXPORTS_CORE_COMPONENTS = [
   HeaderComponent,
   SidebarComponent,
   NotFoundComponent,
+  LangSwitcherComponent,
+  LangSwitcherListComponent,
 ];
+
+const CORE_MODULE_PROVIDERS: [] = [];
 
 @NgModule({
   imports: [
@@ -39,6 +47,9 @@ const EXPORTS_CORE_COMPONENTS = [
   ],
   entryComponents: [
     ...EXPORTS_CORE_COMPONENTS,
+  ],
+  providers: [
+    ...CORE_MODULE_PROVIDERS,
   ]
 })
 export class CoreModule {
@@ -46,6 +57,7 @@ export class CoreModule {
     return {
       ngModule: CoreModule,
       providers: [
+        ...CORE_MODULE_PROVIDERS,
       ]
     };
   }

@@ -1,6 +1,7 @@
 import {
     faBars,
     faClipboard,
+    faLanguage,
     faMagic,
     faPlus,
     faSignOutAlt,
@@ -12,6 +13,7 @@ import {
 export const FONT_AWSOME_ICONS = [
     faBars,
     faClipboard,
+    faLanguage,
     faMagic,
     faPlus,
     faSignOutAlt,

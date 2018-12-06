@@ -2,11 +2,11 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a [routerLink]="['/core/users']">
-                Usuarios
+                {{ 'users.users' | translate}}
             </a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
-            Crear Usuario
+            {{ 'users.create.title' | translate}}
         </li>
     </ol>
 </nav>
@@ -15,7 +15,7 @@
         <div class="row show-grid">
             <div class="col-md-10">
                 <h2>
-                    Crear Usuario
+                    {{ 'users.create.title' | translate}}
                 </h2>
             </div>
         </div>
@@ -24,66 +24,58 @@
         <form class="form-horizontal">
             <div class="form-group row">
                 <label for="inputID" class="col-sm-3 form-control-label">
-                    ID
+                    {{ 'users.view.id' | translate}}
                 </label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="inputID" placeholder="ID">
+                    <input type="text" class="form-control" id="inputID" placeholder="{{ 'users.view.id' | translate}}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputName" class="col-sm-3 form-control-label">
-                    Nombres
+                    {{ 'users.view.name' | translate}}
                 </label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="inputName" placeholder="Nombres">
+                    <input type="text" class="form-control" id="inputName" placeholder="{{ 'users.view.name' | translate}}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputLastName" class="col-sm-3 form-control-label">
-                    Apellidos
+                    {{ 'users.view.lastName' | translate}}
                 </label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="inputLastName" placeholder="Apellidos">
+                    <input type="text" class="form-control" id="inputLastName" placeholder="{{ 'users.view.lastName' | translate}}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputEmail" class="col-sm-3 form-control-label">
-                    Correo Electronico
+                    {{ 'users.view.email' | translate}}
                 </label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="inputEmail" placeholder="Correo Electronico">
+                    <input type="text" class="form-control" id="inputEmail" placeholder="{{ 'users.view.email' | translate}}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputEmailConfirm" class="col-sm-3 form-control-label">
-                    Confirmar Correo Electronico
+                    {{ 'users.view.emailConfirm' | translate}}
                 </label>
                 <div class="col-sm-9">
-                    <input type="email" class="form-control" id="inputEmailConfirm" placeholder="Confirmar Correo Electronico">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputEmailConfirm" class="col-sm-3 form-control-label">
-                    Confirmar Correo Electronico
-                </label>
-                <div class="col-sm-9">
-                    <input type="email" class="form-control" id="inputEmailConfirm" placeholder="Confirmar Correo Electronico">
+                    <input type="email" class="form-control" id="inputEmailConfirm" placeholder="{{ 'users.view.emailConfirm' | translate}}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-3 form-control-label">
-                    Contraseña
+                    {{ 'users.view.password' | translate}}
                 </label>
                 <div class="col-sm-9">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="{{ 'users.view.password' | translate}}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputPasswordConfirm" class="col-sm-3 form-control-label">
-                    Confirmar Contraseña
+                    {{ 'users.view.passwordConfirm' | translate}}
                 </label>
                 <div class="col-sm-9">
-                    <input type="password" class="form-control" id="inputPasswordConfirm" placeholder="Confirmar Contraseña">
+                    <input type="password" class="form-control" id="inputPasswordConfirm" placeholder="{{ 'users.view.passwordConfirm' | translate}}">
                 </div>
             </div>
         </form>
@@ -91,10 +83,10 @@
     <nb-card-footer>
         <div class="float-right">
             <button nbButton class="btn-secondary mr-2">
-                Cerrar
+                {{ 'general.create' | translate}}
             </button>
             <button nbButton>
-                Crear
+                {{ 'general.close' | translate}}
             </button>
         </div>
     </nb-card-footer>

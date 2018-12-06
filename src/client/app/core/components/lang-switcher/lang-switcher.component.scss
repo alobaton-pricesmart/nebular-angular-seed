@@ -1,8 +1,8 @@
-@import "../../styles/themes";
+@import "../../../theme/styles/themes";
 @import "../../../../../../node_modules/@nebular/theme/styles/core/mixins";
 @import "../../../../../../node_modules/@nebular/theme/styles/core/functions";
 @include nb-install-component() {
-  /deep/ .themes-switcher {
+  /deep/ .langs-switcher {
     display: flex;
     font-size: 1.25rem;
     padding: 0.8rem 1.25rem;

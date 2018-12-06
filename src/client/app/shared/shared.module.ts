@@ -5,6 +5,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ChartModule } from 'angular2-chartjs';
+import { CookieModule } from 'ngx-cookie';
+import { LangService } from './services/lang/lang.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { TitleService } from './services/title/title.service';
+import { MenuService } from './services/menu/menu.service';
 
 const IMPORTS_BASE_MODULES = [
   CommonModule,
@@ -32,12 +37,21 @@ const IMPORTS_SHARED_MODULE = [
   FontAwesomeModule,
   Ng2SmartTableModule,
   ChartModule,
+  CookieModule.forRoot(),
 ];
 
 const EXPORTS_SHARED_MODULE = [
+  TranslateModule,
   FontAwesomeModule,
   Ng2SmartTableModule,
   ChartModule,
+  CookieModule,
+];
+
+const SHARED_MODULE_PROVIDERS = [
+  LangService,
+  TitleService,
+  MenuService,
 ];
 
 @NgModule({
@@ -47,6 +61,7 @@ const EXPORTS_SHARED_MODULE = [
     ...IMPORTS_SHARED_MODULE,
   ],
   providers: [
+    ...SHARED_MODULE_PROVIDERS,
   ],
   exports: [
     ...EXPORTS_BASE_MODULES,
@@ -64,6 +79,7 @@ export class SharedModule {
     return {
       ngModule: SharedModule,
       providers: [
+        ...SHARED_MODULE_PROVIDERS,
       ]
     };
   }

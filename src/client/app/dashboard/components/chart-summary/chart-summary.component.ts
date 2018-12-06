@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ChartSummaryComponent implements OnInit {
 
-  @Input() 
+  @Input()
   summary: { title: string; value: number }[];
 
   constructor() { }

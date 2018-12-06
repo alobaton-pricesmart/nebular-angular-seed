@@ -1,16 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NbMenuItem, NbSidebarService, NbMenuService } from '@nebular/theme';
-
-const USER_MENU_ITEMS: NbMenuItem[] = [
-  {
-    title: 'Perfil',
-    icon: 'fas fa-user'
-  },
-  {
-    title: 'Cerrar Sesión',
-    icon: 'fas fa-sign-out-alt'
-  }
-];
+import { MenuService } from '../../../shared/services/menu/menu.service';
 
 @Component({
   moduleId: module.id,
@@ -20,11 +10,21 @@ const USER_MENU_ITEMS: NbMenuItem[] = [
 })
 export class HeaderComponent implements OnInit {
 
-  userMenu = USER_MENU_ITEMS;
+  userMenu: NbMenuItem[] = [
+    {
+      title: 'users.profile',
+      icon: 'fas fa-user'
+    },
+    {
+      title: 'auth.logOut',
+      icon: 'fas fa-sign-out-alt'
+    }
+  ];
 
-  constructor(private sidebarService: NbSidebarService, private menuService: NbMenuService) { }
+  constructor(private sidebarService: NbSidebarService, private menuService: NbMenuService, private menu: MenuService) { }
 
   ngOnInit() {
+    this.menu.translateMenuItems(this.userMenu);
   }
 
   toggleSidebar(): boolean {
@@ -35,5 +35,4 @@ export class HeaderComponent implements OnInit {
   goToHome() {
     this.menuService.navigateHome();
   }
-
 }

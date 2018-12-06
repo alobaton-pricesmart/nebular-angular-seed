@@ -1,6 +1,6 @@
 <ul class="themes-switcher-list">
-    <li class="themes-switcher-item" *ngFor="let theme of themes" (click)="onToggleTheme(theme.key)">
-        <fa-icon [icon]="['fas', 'magic']" [ngClass]="'drop-icon-' + theme.key"></fa-icon>
+    <li class="themes-switcher-item" *ngFor="let theme of themes" (click)="onToggleTheme(theme.data)">
+        <fa-icon [icon]="['fas', 'magic']" [ngClass]="'drop-icon-' + theme.data"></fa-icon>
         <span>{{ theme.title }}</span>
     </li>
 </ul>

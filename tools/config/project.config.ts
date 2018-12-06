@@ -24,7 +24,6 @@ export class ProjectConfig extends SeedConfig {
       ...this.NPM_DEPENDENCIES,
       { src: 'jquery/dist/jquery.min.js', inject: 'libs' },
       { src: 'lodash/lodash.min.js', inject: 'libs' },
-      { src: 'jquery/dist/jquery.min.js', inject: 'libs' },
       { src: 'popper.js/dist/umd/popper.min.js', inject: 'libs' },
       { src: 'bootstrap/dist/js/bootstrap.min.js', inject: 'libs' },
       { src: '@fortawesome/fontawesome-free/js/fontawesome.min.js', inject: 'libs' },
@@ -163,6 +162,26 @@ export class ProjectConfig extends SeedConfig {
       {
         name: 'intersection-observer',
         path: 'node_modules/intersection-observer/intersection-observer.js'
+      },
+      {
+        name: 'ngx-cookie',
+        path: 'node_modules/ngx-cookie/bundles/ngx-cookie.umd.js'
+      },
+      {
+        name: '@nguniversal/express-engine',
+        path: 'node_modules/@nguniversal/express-engine/bundles/express-engine.umd.js'
+      },
+      {
+        name: '@nguniversal/express-engine/tokens',
+        path: 'node_modules/@nguniversal/express-engine/bundles/express-engine-tokens.umd.js'
+      },
+      {
+        name: '@ngx-translate/core',
+        path: 'node_modules/@ngx-translate/core/bundles/ngx-translate-core.umd.js'
+      },
+      {
+        name: '@ngx-translate/http-loader',
+        path: 'node_modules/@ngx-translate/http-loader/bundles/ngx-translate-http-loader.umd.js'
       }
     ];
 
