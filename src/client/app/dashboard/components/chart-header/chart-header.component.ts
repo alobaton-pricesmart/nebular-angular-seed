@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, Output, Input, EventEmitter } from '@angular/core';
-import { NbMediaBreakpoint, NbMediaBreakpointsService } from '@nebular/theme';
+import { NbMediaBreakpointsService } from '@nebular/theme';
 
 @Component({
   moduleId: module.id,
@@ -23,7 +23,6 @@ export class ChartHeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-
   }
 
   ngOnDestroy() {
@@ -34,7 +33,7 @@ export class ChartHeaderComponent implements OnInit, OnDestroy {
     this.periodChange.emit(period);
   }
 
-  _getPeriodText(period: string): string {
+  getPeriodText(period: string): string {
     for (let i = 0; i < this.periods.length; i++) {
       if (period === this.periods[i].value) {
         return this.periods[i].text;
@@ -42,5 +41,4 @@ export class ChartHeaderComponent implements OnInit, OnDestroy {
     }
     return '';
   }
-
 }

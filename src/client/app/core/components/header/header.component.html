@@ -7,10 +7,10 @@
             Logo
         </div>
     </div>
-    <app-theme-switcher></app-theme-switcher>
+    <app-switcher [icon]="['fas', 'magic']" [title]="'theme.themes'" [switcherListComponent]="themeSwitcherListComponent"></app-switcher>
 </div>
 <div class="header-container">
-    <app-lang-switcher></app-lang-switcher>
+    <app-switcher [icon]="['fas', 'language']" [title]="lang" [switcherListComponent]="langSwitcherListComponent"></app-switcher>
     <nb-actions size="medium">
         <nb-action>
             <nb-user name="Jonh Doe" title="Engineer" [nbContextMenu]="userMenu"></nb-user>

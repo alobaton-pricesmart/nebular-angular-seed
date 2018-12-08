@@ -1,0 +1,106 @@
+<h1 id="title" class="title">
+    {{ 'auth.logIn.title' | translate }}
+</h1>
+<p class="sub-title">
+    {{ 'auth.logIn.subTitle' | translate }}
+</p>
+
+<nb-alert *ngIf="showMessages.error && errors?.length && !submitted" status="danger" role="alert">
+    <p class="alert-title">
+        <b>{{ 'general.errors.title' | translate }}</b>
+    </p>
+    <ul class="alert-message-list">
+        <li *ngFor="let error of errors" class="alert-message">
+            {{ error | translate }}
+        </li>
+    </ul>
+</nb-alert>
+
+<nb-alert *ngIf="showMessages.success && messages?.length && !submitted" status="success" role="alert">
+    <p class="alert-title">
+        <b>{{ 'general.messages.title' | translate }}</b>
+    </p>
+    <ul class="alert-message-list">
+        <li *ngFor="let message of messages" class="alert-message">
+            {{ message | translate }}
+        </li>
+    </ul>
+</nb-alert>
+
+<form (ngSubmit)="login()" #form="ngForm" aria-labelledby="title">
+
+    <div class="form-control-group">
+        <label class="label" for="input-email">
+            {{ 'users.view.email' | translate }}
+        </label>
+        <input nbInput fullWidth [(ngModel)]="user.email" #email="ngModel" name="email" id="input-email" pattern=".+@.+\..+"
+            placeholder="{{ 'users.view.email' | translate }}" autofocus [status]="email.dirty ? (email.invalid  ? 'danger' : 'success') : ''"
+            [required]="getConfigValue('forms.validation.email.required')" [attr.aria-invalid]="email.invalid && email.touched ? true : null">
+        <ng-container *ngIf="email.invalid && email.touched">
+            <p class="error-message" *ngIf="email.errors?.required">
+                {{ 'auth.logIn.errors.requiredEmail' | translate }}
+            </p>
+            <p class="error-message" *ngIf="email.errors?.pattern">
+                {{ 'auth.logIn.errors.invalidEmail' | translate }}
+            </p>
+        </ng-container>
+    </div>
+
+    <div class="form-control-group">
+        <label class="label" for="input-password">
+            {{ 'users.view.password' | translate }}
+        </label>
+        <input nbInput fullWidth [(ngModel)]="user.password" #password="ngModel" name="password" type="password" id="input-password"
+            placeholder="{{ 'users.view.password' | translate }}" [status]="password.dirty ? (password.invalid  ? 'danger' : 'success') : ''"
+            [required]="getConfigValue('forms.validation.password.required')" [minlength]="getConfigValue('forms.validation.password.minLength')"
+            [maxlength]="getConfigValue('forms.validation.password.maxLength')" [attr.aria-invalid]="password.invalid && password.touched ? true : null">
+        <ng-container *ngIf="password.invalid && password.touched ">
+            <p class="error-message" *ngIf="password.errors?.required">
+                {{ 'auth.logIn.errors.requiredPassword' | translate }}
+            </p>
+            <p class="error-message" *ngIf="password.errors?.minlength || password.errors?.maxlength">
+                {{ 'auth.logIn.errors.invalidPassword' | translate:
+                {
+                minLength: getConfigValue('forms.validation.password.minLength'),
+                maxLength: getConfigValue('forms.validation.password.maxLength')
+                }
+                }}
+            </p>
+        </ng-container>
+    </div>
+
+    <div class="form-control-group accept-group">
+        <nb-checkbox name="rememberMe" [(ngModel)]="user.rememberMe" *ngIf="rememberMe">
+            {{ 'auth.logIn.messages.rememberMe' | translate }}
+        </nb-checkbox>
+        <a class="forgot-password" routerLink="../request-password">
+            {{ 'auth.logIn.messages.forgotPassword' | translate }}
+        </a>
+    </div>
+
+    <button nbButton fullWidth status="success" [disabled]="submitted || !form.valid" [class.btn-pulse]="submitted">
+        {{ 'auth.logIn.title' | translate }}
+    </button>
+</form>
+
+<section *ngIf="socialLinks && socialLinks.length > 0" class="links" aria-label="Social sign in">
+    <div class="socials">
+        <ng-container *ngFor="let socialLink of socialLinks">
+            <a *ngIf="socialLink.link" [routerLink]="socialLink.link" [attr.target]="socialLink.target" [attr.class]="socialLink.icon"
+                [class.with-icon]="socialLink.icon">
+                {{ socialLink.title }}
+            </a>
+            <a *ngIf="socialLink.url" [attr.href]="socialLink.url" [attr.target]="socialLink.target" [attr.class]="socialLink.icon"
+                [class.with-icon]="socialLink.icon">
+                {{ socialLink.title }}
+            </a>
+        </ng-container>
+    </div>
+</section>
+
+<section class="another-action" aria-label="Register">
+    {{ 'auth.logIn.messages.doNotHaveAnAccount' | translate }}
+    <a class="text-link" routerLink="../register">
+        {{ 'auth.register.title' | translate }}
+    </a>
+</section>

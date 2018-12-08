@@ -1,8 +1,16 @@
 {
     "title": "nebular-angular-seed",
     "general": {
+        "accept": "Aceptar",
         "create": "Crear",
-        "close": "Cerrar"
+        "close": "Cerrar",
+        "messages": {
+            "title": "En hora buena!"
+        },
+        "errors": {
+            "title": "Oh oh!",
+            "serverMomentarilyOutOfService": "El servidor se encuentra momentaneamente fuera de servicio"
+        }
     },
     "theme": {
         "themes": "Temas",
@@ -11,7 +19,64 @@
         "corporate": "Corporativo"
     },
     "auth": {
-        "logOut": "Cerrar Sesión"
+        "logOut": {
+            "title": "Cerrar Sesión",
+            "messages": {
+                "loggingOut": "Cerrando sesión..."
+            }
+        },
+        "logIn": {
+            "title": "Iniciar Sesión",
+            "subTitle": "Inicia sesión con tu correo electronico",
+            "messages": {
+                "default": "Has iniciado sesión correctamente",
+                "rememberMe": "Recuerdame",
+                "forgotPassword": "¿Olvido su contraseña?",
+                "doNotHaveAnAccount": "¿No tienes una cuenta?"
+            },
+            "errors": {
+                "default": "El correo electronico o la contraseña son incorrectos",
+                "requiredEmail": "Correo electronico requerido",
+                "invalidEmail": "Correo electronico invalido",
+                "requiredPassword": "Contraseña requerida",
+                "invalidPassword": "La contraseña debe contener de {{minLength}} a {{maxLength}} caracteres."
+            }
+        },
+        "register": {
+            "title": "Registrate",
+            "messages": {
+                "default": "Te has registrado correctamente",
+                "termsAndConditions": "Terminos y Condiciones",
+                "alreadyHaveAndAccount": "¿Tienes una cuenta?"
+            },
+            "errors": {
+                "default": "Algo ha salido mal, vuelvelo a intentar",
+                "requiredPasswordConfirm": "Confirmación de contraseña requerida",
+                "notMatchPasswordConfirm": "La contraseña no coincide con la confirmación de contraseña",
+                "requiredName": "El nombre es requerido",
+                "requiredLastName": "El apellido es requerido"
+            }
+        },
+        "requestPassword": {
+            "title": "Solicitar Contraseña",
+            "subTitle": "Ingrese su dirección de correo electrónico y le enviaremos un enlace para restablecer su contraseña",
+            "messages": {
+                "default": "Las instrucciones para reestablecer la contraseña se han enviado a tu correo electronico"
+            },
+            "errors": {
+                "default": "Algo ha salido mal, vuelvelo a intentar"
+            }
+        },
+        "resetPassword": {
+            "title": "Reestablecer Contraseña",
+            "subTitle": "Por favor ingrese una nueva contraseña",
+            "messages": {
+                "default": "Tu contraseña ha sido actualizada correctamente"
+            },
+            "errors": {
+                "default": "Algo ha salido mal, vuelvelo a intentar"
+            }
+        }
     },
     "dashboard": {
         "dashboard": "Tablero Administrativo"

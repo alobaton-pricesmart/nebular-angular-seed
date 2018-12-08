@@ -10,6 +10,7 @@ import { LangService } from './services/lang/lang.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { TitleService } from './services/title/title.service';
 import { MenuService } from './services/menu/menu.service';
+import { ToastService } from './services/toast/toast.service';
 
 const IMPORTS_BASE_MODULES = [
   CommonModule,
@@ -52,6 +53,7 @@ const SHARED_MODULE_PROVIDERS = [
   LangService,
   TitleService,
   MenuService,
+  ToastService,
 ];
 
 @NgModule({

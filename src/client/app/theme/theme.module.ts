@@ -11,11 +11,14 @@ import {
   NbTabsetModule,
   NbActionsModule,
   NbPopoverModule,
+  NbAlertModule,
+  NbInputModule,
+  NbCheckboxModule,
+  NbToastrModule,
 } from '@nebular/theme';
 import { DEFAULT_THEME } from './styles/theme-default';
 import { COSMIC_THEME } from './styles/theme-cosmic';
 import { CORPORATE_THEME } from './styles/theme-corporate';
-import { ThemeSwitcherComponent } from './components/theme-switcher/theme-switcher.component';
 import { ThemeSwitcherListComponent } from './components/theme-switcher-list/theme-switcher-list.component';
 import { SharedModule } from '../shared/shared.module';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -38,6 +41,10 @@ const IMPORTS_NB_MODULES = [
   NbTabsetModule,
   NbActionsModule,
   NbPopoverModule,
+  NbAlertModule,
+  NbInputModule,
+  NbCheckboxModule,
+  NbToastrModule.forRoot(),
 ];
 
 const EXPORTS_NB_MODULES = [
@@ -52,6 +59,10 @@ const EXPORTS_NB_MODULES = [
   NbTabsetModule,
   NbActionsModule,
   NbPopoverModule,
+  NbAlertModule,
+  NbInputModule,
+  NbCheckboxModule,
+  NbToastrModule,
 ];
 
 const IMPORTS_THEME_MODULE = [
@@ -70,7 +81,6 @@ const NB_THEME_PROVIDERS = [
 ];
 
 const THEME_COMPONENTS = [
-  ThemeSwitcherComponent,
   ThemeSwitcherListComponent,
 ];
 

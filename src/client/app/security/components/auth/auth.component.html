@@ -1,0 +1,25 @@
+<nb-layout>
+    <nb-layout-column>
+        <nb-card>
+            <nb-card-header>
+                <div class="row show-grid">
+                    <div class="col-md-8">
+                        <a href="#" (click)="back()" class="btn btn-link" aria-label="Back">
+                            <fa-icon [icon]="['fas', 'arrow-left']" class="align-middle"></fa-icon>
+                        </a>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-end">
+                        <app-switcher [icon]="['fas', 'magic']" [title]="'theme.themes'" [switcherListComponent]="themeSwitcherListComponent"
+                            class="mr-2"></app-switcher>
+                        <app-switcher [icon]="['fas', 'language']" [title]="lang" [switcherListComponent]="langSwitcherListComponent"></app-switcher>
+                    </div>
+                </div>
+            </nb-card-header>
+            <nb-card-body>
+                <nb-auth-block class="container">
+                    <router-outlet></router-outlet>
+                </nb-auth-block>
+            </nb-card-body>
+        </nb-card>
+    </nb-layout-column>
+</nb-layout>

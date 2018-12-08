@@ -2,7 +2,7 @@
 @import "../../../../../../node_modules/@nebular/theme/styles/core/mixins";
 @import "../../../../../../node_modules/@nebular/theme/styles/core/functions";
 @include nb-install-component() {
-  /deep/ .langs-switcher {
+  /deep/ .switcher {
     display: flex;
     font-size: 1.25rem;
     padding: 0.8rem 1.25rem;
@@ -17,6 +17,7 @@
     }
     span {
       margin: 0 1.2rem;
+      font-weight: normal;
     }
     fa-icon {
       font-size: 1.5rem;
