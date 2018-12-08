@@ -52,7 +52,9 @@
             "errors": {
                 "default": "Algo ha salido mal, vuelvelo a intentar",
                 "requiredPasswordConfirm": "Confirmación de contraseña requerida",
-                "notMatchPasswordConfirm": "La contraseña no coincide con la confirmación de contraseña"
+                "notMatchPasswordConfirm": "La contraseña no coincide con la confirmación de contraseña",
+                "requiredName": "El nombre es requerido",
+                "requiredLastName": "El apellido es requerido"
             }
         },
         "requestPassword": {

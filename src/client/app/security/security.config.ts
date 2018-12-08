@@ -85,6 +85,12 @@ export const EMAIL_PASSWORD_FORMS = {
         },
         email: {
             required: true,
+        },
+        name: {
+            required: true,
+        },
+        lastName: {
+            required: true,
         }
     },
 };
