@@ -16,7 +16,8 @@ export class HeaderComponent implements OnInit {
   userMenu: NbMenuItem[] = [
     {
       title: 'users.profile',
-      icon: 'fas fa-user'
+      icon: 'fas fa-user',
+      link: '/core/users/profile'
     },
     {
       title: 'auth.logOut.title',

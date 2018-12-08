@@ -3,10 +3,14 @@
         <nb-card>
             <nb-card-body>
                 <div class="flex-centered col-xl-4 col-lg-6 col-md-8 col-sm-12">
-                    <h2 class="title">404 Página No Encontrada</h2>
-                    <small class="sub-title">La página que estas buscando no existe</small>
+                    <h2 class="title">
+                        {{ '404.title' | translate }}
+                    </h2>
+                    <small class="sub-title">
+                        {{ '404.subTitle' | translate }}
+                    </small>
                     <button nbButton (click)="goToHome()" type="button" class="btn-block">
-                        Inicio
+                        {{ 'general.home' | translate }}
                     </button>
                 </div>
             </nb-card-body>

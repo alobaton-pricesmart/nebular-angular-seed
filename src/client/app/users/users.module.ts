@@ -4,16 +4,20 @@ import { ThemeModule } from '../theme/theme.module';
 import { UsersComponent } from './components/users/users.component';
 import { UsersRoutingModule } from './users-routing.module';
 import { CreateUserComponent } from './components/create-user/create-user.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { NbAuthModule } from '@nebular/auth';
 
 const USERS_MODULES = [
   UsersRoutingModule,
   SharedModule.forRoot(),
   ThemeModule.forRoot(),
+  NbAuthModule.forRoot(),
 ];
 
 const USERS_COMPONENTS = [
   UsersComponent,
   CreateUserComponent,
+  ProfileComponent
 ];
 
 const EXPORTS_USERS_COMPONENTS = [

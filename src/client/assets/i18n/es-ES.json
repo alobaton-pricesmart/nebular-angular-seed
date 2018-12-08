@@ -1,6 +1,7 @@
 {
     "title": "nebular-angular-seed",
     "general": {
+        "home": "Inicio",
         "accept": "Aceptar",
         "create": "Crear",
         "close": "Cerrar",
@@ -80,6 +81,10 @@
     },
     "dashboard": {
         "dashboard": "Tablero Administrativo"
+    },
+    "404": {
+        "title": "404 Página No Encontrada",
+        "subTitle": "La página que estas buscando no existe"
     },
     "users": {
         "users": "Usuarios",
