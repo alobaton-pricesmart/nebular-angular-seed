@@ -10,7 +10,16 @@ import { SecurityRoutingModule } from '../security/security-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { LoginComponent } from './components/login/login.component';
 import { ThemeModule } from '../theme/theme.module';
-import { EMAIL_PASSWORD_STRATEGY, EMAIL_PASSWORD_FORMS, EMAIL_PASSWORD_ACCESS_CONTROL } from './security.conf';
+import {
+  EMAIL_PASSWORD_STRATEGY,
+  EMAIL_PASSWORD_FORMS,
+  EMAIL_PASSWORD_ACCESS_CONTROL
+} from './security.config';
+import { RequestPassworcComponent } from './components/request-password/request-password.component';
+import { AuthComponent } from './components/auth/auth.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 const IMPORTS_SECURITY_MODULES = [
   SharedModule.forRoot(),
@@ -37,7 +46,12 @@ const NB_SECURITY_PROVIDERS = [
 ];
 
 const SECURITY_COMPONENTS = [
-  LoginComponent
+  AuthComponent,
+  LoginComponent,
+  LogoutComponent,
+  RegisterComponent,
+  RequestPassworcComponent,
+  ResetPasswordComponent,
 ];
 
 @NgModule({
