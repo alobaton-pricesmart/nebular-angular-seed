@@ -1,6 +1,7 @@
 {
     "title": "nebular-angular-seed",
     "general": {
+        "accept": "Aceptar",
         "create": "Crear",
         "close": "Cerrar",
         "messages": {
@@ -18,13 +19,19 @@
         "corporate": "Corporativo"
     },
     "auth": {
-        "logOut": "Cerrar Sesión",
+        "logOut": {
+            "title": "Cerrar Sesión",
+            "messages": {
+                "loggingOut": "Cerrando sesión..."
+            }
+        },
         "logIn": {
             "title": "Iniciar Sesión",
             "subTitle": "Inicia sesión con tu correo electronico",
             "messages": {
                 "rememberMe": "Recuerdame",
-                "forgotPassword": "¿Olvido su contraseña?"
+                "forgotPassword": "¿Olvido su contraseña?",
+                "doNotHaveAnAccount": "¿No tienes una cuenta?"
             },
             "errors": {
                 "requiredEmail": "Correo electronico requerido",
@@ -36,8 +43,21 @@
         "register": {
             "title": "Registrate",
             "messages": {
-                "doNotHaveAnAccount": "¿No tienes una cuenta?"
+                "termsAndConditions": "Terminos y Condiciones",
+                "alreadyHaveAndAccount": "¿Tienes una cuenta?"
+            },
+            "errors": {
+                "requiredPasswordConfirm": "Confirmación de contraseña requerida",
+                "notMatchPasswordConfirm": "La contraseña no coincide con la confirmación de contraseña"
             }
+        },
+        "requestPassword": {
+            "title": "Solicitar Contraseña",
+            "subTitle": "Ingrese su dirección de correo electrónico y le enviaremos un enlace para restablecer su contraseña"
+        },
+        "sesetPassword": {
+            "title": "Reestablecer Contraseña",
+            "subTitle": "Por favor ingrese una nueva contraseña"
         }
     },
     "dashboard": {

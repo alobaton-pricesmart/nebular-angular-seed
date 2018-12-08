@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
       icon: 'fas fa-user'
     },
     {
-      title: 'auth.logOut',
+      title: 'auth.logOut.title',
       icon: 'fas fa-sign-out-alt'
     }
   ];
