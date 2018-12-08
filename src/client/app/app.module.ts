@@ -23,7 +23,7 @@ const EXPORTS_BASE_MODULES = [
 ];
 
 const IMPORTS_APP_MODULES = [
-  CoreModule,
+  CoreModule.forRoot(),
   AppRoutingModule,
   HttpClientModule,
   TranslateModule.forRoot({

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NbMenuItem, NbSidebarService, NbMenuService } from '@nebular/theme';
 import { MenuService } from '../../../shared/services/menu/menu.service';
+import { LangService } from '../../../shared/services/lang/lang.service';
+import { LangSwitcherListComponent } from '../lang-switcher-list/lang-switcher-list.component';
+import { ThemeSwitcherListComponent } from '../../../theme/components/theme-switcher-list/theme-switcher-list.component';
 
 @Component({
   moduleId: module.id,
@@ -21,9 +24,17 @@ export class HeaderComponent implements OnInit {
     }
   ];
 
-  constructor(private sidebarService: NbSidebarService, private menuService: NbMenuService, private menu: MenuService) { }
+  themeSwitcherListComponent = ThemeSwitcherListComponent;
+
+  lang: string;
+  langSwitcherListComponent = LangSwitcherListComponent;
+
+  constructor(private sidebarService: NbSidebarService, private menuService: NbMenuService, private menu: MenuService,
+    private langService: LangService) { }
 
   ngOnInit() {
+    this.lang = this.langService.get({ translated: true });
+
     this.menu.translateMenuItems(this.userMenu);
   }
 

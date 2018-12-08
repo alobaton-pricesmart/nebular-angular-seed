@@ -34,7 +34,7 @@ export class UsersService extends BasePagedService<User> {
 
     getUsersPaged(input: any, query?: any): Observable<any> {
         const options = {};
-        let url = `users/paged`;
+        const url = `users/paged`;
         return super.getAllPaged(url, options, input);
     }
 

@@ -1,4 +1,4 @@
-import { NbAuthSocialLink } from "@nebular/auth";
+import { NbAuthSocialLink } from '@nebular/auth';
 
 const EMAIL_PASSWORD_STRATEGY_NAME = 'emailPasswordStrategy';
 
