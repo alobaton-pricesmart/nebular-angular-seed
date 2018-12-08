@@ -11,6 +11,9 @@ import {
   NbTabsetModule,
   NbActionsModule,
   NbPopoverModule,
+  NbAlertModule,
+  NbInputModule,
+  NbCheckboxModule,
 } from '@nebular/theme';
 import { DEFAULT_THEME } from './styles/theme-default';
 import { COSMIC_THEME } from './styles/theme-cosmic';
@@ -38,6 +41,9 @@ const IMPORTS_NB_MODULES = [
   NbTabsetModule,
   NbActionsModule,
   NbPopoverModule,
+  NbAlertModule,
+  NbInputModule,
+  NbCheckboxModule,
 ];
 
 const EXPORTS_NB_MODULES = [
@@ -52,6 +58,9 @@ const EXPORTS_NB_MODULES = [
   NbTabsetModule,
   NbActionsModule,
   NbPopoverModule,
+  NbAlertModule,
+  NbInputModule,
+  NbCheckboxModule,
 ];
 
 const IMPORTS_THEME_MODULE = [

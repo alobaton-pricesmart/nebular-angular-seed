@@ -2,7 +2,13 @@
     "title": "nebular-angular-seed",
     "general": {
         "create": "Crear",
-        "close": "Cerrar"
+        "close": "Cerrar",
+        "messages": {
+            "title": "En hora buena!"
+        },
+        "errors": {
+            "title": "Oh oh!"
+        }
     },
     "theme": {
         "themes": "Temas",
@@ -11,7 +17,27 @@
         "corporate": "Corporativo"
     },
     "auth": {
-        "logOut": "Cerrar Sesión"
+        "logOut": "Cerrar Sesión",
+        "logIn": {
+            "title": "Iniciar Sesión",
+            "subTitle": "Inicia sesión con tu correo electronico",
+            "messages": {
+                "rememberMe": "Recuerdame",
+                "forgotPassword": "¿Olvido su contraseña?"
+            },
+            "errors": {
+                "requiredEmail": "Correo electronico requerido",
+                "invalidEmail": "Correo electronico invalido",
+                "requiredPassword": "Contraseña requerida",
+                "invalidPassword": "La contraseña debe contener de {{minLength}} a {{maxLength}} caracteres."
+            }
+        },
+        "register": {
+            "title": "Registrate",
+            "messages": {
+                "doNotHaveAnAccount": "¿No tienes una cuenta?"
+            }
+        }
     },
     "dashboard": {
         "dashboard": "Tablero Administrativo"

@@ -1,19 +1,20 @@
 import { NgModule, ModuleWithProviders, Optional, SkipSelf } from '@angular/core';
 import {
   NbAuthModule,
-  NbPasswordAuthStrategy,
-  NbAuthSocialLink
+  NbPasswordAuthStrategy
 } from '@nebular/auth';
 import { NbSecurityModule, NbRoleProvider } from '@nebular/security';
 import { AuthGuard } from '../security/guards/auth/auth.guard';
 import { RoleService } from '../security/services/role/role.service';
 import { SecurityRoutingModule } from '../security/security-routing.module';
 import { SharedModule } from '../shared/shared.module';
-
-const socialLinks: NbAuthSocialLink[] = [];
+import { LoginComponent } from './components/login/login.component';
+import { ThemeModule } from '../theme/theme.module';
+import { EMAIL_PASSWORD_STRATEGY, EMAIL_PASSWORD_FORMS, EMAIL_PASSWORD_ACCESS_CONTROL } from './security.conf';
 
 const IMPORTS_SECURITY_MODULES = [
   SharedModule.forRoot(),
+  ThemeModule.forRoot(),
   SecurityRoutingModule,
 ];
 
@@ -24,101 +25,19 @@ const EXPORTS_NB_AUTH_MODULES = [
 const NB_SECURITY_PROVIDERS = [
   NbAuthModule.forRoot({
     strategies: [
-      NbPasswordAuthStrategy.setup({
-        name: 'email',
-        baseEndpoint: 'http://',
-        login: {
-          endpoint: '/auth/sign-in',
-        },
-        register: {
-          endpoint: '/auth/sign-up',
-        },
-        logout: {
-          endpoint: '/auth/sign-out',
-        },
-        requestPass: {
-          endpoint: '/auth/request-pass',
-        },
-        resetPass: {
-          endpoint: '/auth/reset-pass',
-        },
-      }),
+      NbPasswordAuthStrategy.setup(EMAIL_PASSWORD_STRATEGY),
     ],
-    forms: {
-      login: {
-        redirectDelay: 0,
-        strategy: 'email',
-        rememberMe: true,
-        showMessages: {
-          success: true,
-          error: true,
-        },
-        socialLinks: socialLinks,
-      },
-      register: {
-        redirectDelay: 0,
-        strategy: 'email',
-        showMessages: {
-          success: true,
-          error: true,
-        },
-        terms: true,
-        socialLinks: socialLinks,
-      },
-      requestPassword: {
-        redirectDelay: 0,
-        strategy: 'email',
-        showMessages: {
-          success: true,
-          error: true,
-        },
-        socialLinks: socialLinks,
-      },
-      resetPassword: {
-        redirectDelay: 0,
-        strategy: 'email',
-        showMessages: {
-          success: true,
-          error: true,
-        },
-        socialLinks: socialLinks,
-      },
-      logout: {
-        redirectDelay: 0,
-        strategy: 'email',
-      },
-      validation: {
-        password: {
-          required: true,
-          minLength: 4,
-          maxLength: 50,
-        },
-        email: {
-          required: true,
-        },
-        fullName: {
-          required: false,
-          minLength: 4,
-          maxLength: 50,
-        },
-      },
-    },
+    forms: EMAIL_PASSWORD_FORMS,
   }).providers,
   NbSecurityModule.forRoot({
-    accessControl: {
-      guest: {
-        view: '*',
-      },
-      user: {
-        parent: 'guest',
-        create: '*',
-        edit: '*',
-        remove: '*',
-      },
-    },
+    accessControl: EMAIL_PASSWORD_ACCESS_CONTROL,
   }).providers,
   AuthGuard,
   { provide: NbRoleProvider, useClass: RoleService },
+];
+
+const SECURITY_COMPONENTS = [
+  LoginComponent
 ];
 
 @NgModule({
@@ -131,7 +50,9 @@ const NB_SECURITY_PROVIDERS = [
   exports: [
     ...EXPORTS_NB_AUTH_MODULES,
   ],
-  declarations: []
+  declarations: [
+    ...SECURITY_COMPONENTS,
+  ]
 })
 export class SecurityModule {
   static forRoot(): ModuleWithProviders {
