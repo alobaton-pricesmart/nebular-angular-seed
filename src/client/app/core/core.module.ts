@@ -7,7 +7,6 @@ import { CoreComponent } from './components/core/core.component';
 import { CoreRoutingModule } from './core-routing.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LangSwitcherListComponent } from './components/lang-switcher-list/lang-switcher-list.component';
-import { SwitcherComponent } from './components/switcher/switcher.component';
 
 const CORE_MODULES = [
   CoreRoutingModule,
@@ -20,7 +19,6 @@ const CORE_COMPONENTS = [
   HeaderComponent,
   SidebarComponent,
   NotFoundComponent,
-  SwitcherComponent,
   LangSwitcherListComponent,
 ];
 
@@ -29,7 +27,6 @@ const EXPORTS_CORE_COMPONENTS = [
   HeaderComponent,
   SidebarComponent,
   NotFoundComponent,
-  SwitcherComponent,
   LangSwitcherListComponent,
 ];
 

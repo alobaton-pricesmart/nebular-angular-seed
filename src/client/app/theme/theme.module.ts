@@ -23,6 +23,7 @@ import { ThemeSwitcherListComponent } from './components/theme-switcher-list/the
 import { SharedModule } from '../shared/shared.module';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FONT_AWSOME_ICONS } from './styles/icons';
+import { SwitcherComponent } from './components/switcher/switcher.component';
 
 const IMPORTS_NB_MODULES = [
   NbThemeModule.forRoot(
@@ -81,6 +82,7 @@ const NB_THEME_PROVIDERS = [
 ];
 
 const THEME_COMPONENTS = [
+  SwitcherComponent,
   ThemeSwitcherListComponent,
 ];
 
