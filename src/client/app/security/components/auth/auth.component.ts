@@ -3,6 +3,7 @@ import { NbAuthComponent, NbAuthService } from '@nebular/auth';
 import { LangSwitcherListComponent } from '../../../core/components/lang-switcher-list/lang-switcher-list.component';
 import { LangService } from '../../../shared/services/lang/lang.service';
 import { Location } from '@angular/common';
+import { ThemeSwitcherListComponent } from '../../../theme/components/theme-switcher-list/theme-switcher-list.component';
 
 @Component({
     moduleId: module.id,
@@ -11,6 +12,8 @@ import { Location } from '@angular/common';
     styleUrls: ['auth.component.css']
 })
 export class AuthComponent extends NbAuthComponent implements OnInit {
+
+    themeSwitcherListComponent = ThemeSwitcherListComponent;
 
     lang: string;
     langSwitcherListComponent = LangSwitcherListComponent;

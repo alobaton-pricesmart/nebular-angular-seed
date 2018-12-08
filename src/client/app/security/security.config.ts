@@ -9,18 +9,28 @@ export const EMAIL_PASSWORD_STRATEGY = {
     baseEndpoint: 'http://',
     login: {
         endpoint: '/auth/sign-in',
+        defaultErrors: ['auth.logIn.errors.default'],
+        defaultMessages: ['auth.logIn.messages.default'],
     },
     register: {
         endpoint: '/auth/sign-up',
+        defaultErrors: ['auth.register.errors.default'],
+        defaultMessages: ['auth.register.messages.default'],
     },
     logout: {
         endpoint: '/auth/sign-out',
+        defaultErrors: ['auth.logOut.errors.default'],
+        defaultMessages: ['auth.logOut.messages.default'],
     },
     requestPass: {
         endpoint: '/auth/request-pass',
+        defaultErrors: ['auth.requestPassword.errors.default'],
+        defaultMessages: ['auth.requestPassword.messages.default'],
     },
     resetPass: {
         endpoint: '/auth/reset-pass',
+        defaultErrors: ['auth.resetPassword.errors.default'],
+        defaultMessages: ['auth.resetPassword.messages.default'],
     },
 };
 

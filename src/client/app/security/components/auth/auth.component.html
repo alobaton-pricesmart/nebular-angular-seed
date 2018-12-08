@@ -2,10 +2,18 @@
     <nb-layout-column>
         <nb-card>
             <nb-card-header>
-                <nav class="navigation">
-                    <app-switcher [icon]="['fas', 'language']" [title]="lang" [switcherListComponent]="langSwitcherListComponent"
-                        class="float-right"></app-switcher>
-                </nav>
+                <div class="row show-grid">
+                    <div class="col-md-8">
+                        <a href="#" (click)="back()" class="btn btn-link" aria-label="Back">
+                            <fa-icon [icon]="['fas', 'arrow-left']" class="align-middle"></fa-icon>
+                        </a>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-end">
+                        <app-switcher [icon]="['fas', 'magic']" [title]="'theme.themes'" [switcherListComponent]="themeSwitcherListComponent"
+                            class="mr-2"></app-switcher>
+                        <app-switcher [icon]="['fas', 'language']" [title]="lang" [switcherListComponent]="langSwitcherListComponent"></app-switcher>
+                    </div>
+                </div>
             </nb-card-header>
             <nb-card-body>
                 <nb-auth-block class="container">
