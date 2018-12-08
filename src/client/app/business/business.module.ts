@@ -1,11 +1,19 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
+import { UsersService } from './services/users/users.service';
+import { BaseService } from './services/base/base.service';
+import { BasePagedService } from './services/base/base-paged.service';
+import { HttpErrorHandler } from './helpers/http-error-handler';
 
 const BUSINESS_MODULES = [
   SharedModule.forRoot(),
 ];
 
 const BUSINESS_PROVIDERS: any[] = [
+  HttpErrorHandler,
+  BaseService,
+  BasePagedService,
+  UsersService,
 ];
 
 @NgModule({
