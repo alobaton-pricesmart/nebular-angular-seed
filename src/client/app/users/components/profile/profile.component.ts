@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { NbAuthService } from '@nebular/auth';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../../../security/services/user/user.service';
 
 @Component({
     moduleId: module.id,
@@ -8,22 +8,13 @@ import { Router } from '@angular/router';
     templateUrl: 'profile.component.html',
     styleUrls: ['profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent {
 
     user: any = {};
 
-    constructor(private authService: NbAuthService, private router: Router) {
-    }
-
-    ngOnInit() {
-        this.authService.getToken().subscribe(token => {
-            if (token.isValid()) {
-                this.user = token.getPayload();
-            } else {
-                this.router.navigate(['/core/404']);
-            }
-        }, err => {
-            this.router.navigate(['/core/404']);
+    constructor(private userService: UserService, private router: Router) {
+        this.userService.getUser().subscribe((user: any) => {
+            this.user = user;
         });
     }
 

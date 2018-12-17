@@ -1,4 +1,4 @@
-import { NbAuthSocialLink } from '@nebular/auth';
+import { NbAuthSocialLink, NbAuthJWTToken } from '@nebular/auth';
 
 const EMAIL_PASSWORD_STRATEGY_NAME = 'emailPasswordStrategy';
 
@@ -32,6 +32,10 @@ export const EMAIL_PASSWORD_STRATEGY = {
         defaultErrors: ['auth.resetPassword.errors.default'],
         defaultMessages: ['auth.resetPassword.messages.default'],
     },
+    token: {
+        class: NbAuthJWTToken,
+        key: 'token'
+    }
 };
 
 export const EMAIL_PASSWORD_FORMS = {
