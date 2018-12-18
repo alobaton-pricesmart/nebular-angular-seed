@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from '../../../security/services/user/user.service';
+import { UserService } from '../../../shared/services/user/user.service';
 
 @Component({
     moduleId: module.id,
@@ -14,7 +14,11 @@ export class ProfileComponent {
 
     constructor(private userService: UserService, private router: Router) {
         this.userService.getUser().subscribe((user: any) => {
-            this.user = user;
+            if (user) {
+                this.user = user;
+            } else {
+                this.router.navigate(['/core/404']);
+            }
         });
     }
 
