@@ -2,14 +2,13 @@
   <div class="row w-100">
     <div class="col text-right">
       <div ngbDropdown class="d-inline-block">
-        <button nbButton id="periodDropdown" ngbDropdownToggle>
-          {{ getPeriodText(period) }}
-        </button>
-        <div ngbDropdownMenu aria-labelledby="periodDropdown">
-          <button nbButton class="dropdown-item" *ngFor="let p of periods" (click)="changePeriod(p.value)">
+
+        <nb-select placeholder="{{ getPeriodText(period) }}">
+          <nb-option value="p.value" (click)="changePeriod(p.value)" *ngFor="let p of periods">
             {{ p.text }}
-          </button>
-        </div>
+          </nb-option>
+        </nb-select>
+
       </div>
     </div>
   </div>

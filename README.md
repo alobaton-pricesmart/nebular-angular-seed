@@ -131,7 +131,7 @@ git pull upstream master
 
 ## Contributing
 
-Please see the [CONTRIBUTING](https://github.com/alobaton/nebular-angular-seed/blob/master/.github/CONTRIBUTING.md) file for guidelines.
+Please see the [CONTRIBUTING](https://github.com/alobaton/nebular-angular-seed/blob/master/CONTRIBUTING.md) file for guidelines.
 
 ## Directory Structure
 
