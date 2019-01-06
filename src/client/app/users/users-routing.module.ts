@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UsersComponent } from './components/users/users.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { BasicInformationComponent } from './components/basic-information/basic-information.component';
 
 export const routes: Routes = [
     {
@@ -15,7 +16,17 @@ export const routes: Routes = [
     },
     {
         path: 'profile',
-        component: ProfileComponent
+        component: ProfileComponent,
+        children: [
+            {
+                path: '',
+                component: BasicInformationComponent,
+            },
+            {
+                path: 'basic-information',
+                component: BasicInformationComponent
+            },
+        ]
     }
 ];
 

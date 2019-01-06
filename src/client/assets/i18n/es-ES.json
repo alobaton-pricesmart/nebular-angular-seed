@@ -97,10 +97,17 @@
             "email": "Correo Electronico",
             "emailConfirm": "Confirmar Correo Electronico",
             "password": "Contraseña",
-            "passwordConfirm": "Confirmar Contraseña"
+            "passwordConfirm": "Confirmar Contraseña",
+            "basicInformation": "Información Basica"
         },
         "create": {
-            "title": "Crear Usuario"
+            "title": "Crear Usuario",
+            "messages": {},
+            "errors": {
+                "requiredID": "El ID es requerido",
+                "requiredEmailConfirm": "Confirmación de Correo electronico requerido",
+                "notMatchPasswordConfirm": "El Correo electronico no coincide con la confirmación"
+            }
         },
         "update": {
             "title": "Actualizar Usuario"

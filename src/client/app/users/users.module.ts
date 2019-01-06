@@ -6,6 +6,7 @@ import { UsersRoutingModule } from './users-routing.module';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NbAuthModule } from '@nebular/auth';
+import { BasicInformationComponent } from './components/basic-information/basic-information.component';
 
 const USERS_MODULES = [
   UsersRoutingModule,
@@ -17,7 +18,8 @@ const USERS_MODULES = [
 const USERS_COMPONENTS = [
   UsersComponent,
   CreateUserComponent,
-  ProfileComponent
+  ProfileComponent,
+  BasicInformationComponent
 ];
 
 const EXPORTS_USERS_COMPONENTS = [
