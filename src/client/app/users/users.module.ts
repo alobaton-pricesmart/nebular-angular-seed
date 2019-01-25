@@ -5,14 +5,14 @@ import { UsersComponent } from './components/users/users.component';
 import { UsersRoutingModule } from './users-routing.module';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { NbAuthModule } from '@nebular/auth';
 import { BasicInformationComponent } from './components/basic-information/basic-information.component';
+import { BusinessModule } from '../business/business.module';
 
 const USERS_MODULES = [
   UsersRoutingModule,
-  SharedModule.forRoot(),
   ThemeModule.forRoot(),
-  NbAuthModule.forRoot(),
+  SharedModule.forRoot(),
+  BusinessModule.forRoot(),
 ];
 
 const USERS_COMPONENTS = [

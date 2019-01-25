@@ -20,7 +20,8 @@ export const routes: Routes = [
         children: [
             {
                 path: '',
-                component: BasicInformationComponent,
+                redirectTo: 'basic-information',
+                pathMatch: 'full'
             },
             {
                 path: 'basic-information',

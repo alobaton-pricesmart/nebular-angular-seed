@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SecurityModule } from './security/security.module';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -16,15 +17,6 @@ export function createTranslateLoader(http: HttpClient) {
 const IMPORTS_BASE_MODULES = [
   BrowserModule,
   BrowserAnimationsModule,
-];
-
-const EXPORTS_BASE_MODULES = [
-  BrowserAnimationsModule,
-];
-
-const IMPORTS_APP_MODULES = [
-  CoreModule.forRoot(),
-  AppRoutingModule,
   HttpClientModule,
   TranslateModule.forRoot({
     loader: {
@@ -33,6 +25,16 @@ const IMPORTS_APP_MODULES = [
       deps: [HttpClient]
     }
   }),
+];
+
+const EXPORTS_BASE_MODULES = [
+  BrowserAnimationsModule,
+];
+
+const IMPORTS_APP_MODULES = [
+  SecurityModule.forRoot(),
+  CoreModule.forRoot(),
+  AppRoutingModule,
 ];
 
 @NgModule({

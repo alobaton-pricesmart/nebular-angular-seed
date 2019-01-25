@@ -11,7 +11,7 @@ export class UserService {
   constructor(private authService: NbAuthService) {
     this.authService.onTokenChange().subscribe((token: NbAuthOAuth2JWTToken) => {
         if (token.isValid()) {
-            this.user = token.getAccessTokenPayload();
+            this.user = token.getPayload();
         }
     });
   }

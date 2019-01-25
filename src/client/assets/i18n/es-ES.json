@@ -98,7 +98,8 @@
             "emailConfirm": "Confirmar Correo Electronico",
             "password": "Contraseña",
             "passwordConfirm": "Confirmar Contraseña",
-            "basicInformation": "Información Basica"
+            "basicInformation": "Información Basica",
+            "roles": "Roles"
         },
         "create": {
             "title": "Crear Usuario",

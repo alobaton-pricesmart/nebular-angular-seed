@@ -1,17 +1,17 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
-import { ThemeModule } from '../theme/theme.module';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CoreComponent } from './components/core/core.component';
 import { CoreRoutingModule } from './core-routing.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LangSwitcherListComponent } from './components/lang-switcher-list/lang-switcher-list.component';
+import { ThemeModule } from '../theme/theme.module';
 
 const CORE_MODULES = [
   CoreRoutingModule,
-  SharedModule.forRoot(),
   ThemeModule.forRoot(),
+  SharedModule.forRoot(),
 ];
 
 const CORE_COMPONENTS = [

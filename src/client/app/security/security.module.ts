@@ -2,7 +2,6 @@ import { NgModule, ModuleWithProviders, Optional, SkipSelf } from '@angular/core
 import {
   NbAuthModule,
   NbPasswordAuthStrategy,
-  NbAuthBlockComponent
 } from '@nebular/auth';
 import { NbSecurityModule, NbRoleProvider } from '@nebular/security';
 import { AuthGuard } from '../security/guards/auth/auth.guard';
@@ -21,10 +20,8 @@ import { AuthComponent } from './components/auth/auth.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
-import { CoreModule } from '../core/core.module';
 
 const IMPORTS_SECURITY_MODULES = [
-  CoreModule.forRoot(),
   SharedModule.forRoot(),
   ThemeModule.forRoot(),
   SecurityRoutingModule,

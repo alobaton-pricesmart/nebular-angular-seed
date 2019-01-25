@@ -4,6 +4,7 @@ import { UsersService } from './services/users/users.service';
 import { BaseService } from './services/base/base.service';
 import { BasePagedService } from './services/base/base-paged.service';
 import { HttpErrorHandler } from './helpers/http-error-handler';
+import { RolesService } from './services/roles/roles.service';
 
 const BUSINESS_MODULES = [
   SharedModule.forRoot(),
@@ -14,6 +15,7 @@ const BUSINESS_PROVIDERS: any[] = [
   BaseService,
   BasePagedService,
   UsersService,
+  RolesService,
 ];
 
 @NgModule({

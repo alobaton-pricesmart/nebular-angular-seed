@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, ExtraOptions } from '@angular/router';
-import { SecurityModule } from './security/security.module';
 import { CoreModule } from './core/core.module';
 
 const config: ExtraOptions = {
@@ -8,10 +7,6 @@ const config: ExtraOptions = {
 };
 
 export const routes: Routes = [
-    {
-        path: '',
-        loadChildren: () => SecurityModule,
-    },
     {
         path: 'core',
         loadChildren: () => CoreModule,

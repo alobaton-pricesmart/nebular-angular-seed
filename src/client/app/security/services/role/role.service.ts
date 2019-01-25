@@ -9,12 +9,13 @@ export class RoleService implements NbRoleProvider {
 
   constructor(private authService: NbAuthService) {
   }
+
   getRole(): Observable<string> {
     return this.authService.onTokenChange()
       .pipe(
         map((token: NbAuthJWTToken) => {
           return token.isValid() ? token.getPayload()['role'] : 'guest';
         }),
-    );
+      );
   }
 }

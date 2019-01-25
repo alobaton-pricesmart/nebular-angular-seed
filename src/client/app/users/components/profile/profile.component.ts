@@ -11,7 +11,7 @@ const PROFILE_ITEMS: NbMenuItem[] = [
         link: '/core/users/profile/basic-information',
         home: true,
     }
-]
+];
 
 @Component({
     moduleId: module.id,
