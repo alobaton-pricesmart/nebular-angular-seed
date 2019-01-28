@@ -103,7 +103,9 @@
         },
         "create": {
             "title": "Crear Usuario",
-            "messages": {},
+            "messages": {
+                "success": "El usuario se ha creado con exito"
+            },
             "errors": {
                 "requiredID": "El ID es requerido",
                 "requiredEmailConfirm": "Confirmación de Correo electronico requerido",

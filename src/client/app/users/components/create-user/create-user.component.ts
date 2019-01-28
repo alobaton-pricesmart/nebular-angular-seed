@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { UsersService } from '../../../business/services/users/users.service';
 import { RolesService } from '../../../business/services/roles/roles.service';
+import { ToastService } from '../../../shared/services/toast/toast.service';
 
 @Component({
   moduleId: module.id,
@@ -9,7 +10,7 @@ import { RolesService } from '../../../business/services/roles/roles.service';
   templateUrl: 'create-user.component.html',
   styleUrls: ['create-user.component.css']
 })
-export class CreateUserComponent implements OnInit {
+export class CreateUserComponent implements OnInit, OnDestroy {
 
   form: FormGroup;
   id: FormControl;
@@ -23,9 +24,10 @@ export class CreateUserComponent implements OnInit {
 
   roles: any[];
 
-  constructor(private formBuilder: FormBuilder, private usersService: UsersService, private rolesService: RolesService) { }
+  commonSelectedItem: any;
 
-  ngOnInit() {
+  constructor(private formBuilder: FormBuilder, private usersService: UsersService, private rolesService: RolesService,
+    private toast: ToastService) {
     this.id = new FormControl('', [Validators.required]);
     this.name = new FormControl('', [Validators.required]);
     this.lastName = new FormControl('', [Validators.required]);
@@ -44,14 +46,24 @@ export class CreateUserComponent implements OnInit {
       passwordConfirm: this.passwordConfirm,
       role: this.role,
     });
+  }
 
+  ngOnInit() {
     this.getRoles();
+  }
+
+  ngOnDestroy() {
+
   }
 
   getRoles() {
     this.roles = [];
     this.rolesService.getRoles().subscribe((roles: any) => {
-      this.roles = roles;
+      this.roles = roles.map((role: any) => {
+        return { value: role.code, title: role.name.es }
+      });
+    }, (err: any) => {
+      this.toast.error('general.errors.serverMomentarilyOutOfService', 'general.errors.title');
     });
   }
 
@@ -68,7 +80,9 @@ export class CreateUserComponent implements OnInit {
     };
 
     this.usersService.createUser(user).subscribe(user => {
-
+      this.toast.info('users.create.messages.success', 'general.messages.title');
+    }, (err: any) => {
+      this.toast.error('general.errors.serverMomentarilyOutOfService', 'general.errors.title');
     });
   }
 
