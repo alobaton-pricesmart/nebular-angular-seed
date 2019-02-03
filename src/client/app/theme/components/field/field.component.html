@@ -1,0 +1,15 @@
+<div class="field-group form-group row">
+    <label for="{{ id }}" class="col-sm-3 form-control-label">
+        {{ label | translate }}
+    </label>
+    <div class="field-value col-sm-9">
+        <ng-template *ngIf="readonly; else editable">
+            <span>{{ value | translate }}</span>
+        </ng-template>
+        <ng-template #editable>
+            <input nbInput id="{{ id }}" [type]="type" placeholder="{{ label | translate }}" class="form-control"
+                [formControl]="control" [attr.aria-invalid]="control.invalid && control.touched ? true : null" [status]="control.dirty || control.touched ? (control.invalid  ? 'danger' : 'success') : ''">
+            <ng-container *ngTemplateOutlet="template"></ng-container>
+        </ng-template>
+    </div>
+</div>

@@ -20,6 +20,7 @@ import { AuthComponent } from './components/auth/auth.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { UserService } from './services/user/user.service';
 
 const IMPORTS_SECURITY_MODULES = [
   SharedModule.forRoot(),
@@ -47,6 +48,7 @@ const NB_SECURITY_PROVIDERS = [
   }).providers,
   AuthGuard,
   { provide: NbRoleProvider, useClass: RoleService },
+  UserService,
 ];
 
 const SECURITY_COMPONENTS = [

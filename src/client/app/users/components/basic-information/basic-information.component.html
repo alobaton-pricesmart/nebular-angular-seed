@@ -10,3 +10,55 @@
         </li>
     </ol>
 </nav>
+
+<nb-card>
+    <nb-card-header>
+        {{ 'users.view.basicInformation' | translate }}
+    </nb-card-header>
+    <nb-card-body>
+        <form class="form-horizontal" [formGroup]="form">
+            <app-field [id]="id" [label]="'users.view.id'" [readonly]="true" [value]="user.id">
+            </app-field>
+            <app-field [id]="name" [label]="'users.view.name'" [value]="user.name" [type]="'text'" [control]="name"
+                [template]="nameTemplate">
+            </app-field>
+            <ng-template #nameTemplate>
+                <ng-container *ngIf="name.invalid && name.touched">
+                    <p class="error-message" *ngIf="name.errors?.required">
+                        {{ 'auth.register.errors.requiredName' | translate }}
+                    </p>
+                </ng-container>
+            </ng-template>
+            <app-field [id]="lastName" [label]="'users.view.lastName'" [value]="user.lastName" [type]="'text'"
+                [control]="lastName" [template]="lastNameTemplate">
+            </app-field>
+            <ng-template #lastNameTemplate>
+                <ng-container *ngIf="lastName.invalid && lastName.touched">
+                    <p class="error-message" *ngIf="lastName.errors?.required">
+                        {{ 'auth.register.errors.requiredLastName' | translate }}
+                    </p>
+                </ng-container>
+            </ng-template>
+            <app-field [id]="email" [label]="'users.view.email'" [value]="user.email" [type]="'email'" [control]="email"
+                [template]="emailTemplate">
+            </app-field>
+            <ng-template #emailTemplate>
+                <ng-container *ngIf="email.invalid && email.touched">
+                    <p class="error-message" *ngIf="email.errors?.required">
+                        {{ 'auth.logIn.errors.requiredEmail' | translate }}
+                    </p>
+                    <p class="error-message" *ngIf="email.errors?.email">
+                        {{ 'auth.logIn.errors.invalidEmail' | translate }}
+                    </p>
+                </ng-container>
+            </ng-template>
+        </form>
+    </nb-card-body>
+    <nb-card-footer>
+        <div class="float-right">
+            <button nbButton [disabled]="!form.valid">
+                {{ 'general.update' | translate }}
+            </button>
+        </div>
+    </nb-card-footer>
+</nb-card>

@@ -42,6 +42,10 @@ export class UsersComponent implements OnInit {
                 title: 'Correo Electronico',
                 type: 'string',
             },
+            roles: {
+                title: 'Roles',
+                type: 'string'
+            }
         },
         pager: {
             display: true

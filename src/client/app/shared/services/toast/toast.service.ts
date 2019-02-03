@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NbToastrService } from '@nebular/theme';
-import { merge } from 'rxjs';
+import { forkJoin } from 'rxjs';
 
 @Injectable()
 export class ToastService {
+
+    config = { preventDuplicates: true };
 
     constructor(private translate: TranslateService, public toastr: NbToastrService) {
     }
@@ -17,8 +19,8 @@ export class ToastService {
             observables.push(this.translate.get(title));
         }
 
-        merge(observables).subscribe((response: any) => {
-            this.toastr.info(response[0], response[1]);
+        forkJoin(observables).subscribe((response: any) => {
+            this.toastr.info(response[0], response[1], this.config);
         });
     }
 
@@ -30,8 +32,8 @@ export class ToastService {
             observables.push(this.translate.get(title));
         }
 
-        merge(observables).subscribe((response: any) => {
-            this.toastr.success(response[0], response[1]);
+        forkJoin(observables).subscribe((response: any) => {
+            this.toastr.success(response[0], response[1], this.config);
         });
     }
 
@@ -43,8 +45,8 @@ export class ToastService {
             observables.push(this.translate.get(title));
         }
 
-        merge(observables).subscribe((response: any) => {
-            this.toastr.danger(response[0], response[1]);
+        forkJoin(observables).subscribe((response: any) => {
+            this.toastr.danger(response[0], response[1], this.config);
         });
     }
 }

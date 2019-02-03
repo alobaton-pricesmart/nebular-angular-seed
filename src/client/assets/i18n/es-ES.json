@@ -1,10 +1,13 @@
 {
     "title": "nebular-angular-seed",
     "general": {
+        "general": "General",
         "home": "Inicio",
         "accept": "Aceptar",
         "create": "Crear",
         "close": "Cerrar",
+        "save": "Guardar",
+        "update": "Actualizar",
         "messages": {
             "title": "En hora buena!"
         },

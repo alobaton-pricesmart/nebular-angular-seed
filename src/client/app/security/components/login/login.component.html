@@ -34,7 +34,7 @@
             {{ 'users.view.email' | translate }}
         </label>
         <input nbInput fullWidth [(ngModel)]="user.email" #email="ngModel" name="email" id="input-email" pattern=".+@.+\..+"
-            placeholder="{{ 'users.view.email' | translate }}" autofocus [status]="email.dirty ? (email.invalid  ? 'danger' : 'success') : ''"
+            placeholder="{{ 'users.view.email' | translate }}" autofocus [status]="email.dirty || email.touched ? (email.invalid  ? 'danger' : 'success') : ''"
             [required]="getConfigValue('forms.validation.email.required')" [attr.aria-invalid]="email.invalid && email.touched ? true : null">
         <ng-container *ngIf="email.invalid && email.touched">
             <p class="error-message" *ngIf="email.errors?.required">
@@ -51,7 +51,7 @@
             {{ 'users.view.password' | translate }}
         </label>
         <input nbInput fullWidth [(ngModel)]="user.password" #password="ngModel" name="password" type="password" id="input-password"
-            placeholder="{{ 'users.view.password' | translate }}" [status]="password.dirty ? (password.invalid  ? 'danger' : 'success') : ''"
+            placeholder="{{ 'users.view.password' | translate }}" [status]="password.dirty || password.touched ? (password.invalid  ? 'danger' : 'success') : ''"
             [required]="getConfigValue('forms.validation.password.required')" [minlength]="getConfigValue('forms.validation.password.minLength')"
             [maxlength]="getConfigValue('forms.validation.password.maxLength')" [attr.aria-invalid]="password.invalid && password.touched ? true : null">
         <ng-container *ngIf="password.invalid && password.touched ">

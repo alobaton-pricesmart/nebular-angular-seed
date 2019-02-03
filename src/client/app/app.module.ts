@@ -37,6 +37,10 @@ const IMPORTS_APP_MODULES = [
   AppRoutingModule,
 ];
 
+const EXPORTS_APP_MODULES = [
+  SecurityModule,
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +51,7 @@ const IMPORTS_APP_MODULES = [
   ],
   exports: [
     ...EXPORTS_BASE_MODULES,
+    ...EXPORTS_APP_MODULES,
   ],
   providers: [],
   bootstrap: [AppComponent]

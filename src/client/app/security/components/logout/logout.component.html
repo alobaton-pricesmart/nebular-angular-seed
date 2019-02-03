@@ -1,3 +1,10 @@
-<div>
-    {{ 'auth.logOut.messages.loggingOut' | translate }}
-</div>
+<nb-alert status="info" role="alert">
+    <p class="alert-title">
+        <b>{{ 'auth.logOut.title' | translate }}</b>
+    </p>
+    <ul class="alert-message-list">
+        <li class="alert-message">
+            {{ 'auth.logOut.messages.loggingOut' | translate }}
+        </li>
+    </ul>
+</nb-alert>
