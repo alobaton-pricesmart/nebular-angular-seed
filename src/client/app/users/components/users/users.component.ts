@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     moduleId: module.id,
@@ -55,7 +54,7 @@ export class UsersComponent implements OnInit {
 
     source: any;
 
-    constructor(private modalService: NgbModal) {
+    constructor() {
         this.source = new LocalDataSource([]);
     }
 
