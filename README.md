@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="https://cdn3.iconfinder.com/data/icons/logos-3/250/angular-512.png" width="100" title="hover text">
+  <b> + Nebular </b>
+</p>
+
 # nebular-angular-seed
 
 [![Build Status](https://travis-ci.org/alobaton/nebular-angular-seed.svg?branch=master)](https://travis-ci.org/alobaton/nebular-angular-seed)
