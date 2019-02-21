@@ -1,6 +1,5 @@
-<p align="center">
-  <img src="https://cdn3.iconfinder.com/data/icons/logos-3/250/angular-512.png" width="100" title="hover text">
-  <b> + Nebular </b>
+<p align="center">  
+  <img src="https://cdn3.iconfinder.com/data/icons/logos-3/250/angular-512.png" width="100" title="Angular 2+">
 </p>
 
 # nebular-angular-seed
