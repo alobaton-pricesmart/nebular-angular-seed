@@ -1,5 +1,5 @@
 <p align="center">  
-  <img src="https://cdn3.iconfinder.com/data/icons/logos-3/250/angular-512.png" width="100" title="Angular 2+">
+  <img src="https://cdn3.iconfinder.com/data/icons/logos-3/250/angular-512.png" width="100" title="Angular">
 </p>
 
 # nebular-angular-seed
@@ -173,7 +173,7 @@ Please see the [CONTRIBUTING](https://github.com/alobaton/nebular-angular-seed/b
 │   ├── client
 │   │   ├── app
 │   │   │   ├── app-routing.module.ts
-│   │   │   ├── app.component.css
+│   │   │   ├── app.component.scss
 │   │   │   ├── app.component.html
 │   │   │   ├── app.component.spec.ts
 │   │   │   ├── app.component.ts

@@ -1,0 +1,216 @@
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../node_modules/bootstrap/scss/variables";
+// Override Boootstrap variables here...
+// Use http://scg.ar-ch.org/ for pallet
+$custom-primary: #1eb19d;
+$custom-primary-light: #22c7b0;
+$theme-colors: (
+  primary: $custom-primary
+);
+@import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
+// @nebular theming framework
+@import "../../../../node_modules/@nebular/theme/styles/theming";
+// @nebular out of the box themes
+@import "../../../../node_modules/@nebular/theme/styles/themes";
+$nb-enabled-themes: (default, cosmic, corporate);
+// Register default theme
+$nb-themes: nb-register-theme(
+  (
+    chart-panel-summary-background-color: #ecf2f5,
+    chart-panel-summary-border-color: #ebeff1,
+    chart-panel-summary-border-width: 1px,
+    chart-panel-summary-box-shadow: none,
+    color-primary: $custom-primary,
+    context-menu-active-bg: color-primary,
+    context-menu-border: color-primary,
+    font-main: unquote('"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'),
+    font-secondary: unquote('"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'),
+    form-control-selected-border-color: color-primary,
+    layout-content-width: 1400px,
+    link-color: color-primary,
+    link-color-hover: $custom-primary-light,
+    menu-active-fg: white !important,
+    menu-active-bg: color-primary,
+    menu-icon-font-size: 2rem !important,
+    menu-icon-margin: 0 0.5rem 0 !important,
+    menu-submenu-active-border-color: color-primary,
+    menu-submenu-active-fg: white !important,
+    menu-submenu-active-bg: color-primary !important,
+    menu-submenu-hover-fg: white !important,
+    menu-submenu-hover-bg: color-primary,
+    menu-submenu-item-border-radius: 0,
+    popover-border: color-primary,
+    sidebar-header-gap: 2rem,
+    sidebar-header-height: initial,
+    smart-table-header-font-size: 1rem !important,
+    smart-table-font-size: 1.5 rem !important,
+    switcher-background: #ebeff5,
+    switcher-background-percentage: 50%,
+    tabs-selected: color-primary
+  ),
+  default,
+  default
+);
+// Register cosmic theme
+$nb-themes: nb-register-theme(
+  (
+    btn-secondary-border: #243447,
+    chart-panel-summary-background-color: rgba(0, 0, 0, 0.1),
+    chart-panel-summary-border-color: #243447,
+    chart-panel-summary-border-width: 1px,
+    chart-panel-summary-box-shadow: none,
+    color-primary: $custom-primary,
+    color-bg: #141d26,
+    color-bg-active: #243447,
+    color-fg: #a4abb3,
+    context-menu-active-bg: color-primary,
+    context-menu-border: color-primary,
+    font-main: unquote('"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'),
+    font-secondary: unquote('"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'),
+    form-control-bg: #101821,
+    form-control-focus-bg: #101821,
+    form-control-selected-border-color: color-primary,
+    layout-content-width: 1400px,
+    layout-bg: #243447,
+    layout-fg: #a4abb3,
+    layout-window-mode-bg: #243447,
+    link-color: color-primary,
+    link-color-hover: $custom-primary-light,
+    menu-active-fg: white !important,
+    menu-active-bg: color-primary,
+    menu-icon-font-size: 2rem !important,
+    menu-icon-margin: 0 0.5rem 0 !important,
+    menu-submenu-active-border-color: color-primary,
+    menu-submenu-active-fg: white !important,
+    menu-submenu-active-bg: color-primary,
+    menu-submenu-hover-fg: white !important,
+    menu-submenu-hover-bg: color-primary,
+    menu-submenu-item-border-radius: 0,
+    popover-border: color-primary,
+    separator: #243447,
+    shadow: 0 8px 20px 0 #141d26,
+    sidebar-header-gap: 2rem,
+    sidebar-header-height: initial,
+    smart-table-header-font-size: 1rem !important,
+    smart-table-font-size: 1.5 rem !important,
+    smart-table-header-bg: #141d26,
+    switcher-background: #101821,
+    switcher-background-percentage: 50%,
+    tabs-selected: color-primary
+  ),
+  cosmic,
+  cosmic
+);
+// Register corporate theme
+$nb-themes: nb-register-theme(
+  (
+    chart-panel-summary-background-color: #f7fafb,
+    chart-panel-summary-border-color: #ebeff1,
+    chart-panel-summary-border-width: 1px,
+    chart-panel-summary-box-shadow: none,
+    color-primary: $custom-primary,
+    context-menu-active-bg: color-primary,
+    context-menu-border: color-primary,
+    font-main: unquote('"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'),
+    font-secondary: unquote('"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'),
+    form-control-selected-border-color: color-primary,
+    layout-content-width: 1400px,
+    link-color: color-primary,
+    link-color-hover: $custom-primary-light,
+    menu-active-fg: white !important,
+    menu-active-bg: color-primary,
+    menu-icon-font-size: 2rem !important,
+    menu-icon-margin: 0 0.5rem 0 !important,
+    menu-submenu-active-border-color: color-primary,
+    menu-submenu-active-fg: white !important,
+    menu-submenu-active-bg: color-primary,
+    menu-submenu-hover-fg: white !important,
+    menu-submenu-hover-bg: color-primary,
+    menu-submenu-item-border-radius: 0,
+    popover-border: color-primary,
+    shadow: 0 2px 12px 0 #dfe3eb,
+    sidebar-header-gap: 2rem,
+    sidebar-header-height: initial,
+    smart-table-header-font-size: 1rem !important,
+    smart-table-font-size: 1.5 rem !important,
+    switcher-background: #2b2d34,
+    switcher-background-percentage: 50%,
+    tabs-selected: color-primary
+  ),
+  corporate,
+  corporate
+);
+// Custom global styles here...
+// Use this way only if there are no existing nebular theme variables!
+.nb-theme-default nb-menu .menu-item a,
+.nb-theme-cosmic nb-menu .menu-item a,
+.nb-theme-corporate nb-menu .menu-item a {
+  padding: 0.675rem 0.75rem !important;
+  font-weight: normal !important;
+  &:hover .menu-icon,
+  &.active .menu-icon {
+    color: white !important;
+  }
+}
+/deep/ .nb-theme-default nb-menu .menu-item .menu-items .menu-item,
+/deep/ .nb-theme-cosmic nb-menu .menu-item .menu-items .menu-item,
+/deep/ .nb-theme-corporate nb-menu .menu-item .menu-items .menu-item {
+  margin: 0px !important;
+  padding: 0px;
+  & a:hover,
+  & a.active {
+    background-color: $custom-primary-light;
+    color: white !important;
+    border-color: transparent;
+  }
+}
+.nb-theme-cosmic .dropdown.show .dropdown-menu.show,
+.nb-theme-cosmic .dropup.show .dropdown-menu.show {
+  background: #141d26;
+  border: 2px solid $custom-primary;
+}
+.nb-theme-cosmic .dropdown .dropdown-item,
+.nb-theme-cosmic .dropup .dropdown-item {
+  &:hover {
+    background: $custom-primary;
+  }
+}
+/deep/ .nb-theme-default .breadcrumb {
+  background: white;
+}
+/deep/ .nb-theme-cosmic .breadcrumb {
+  background: #141d26;
+}
+/deep/ .nb-theme-corporate .breadcrumb {
+  background: white;
+  border: 1px solid #d5dbe0;
+  border-radius: 0.17rem;
+}
+.error-message {
+  margin-top: 0.5rem;
+  color: #ff386a;
+}
+/deep/ .nb-theme-default nb-toast.info,
+/deep/ .nb-theme-cosmic nb-toast.info,
+/deep/ .nb-theme-corporate nb-toast.info {
+  background-color: #4ca6ff;
+  color: white !important;
+}
+/deep/ .nb-theme-default nb-toast.success,
+/deep/ .nb-theme-cosmic nb-toast.success,
+/deep/ .nb-theme-corporate nb-toast.success {
+  background-color: #40dc7e;
+  color: white !important;
+}
+/deep/ .nb-theme-default nb-toast.warning,
+/deep/ .nb-theme-cosmic nb-toast.warning,
+/deep/ .nb-theme-corporate nb-toast.warning {
+  background-color: #ffa100;
+  color: white !important;
+}
+/deep/ .nb-theme-default nb-toast.danger,
+/deep/ .nb-theme-cosmic nb-toast.danger,
+/deep/ .nb-theme-corporate nb-toast.danger {
+  background-color: #ff4c6a;
+  color: white !important;
+}

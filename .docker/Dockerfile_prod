@@ -4,8 +4,7 @@ WORKDIR /home/node/nebular-angular-seed
 
 # try to make good use of docker cache: don't copy our source files until after install
 # because there is no need to bust the "npm install" cache layer if only the app source files have changed
-COPY package.json package-lock.json gulpfile.ts tsconfig.json tslint.json ./
-COPY tools ./tools/
+COPY package.json package-lock.json tsconfig.json tslint.json ./
 COPY .docker/rm.optional.deps.js ./.docker/rm.optional.deps.js
 
 # before switching to non-root user, change ownership of home
