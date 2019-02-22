@@ -17,9 +17,9 @@
     </nb-card-header>
     <nb-card-body>
         <form class="form-horizontal" [formGroup]="form">
-            <app-field [id]="id" [label]="'users.view.id'" [readonly]="true" [value]="user.id">
+            <app-field [id]="'id'" [label]="'users.view.id'" [readonly]="true" [value]="user.id">
             </app-field>
-            <app-field [id]="name" [label]="'users.view.name'" [value]="user.name" [type]="'text'" [control]="name"
+            <app-field [id]="'name'" [label]="'users.view.name'" [value]="user.name" [type]="'text'" [control]="name"
                 [template]="nameTemplate">
             </app-field>
             <ng-template #nameTemplate>
@@ -29,7 +29,7 @@
                     </p>
                 </ng-container>
             </ng-template>
-            <app-field [id]="lastName" [label]="'users.view.lastName'" [value]="user.lastName" [type]="'text'"
+            <app-field [id]="'lastName'" [label]="'users.view.lastName'" [value]="user.lastName" [type]="'text'"
                 [control]="lastName" [template]="lastNameTemplate">
             </app-field>
             <ng-template #lastNameTemplate>
@@ -39,7 +39,7 @@
                     </p>
                 </ng-container>
             </ng-template>
-            <app-field [id]="email" [label]="'users.view.email'" [value]="user.email" [type]="'email'" [control]="email"
+            <app-field [id]="'email'" [label]="'users.view.email'" [value]="user.email" [type]="'email'" [control]="email"
                 [template]="emailTemplate">
             </app-field>
             <ng-template #emailTemplate>

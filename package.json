@@ -3,8 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --aot",
+    "start": "ng serve --aot --watch=true",
+    "start.prod": "ng serve --aot --environment=prod --target=production",
     "build": "ng build --aot",
+    "build.prod": "ng build --aot --environment=prod --target=production",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -22,6 +24,7 @@
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
     "@fortawesome/angular-fontawesome": "^0.3.0",
+    "@fortawesome/fontawesome-free": "^5.7.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@nebular/auth": "^3.3.0",
@@ -42,6 +45,7 @@
     "popper.js": "^1.14.7",
     "rxjs": "^6.3.3",
     "rxjs-compat": "^6.4.0",
+    "webpack-dev-server": "^3.2.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

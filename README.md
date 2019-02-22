@@ -1,5 +1,5 @@
 <p align="center">  
-  <img src="https://cdn3.iconfinder.com/data/icons/logos-3/250/angular-512.png" width="100" title="Angular">
+  <img src="https://github.com/alobaton/nebular-angular-seed/blob/master/docs/images/angular.png" width="100" title="Angular">
 </p>
 
 # nebular-angular-seed
@@ -14,39 +14,24 @@ This seed project is tested with v8.10.0.
 
 In order to start the seed use:
 
-
 ```bash
 $ git clone --depth 1 https://github.com/alobaton/nebular-angular-seed.git
 $ cd nebular-angular-seed
 
 # install the project's dependencies
 $ npm install
-# fast install (via Yarn, https://yarnpkg.com)
-$ yarn install  # or yarn
 
 # watches your files and uses livereload by default
 $ npm start
-
-# generate api documentation
-$ npm run compodoc
-$ npm run serve.compodoc
-
 
 # to start deving with livereload site and coverage as well as continuous testing
 $ npm run start.deving
 
 # dev build
-$ npm run build.dev
+$ npm run build
 # prod build, will output the production application in `dist/prod`
 # the produced code can be deployed (rsynced) to a remote server
 $ npm run build.prod
-# prod build using different base path
-$ npm run build.prod -- --base "/foo/bar/"
-
-# dev build of multiple applications (by default the value of --app is "app")
-$ npm start -- --app baz
-$ npm start -- --app foo
-$ npm start -- --app bar
 ```
 
 ## Dockerization
@@ -73,7 +58,7 @@ To start the container, use:
 $ docker-compose -f docker-compose.dev.yml up -d   # optional: --build, see below
 ```
 
-Now open your browser at http://localhost:5555
+Now open your browser at http://localhost:4200
 
 ### Production build and deployment
 
@@ -86,7 +71,7 @@ To start the container, use:
 $ docker-compose -f docker-compose.prod.yml up -d   # optional: --build, see below
 ```
 
-Now open your browser at http://localhost:5555
+Now open your browser at http://localhost:4200
 
 ### Updating dependencies and sources
 If you are not already familiar with Docker, please note that for both Dev and Prod docker environments, updates to
@@ -101,34 +86,6 @@ To force docker-compose to rebuild the image before starting the container, use 
 $ docker-compose -f docker-compose.dev.yml up -d --build
 ```
 
-## Configuration
-
-Default application server configuration
-
-```js
-const PORT             = 5555;
-const DOCS_PORT        = 4003;
-const APP_BASE         = '/';
-```
-
-Configure at runtime
-
-```bash
-$ npm start -- --port 8080 --base /my-app/
-```
-
-### Environment configuration
-
-If you have different environments and you need to configure them to use different end points, settings, etc. you can use the files `dev.ts` or `prod.ts` in`./tools/env/`. The name of the file is environment you want to use.
-
-The environment can be specified by using:
-
-```bash
-$ npm start -- --env-config ENV_NAME
-```
-
-Currently the `ENV_NAME`s are `dev`, `prod`, `staging`, but you can simply add a different file `"ENV_NAME.ts".` file in order to alter extra such environments.
-
 ## How to update?
 ```
 git remote add upstream https://github.com/alobaton/nebular-angular-seed
@@ -138,244 +95,6 @@ git pull upstream master
 ## Contributing
 
 Please see the [CONTRIBUTING](https://github.com/alobaton/nebular-angular-seed/blob/master/CONTRIBUTING.md) file for guidelines.
-
-## Directory Structure
-
-```
-.
-├── .docker
-│   ├── dist-build.development.dockerfile  <- Dockerfile for development environment
-│   └── dist-build.production.dockerfile   <- Dockerfile for production environment
-├── .dockerignore              <- ignore file for the docker builds
-├── LICENSE
-├── README.md
-├── appveyor.yml
-├── docker-compose.production.yml  <- docker-compose file for production environment
-├── docker-compose.yml.        <- docker-compose file for development environment
-├── gulpfile.ts                <- configuration of the gulp tasks
-├── karma.conf.js              <- configuration of the test runner
-├── package.json               <- dependencies of the project
-├── cypress
-|   ├── fixtures
-|   |   └── example.json
-|   ├── integration
-|   |   ├── about.component.e2e-spec.ts
-|   |   ├── app.component.e2e-spec.ts
-|   |   └── home.component.e2e-spec.ts
-|   ├── plugins
-|   |   ├── cy-ts-preprocessor.js
-|   |   └── index.js
-|   ├── support
-|   |   ├── commands.js
-|   |   └── index.js
-|   └── tsconfig.json
-├── src
-│   ├── client
-│   │   ├── app
-│   │   │   ├── app-routing.module.ts
-│   │   │   ├── app.component.scss
-│   │   │   ├── app.component.html
-│   │   │   ├── app.component.spec.ts
-│   │   │   ├── app.component.ts
-│   │   │   ├── app.module.ts
-│   │   │   ├── i18n.providers.ts
-│   │   │   ├── main-prod.ts
-│   │   │   ├── main.ts
-|   |   |   ├── business
-│   │   │   |   ├── services
-│   │   │   |   └── business.module.ts
-|   |   |   ├── core
-│   │   │   |   ├── components
-|   |   |   |   |   ├── core
-|   |   |   |   |   |   ├── core.component.html
-|   |   |   |   |   |   ├── core.component.scss
-|   |   |   |   |   |   └── core.component.ts
-|   |   |   |   |   ├── header
-|   |   |   |   |   |   ├── header.component.html
-|   |   |   |   |   |   ├── header.component.scss
-|   |   |   |   |   |   └── header.component.ts
-|   |   |   |   |   └── sidebar
-|   |   |   |   |       ├── sidebar.component.html
-|   |   |   |   |       ├── sidebar.component.scss
-|   |   |   |   |       └── sidebar.component.ts
-|   |   |   |   ├── core-routing.module.ts
-│   │   │   |   └── core.module.ts
-|   |   |   ├── dashboard
-│   │   │   |   ├── components
-|   |   |   |   |   ├── chart-header
-|   |   |   |   |   |   ├── chart-header.component.html
-|   |   |   |   |   |   ├── chart-header.component.scss
-|   |   |   |   |   |   └── chart-header.component.ts
-|   |   |   |   |   ├── chart-summary
-|   |   |   |   |   |   ├── chart-summary.component.html
-|   |   |   |   |   |   ├── chart-summary.component.scss
-|   |   |   |   |   |   └── chart-summary.component.ts
-|   |   |   |   |   ├── charts
-|   |   |   |   |   |   ├── charts.component.html
-|   |   |   |   |   |   ├── charts.component.scss
-|   |   |   |   |   |   └── charts.component.ts
-|   |   |   |   |   ├── profit-chart
-|   |   |   |   |   |   ├── profit-chart.component.html
-|   |   |   |   |   |   ├── profit-chart.component.scss
-|   |   |   |   |   |   └── profit-chart.component.ts
-|   |   |   |   |   └── sales-chart
-|   |   |   |   |       ├── sales-chart.component.html
-|   |   |   |   |       ├── sales-chart.component.scss
-|   |   |   |   |       └── sales-chart.component.ts
-|   |   |   |   ├── dashboard-routing.module.ts
-│   │   │   |   └── dashboard.module.ts
-|   |   |   ├── security
-│   │   │   |   ├── guards
-|   |   |   |   |   └── auth
-|   |   |   |   |       └── auth.guard.ts
-│   │   │   |   ├── services
-|   |   |   |   |   └── role
-|   |   |   |   |       └── role.service.ts
-|   |   |   |   ├── security-routing.module.ts
-│   │   │   |   └── security.module.ts
-│   │   │   ├── shared
-│   │   │   |   ├── config
-│   │   │   |   │   └── env.config.ts
-│   │   │   |   └── shared.module.ts <- configure shared dependencies
-|   |   |   └── theme
-|   |   |       ├── styles
-|   |   |       |   ├── _styles.scss <- global application styles
-|   |   |       |   ├── _themes.scss <- configure nebular themes
-|   |   |       |   ├── bootstrap-rtl.scss
-|   |   |       |   ├── font-size.scss
-|   |   |       |   ├── theme-corporate.ts <- corporate theme variables
-|   |   |       |   ├── theme-cosmic.ts <- cosmic theme variables
-|   |   |       |   └── theme-default.ts <- default theme variables
-|   |   |       ├── theme.module.spec.ts
-|   |   |       └── theme.module.ts
-│   │   ├── assets
-│   │   │   ├── favicon
-│   │   │   │   ├── favicon-DEV.ico
-│   │   │   │   └── favicon-PROD.ico
-│   │   │   └── svg
-│   │   │       └── more.svg
-│   │   ├── css
-│   │   │   └── main.scss
-│   │   ├── libs
-│   │   │   └── fontawsome-free-5.5.0-web
-│   │   ├── index.html
-│   │   ├── ngsw-config.json
-│   │   ├── system-config.ts
-│   │   └── tsconfig.json
-├── test-config.js             <- testing configuration
-├── test-main.js               <- karma test launcher
-├── tools
-│   ├── README.md              <- build documentation
-│   ├── config
-│   │   ├── banner-256.txt
-│   │   ├── banner.txt
-│   │   ├── project.config.ts  <- configuration of the specific project
-│   │   ├── project.tasks.json <- override composite gulp tasks
-│   │   ├── seed.config.ts     <- generic configuration of the seed project
-│   │   ├── seed.config.interfaces.ts
-│   │   ├── seed.tasks.json    <- default composite gulp tasks
-│   │   └── seed.tslint.json   <- generic tslint configuration of the seed project
-│   ├── config.ts              <- exported configuration (merge both seed.config and project.config, project.config overrides seed.config)
-│   ├── debug.ts
-│   ├── env                    <- environment configuration
-│   │   ├── base.ts
-│   │   ├── dev.ts
-│   │   ├── env-config.interface.ts
-│   │   └── prod.ts
-│   ├── manual_typings
-│   │   ├── project            <- manual ambient typings for the project
-│   │   │   └── sample.package.d.ts
-│   │   └── seed               <- seed manual ambient typings
-│   │       ├── autoprefixer.d.ts
-│   │       ├── cssnano.d.ts
-│   │       ├── express-history-api-fallback.d.ts
-│   │       ├── istream.d.ts
-│   │       ├── karma.d.ts
-│   │       ├── merge-stream.d.ts
-│   │       ├── open.d.ts
-│   │       ├── slash.d.ts
-│   │       ├── systemjs-builder.d.ts
-│   │       └── tildify.d.ts
-│   ├── tasks                  <- gulp tasks
-│   │   ├── assets_task.ts
-│   │   ├── css_task.ts
-│   │   ├── project            <- project specific gulp tasks
-│   │   │   └── sample.task.ts
-│   │   └── seed               <- seed generic gulp tasks. They can be overriden by the project specific gulp tasks
-│   │   │   ├── build.assets.dev.ts
-│   │   │   ├── build.assets.prod.ts
-│   │   │   ├── build.bundles.app.rollup.aot.ts
-│   │   │   ├── build.bundles.ts
-│   │   │   ├── build.docs.ts
-│   │   │   ├── build.html_css.ts
-│   │   │   ├── build.index.dev.ts
-│   │   │   ├── build.index.prod.ts
-│   │   │   ├── build.js.dev.ts
-│   │   │   ├── build.js.prod.rollup.aot.ts
-│   │   │   ├── build.js.test.ts
-│   │   │   ├── build.sme.prod.aot.ts
-│   │   │   ├── build.sme.prod.rollup.aot.ts
-│   │   │   ├── build.sme.prod.ts
-│   │   │   ├── build.tools.ts
-│   │   │   ├── check.tools.ts
-│   │   │   ├── check.versions.ts
-│   │   │   ├── clean.all.ts
-│   │   │   ├── clean.coverage.ts
-│   │   │   ├── clean.dev.ts
-│   │   │   ├── clean.prod.ts
-│   │   │   ├── clean.sme.ts
-│   │   │   ├── clean.tools.ts
-│   │   │   ├── clear.files.ts
-│   │   │   ├── compile.ahead.prod.ts
-│   │   │   ├── copy.prod.rollup.aot.ts
-│   │   │   ├── copy.prod.ts
-│   │   │   ├── e2e.ts
-│   │   │   ├── generate.manifest.ts
-│   │   │   ├── i18n.build.ts
-│   │   │   ├── i18n.merge.ts
-│   │   │   ├── karma.run.ts
-│   │   │   ├── karma.run.with_coverage.ts
-│   │   │   ├── karma.run.without_coverage.ts
-│   │   │   ├── karma.watch.ts
-│   │   │   ├── minify.bundles.ts
-│   │   │   ├── minify.index.ts
-│   │   │   ├── noop.ts
-│   │   │   ├── print.banner.ts
-│   │   │   ├── serve.coverage.ts
-│   │   │   ├── serve.coverage.watch.ts
-│   │   │   ├── serve.docs.ts
-│   │   │   ├── server.prod.ts
-│   │   │   ├── server.start.ts
-│   │   │   ├── start.deving.ts
-│   │   │   ├── sw.manifest.static.ts
-│   │   │   ├── test.watch.ts
-│   │   │   ├── transpile.bundles.rollup.aot.ts
-│   │   │   ├── tslint.ts
-│   │   │   ├── watch.dev.ts
-│   │   │   └── watch.test.ts
-│   │   ├── task.ts
-│   │   └── typescript_task.ts
-│   ├── utils                  <- build utils
-│   │   ├── project            <- project specific gulp utils
-│   │   │   └── sample_util.ts
-│   │   ├── project.utils.ts
-│   │   ├── seed               <- seed specific gulp utils
-│   │   │   ├── build_optimizer.ts
-│   │   │   ├── clean.ts
-│   │   │   ├── code_change_tools.ts
-│   │   │   ├── karma.start.ts
-│   │   │   ├── server.ts
-│   │   │   ├── sme.ts
-│   │   │   ├── tasks_tools.ts
-│   │   │   ├── template_locals.ts
-│   │   │   ├── tsproject.ts
-│   │   │   └── watch.ts
-│   │   └── seed.utils.ts
-│   └── utils.ts
-├── tsconfig.json              <- configuration of the typescript project (ts-node, which runs the tasks defined in gulpfile.ts)
-├── tslint.json                <- tslint configuration
-└── yarn.lock
-```
 
 ## Contributors
 
