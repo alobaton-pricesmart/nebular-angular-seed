@@ -6,7 +6,7 @@
 
 [![Build Status](https://travis-ci.org/alobaton/nebular-angular-seed.svg?branch=master)](https://travis-ci.org/alobaton/nebular-angular-seed)
 
-This project is [mgechev/angular-seed](https://github.com/mgechev/angular-seed) fork integrated with [Nebular](https://github.com/akveo/nebular) framework.
+This project is an Angular CLI seed integrated with [Nebular](https://github.com/akveo/nebular) framework.
 
 ## How to start
 
