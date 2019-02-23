@@ -9,8 +9,10 @@ import { TitleService } from './shared/services/title/title.service';
 })
 export class AppComponent {
 
-  constructor(private lang: LangService, private title: TitleService) {
+  title = 'title';
+
+  constructor(private lang: LangService, private titleService: TitleService) {
     this.lang.setDefault(DEFAULT_LANG);
-    this.title.setTitle('title');
+    this.titleService.setTitle(this.title);
   }
 }

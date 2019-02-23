@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
@@ -54,6 +54,9 @@ const EXPORTS_APP_MODULES = [
     ...EXPORTS_APP_MODULES,
   ],
   providers: [],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -24,4 +24,5 @@ cache:
     - "$HOME/.npm"
 
 script:
-  - npm run tests.all
+  - npm run lint
+  - npm run test
