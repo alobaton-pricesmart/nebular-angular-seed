@@ -1,6 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CoreComponent } from './core.component';
+import { HeaderComponent } from '../header/header.component';
+import { NbLayoutModule, NbSidebarModule, NbUserModule, NbMenuModule, NbContextMenuModule, NbActionsModule, NbPopoverModule, NbSidebarService, NbThemeService } from '@nebular/theme';
+import { RouterTestingModule } from '@angular/router/testing';
+import { SidebarComponent } from '../sidebar/sidebar.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SwitcherComponent } from '../../../theme/components/switcher/switcher.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('CoreComponent', () => {
   let component: CoreComponent;
@@ -8,7 +15,28 @@ describe('CoreComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CoreComponent ]
+      imports: [
+        RouterTestingModule,
+        NbLayoutModule,
+        NbSidebarModule,
+        FontAwesomeModule,
+        NbUserModule,
+        NbMenuModule,
+        NbContextMenuModule,
+        NbActionsModule,
+        NbPopoverModule,
+        TranslateModule.forRoot(),
+      ],
+      declarations: [ 
+        CoreComponent, 
+        HeaderComponent,
+        SidebarComponent,
+        SwitcherComponent,
+      ],
+      providers: [
+        NbSidebarService,
+        NbThemeService,
+      ]
     })
     .compileComponents();
   }));
