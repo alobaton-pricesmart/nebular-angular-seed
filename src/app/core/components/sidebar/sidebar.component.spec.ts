@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SidebarComponent } from './sidebar.component';
+import { NbMenuModule } from '@nebular/theme';
+import { TranslateModule } from '@ngx-translate/core';
+import { MenuService } from '../../../shared/services/menu/menu.service';
 
 describe('SidebarComponent', () => {
   let component: SidebarComponent;
@@ -8,7 +11,17 @@ describe('SidebarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [SidebarComponent]
+      imports: [
+        NbMenuModule,
+        TranslateModule.forRoot(),
+      ],
+      declarations: [
+        SidebarComponent,
+      ],
+      providers: [
+        ...NbMenuModule.forRoot().providers,
+        MenuService,
+      ]
     })
       .compileComponents();
   }));
