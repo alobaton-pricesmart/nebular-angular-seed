@@ -104,4 +104,4 @@ Please see the [CONTRIBUTING](https://github.com/alobaton/nebular-angular-seed/b
 
 ## License
 
-MIT
+[MIT](https://github.com/alobaton/nebular-angular-seed/blob/master/LICENSE.md)
