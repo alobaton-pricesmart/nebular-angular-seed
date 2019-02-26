@@ -10,22 +10,22 @@ This project is an Angular CLI seed integrated with [Nebular](https://github.com
 
 ## How to start
 
-This seed project is tested with v8.10.0.
-
 In order to start the seed use:
 
 ```bash
-$ git clone --depth 1 https://github.com/alobaton/nebular-angular-seed.git
+$ git clone https://github.com/alobaton/nebular-angular-seed.git
 $ cd nebular-angular-seed
+
+# delete docs folder
+$ rm -R docs
 
 # install the project's dependencies
 $ npm install
 
 # watches your files and uses livereload by default
 $ npm start
-
-# to start deving with livereload site and coverage as well as continuous testing
-$ npm run start.deving
+# prod start
+$ npm run start.prod
 
 # dev build
 $ npm run build
