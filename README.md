@@ -1,5 +1,5 @@
 <p align="center">  
-  <img src="https://github.com/alobaton/nebular-angular-seed/blob/master/docs/images/angular.png" width="100" title="Angular">
+  <img src="https://github.com/alobaton/nebular-angular-seed/blob/master/docs/img/angular.png" width="100" title="Angular">
 </p>
 
 # nebular-angular-seed
