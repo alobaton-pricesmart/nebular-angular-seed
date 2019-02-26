@@ -214,3 +214,9 @@ $nb-themes: nb-register-theme(
   background-color: #ff4c6a;
   color: white !important;
 }
+// ng-multiselect-dropdown fix
+/deep/ .nb-theme-default .multiselect-dropdown .dropdown-list,
+/deep/ .nb-theme-cosmic .multiselect-dropdown .dropdown-list,
+/deep/ .nb-theme-corporate .multiselect-dropdown .dropdown-list {
+  z-index: 1024;
+}

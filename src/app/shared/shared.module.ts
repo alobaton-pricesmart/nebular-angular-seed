@@ -11,6 +11,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { TitleService } from './services/title/title.service';
 import { MenuService } from './services/menu/menu.service';
 import { ToastService } from './services/toast/toast.service';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 const IMPORTS_BASE_MODULES = [
   CommonModule,
@@ -39,6 +40,7 @@ const IMPORTS_SHARED_MODULE = [
   Ng2SmartTableModule,
   ChartModule,
   CookieModule.forRoot(),
+  NgMultiSelectDropDownModule.forRoot()
 ];
 
 const EXPORTS_SHARED_MODULE = [
@@ -47,6 +49,7 @@ const EXPORTS_SHARED_MODULE = [
   Ng2SmartTableModule,
   ChartModule,
   CookieModule,
+  NgMultiSelectDropDownModule,
 ];
 
 const SHARED_MODULE_PROVIDERS = [

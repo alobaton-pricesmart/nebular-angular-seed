@@ -29,8 +29,9 @@
                             {{ 'users.view.id' | translate }}
                         </label>
                         <div class="col-sm-9">
-                            <input nbInput type="text" class="form-control" id="inputID" placeholder="{{ 'users.view.id' | translate }}"
-                                formControlName="id" [attr.aria-invalid]="id.invalid && id.touched ? true : null"
+                            <input nbInput type="text" class="form-control" id="inputID"
+                                placeholder="{{ 'users.view.id' | translate }}" formControlName="id"
+                                [attr.aria-invalid]="id.invalid && id.touched ? true : null"
                                 [status]="id.dirty || id.touched ? (id.invalid  ? 'danger' : 'success') : ''">
                             <ng-container *ngIf="id.invalid && id.touched">
                                 <p class="error-message" *ngIf="id.errors?.required">
@@ -44,8 +45,9 @@
                             {{ 'users.view.name' | translate }}
                         </label>
                         <div class="col-sm-9">
-                            <input nbInput type="text" class="form-control" id="inputName" placeholder="{{ 'users.view.name' | translate }}"
-                                formControlName="name" [attr.aria-invalid]="name.invalid && name.touched ? true : null"
+                            <input nbInput type="text" class="form-control" id="inputName"
+                                placeholder="{{ 'users.view.name' | translate }}" formControlName="name"
+                                [attr.aria-invalid]="name.invalid && name.touched ? true : null"
                                 [status]="name.dirty || name.touched ? (name.invalid  ? 'danger' : 'success') : ''">
                             <ng-container *ngIf="name.invalid && name.touched">
                                 <p class="error-message" *ngIf="name.errors?.required">
@@ -59,8 +61,9 @@
                             {{ 'users.view.lastName' | translate }}
                         </label>
                         <div class="col-sm-9">
-                            <input nbInput type="text" class="form-control" id="inputLastName" placeholder="{{ 'users.view.lastName' | translate }}"
-                                formControlName="lastName" [attr.aria-invalid]="lastName.invalid && lastName.touched ? true : null"
+                            <input nbInput type="text" class="form-control" id="inputLastName"
+                                placeholder="{{ 'users.view.lastName' | translate }}" formControlName="lastName"
+                                [attr.aria-invalid]="lastName.invalid && lastName.touched ? true : null"
                                 [status]="lastName.dirty || lastName.touched ? (lastName.invalid  ? 'danger' : 'success') : ''">
                             <ng-container *ngIf="lastName.invalid && lastName.touched">
                                 <p class="error-message" *ngIf="lastName.errors?.required">
@@ -74,8 +77,9 @@
                             {{ 'users.view.email' | translate }}
                         </label>
                         <div class="col-sm-9">
-                            <input nbInput type="text" class="form-control" id="inputEmail" placeholder="{{ 'users.view.email' | translate }}"
-                                formControlName="email" [attr.aria-invalid]="email.invalid && email.touched ? true : null"
+                            <input nbInput type="text" class="form-control" id="inputEmail"
+                                placeholder="{{ 'users.view.email' | translate }}" formControlName="email"
+                                [attr.aria-invalid]="email.invalid && email.touched ? true : null"
                                 [status]="email.dirty || email.touched ? (email.invalid  ? 'danger' : 'success') : ''">
                             <ng-container *ngIf="email.invalid && email.touched">
                                 <p class="error-message" *ngIf="email.errors?.required">
@@ -92,8 +96,9 @@
                             {{ 'users.view.emailConfirm' | translate }}
                         </label>
                         <div class="col-sm-9">
-                            <input nbInput type="email" class="form-control" id="inputEmailConfirm" placeholder="{{ 'users.view.emailConfirm' | translate }}"
-                                formControlName="emailConfirm" [attr.aria-invalid]="emailConfirm.invalid && emailConfirm.touched ? true : null"
+                            <input nbInput type="email" class="form-control" id="inputEmailConfirm"
+                                placeholder="{{ 'users.view.emailConfirm' | translate }}" formControlName="emailConfirm"
+                                [attr.aria-invalid]="emailConfirm.invalid && emailConfirm.touched ? true : null"
                                 [status]="emailConfirm.dirty || emailConfirm.touched ? (emailConfirm.invalid  ? 'danger' : 'success') : ''">
                             <ng-container *ngIf="emailConfirm.invalid && emailConfirm.touched">
                                 <p class="error-message" *ngIf="emailConfirm.errors?.required">
@@ -102,7 +107,8 @@
                                 <p class="error-message" *ngIf="emailConfirm.errors?.email">
                                     {{ 'auth.logIn.errors.invalidEmail' | translate }}
                                 </p>
-                                <p class="error-message" *ngIf="email.value != emailConfirm.value && !emailConfirm.errors?.required">
+                                <p class="error-message"
+                                    *ngIf="email.value != emailConfirm.value && !emailConfirm.errors?.required">
                                     {{ 'users.create.errors.notMatchPasswordConfirm' | translate }}
                                 </p>
                             </ng-container>
@@ -113,14 +119,16 @@
                             {{ 'users.view.password' | translate }}
                         </label>
                         <div class="col-sm-9">
-                            <input nbInput type="password" class="form-control" id="inputPassword" placeholder="{{ 'users.view.password' | translate }}"
-                                formControlName="password" [attr.aria-invalid]="password.invalid && password.touched ? true : null"
+                            <input nbInput type="password" class="form-control" id="inputPassword"
+                                placeholder="{{ 'users.view.password' | translate }}" formControlName="password"
+                                [attr.aria-invalid]="password.invalid && password.touched ? true : null"
                                 [status]="password.dirty || password.touched ? (password.invalid  ? 'danger' : 'success') : ''">
                             <ng-container *ngIf="password.invalid && password.touched ">
                                 <p class="error-message" *ngIf="password.errors?.required">
                                     {{ 'auth.logIn.errors.requiredPassword' | translate }}
                                 </p>
-                                <p class="error-message" *ngIf="password.errors?.minlength || password.errors?.maxlength">
+                                <p class="error-message"
+                                    *ngIf="password.errors?.minlength || password.errors?.maxlength">
                                     {{ 'auth.logIn.errors.invalidPassword' | translate:
                                     {
                                     minLength: getConfigValue('forms.validation.password.minLength'),
@@ -136,14 +144,17 @@
                             {{ 'users.view.passwordConfirm' | translate }}
                         </label>
                         <div class="col-sm-9">
-                            <input nbInput type="password" class="form-control" id="inputPasswordConfirm" placeholder="{{ 'users.view.passwordConfirm' | translate }}"
-                                formControlName="passwordConfirm" [attr.aria-invalid]="passwordConfirm.invalid && passwordConfirm.touched ? true : null"
+                            <input nbInput type="password" class="form-control" id="inputPasswordConfirm"
+                                placeholder="{{ 'users.view.passwordConfirm' | translate }}"
+                                formControlName="passwordConfirm"
+                                [attr.aria-invalid]="passwordConfirm.invalid && passwordConfirm.touched ? true : null"
                                 [status]="passwordConfirm.dirty || passwordConfirm.touched ? (passwordConfirm.invalid  ? 'danger' : 'success') : ''">
                             <ng-container *ngIf="passwordConfirm.invalid && passwordConfirm.touched ">
                                 <p class="error-message" *ngIf="passwordConfirm.errors?.required">
                                     {{ 'auth.register.errors.requiredPasswordConfirm' | translate }}
                                 </p>
-                                <p class="error-message" *ngIf="password.value != passwordConfirm.value && !passwordConfirm.errors?.required">
+                                <p class="error-message"
+                                    *ngIf="password.value != passwordConfirm.value && !passwordConfirm.errors?.required">
                                     {{ 'auth.register.errors.notMatchPasswordConfirm' | translate }}
                                 </p>
                             </ng-container>
@@ -154,15 +165,9 @@
                             {{ 'users.view.roles' | translate }}
                         </label>
                         <div class="col-sm-9">
-                            <nb-select multiple id="inputRoles" placeholder="{{ 'users.view.roles' | translate }}"
-                                formControlName="role">
-                                <nb-option disabled>
-                                    {{ 'users.view.roles' | translate }}
-                                </nb-option>
-                                <nb-option [value]="role.value" *ngFor="let role of roles">
-                                    {{ role.title }}
-                                </nb-option>
-                            </nb-select>
+                            <ng-multiselect-dropdown placeholder="{{ 'users.view.roles' | translate }}" [data]="roles"
+                                formControlName="role" [settings]="settings">
+                            </ng-multiselect-dropdown>
                         </div>
                     </div>
                 </form>

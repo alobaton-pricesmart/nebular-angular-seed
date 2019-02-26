@@ -9,13 +9,21 @@ import { NbMediaBreakpointsService } from '@nebular/theme';
 export class ChartHeaderComponent implements OnInit, OnDestroy {
   @Output() periodChange = new EventEmitter<string>();
 
-  @Input() period: any = 'week';
+  @Input() period: any = [{ value: 'week', text: 'Semanal' }];
 
   periods: any[] = [
     { value: 'week', text: 'Semanal' },
     { value: 'month', text: 'Mensual' },
     { value: 'year', text: 'Anual' }];
   breakpoints: any;
+
+  settings = {
+    singleSelection: true,
+    idField: 'value',
+    textField: 'text',
+    allowSearchFilter: false,
+    closeDropDownOnSelection: true
+  };
 
   constructor(private breakpointsService: NbMediaBreakpointsService) {
     this.breakpoints = this.breakpointsService.getBreakpointsMap();
@@ -27,17 +35,7 @@ export class ChartHeaderComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
   }
 
-  changePeriod(period: string): void {
-    this.period = period;
-    this.periodChange.emit(period);
-  }
-
-  getPeriodText(period: string): string {
-    for (let i = 0; i < this.periods.length; i++) {
-      if (period === this.periods[i].value) {
-        return this.periods[i].text;
-      }
-    }
-    return '';
+  changePeriod(event: any): void {
+    this.periodChange.emit(event);
   }
 }

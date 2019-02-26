@@ -22,6 +22,15 @@ export class CreateUserComponent implements OnInit, OnDestroy {
   role: FormControl;
 
   roles: any[];
+  settings = {
+    singleSelection: false,
+    idField: 'value',
+    textField: 'title',
+    selectAllText: 'Select All',
+    unSelectAllText: 'UnSelect All',
+    itemsShowLimit: 5,
+    allowSearchFilter: true
+  };
 
   commonSelectedItem: any;
 
