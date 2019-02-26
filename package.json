@@ -7,7 +7,7 @@
     "start.prod": "ng serve --aot --environment=prod --target=production",
     "build": "ng build --aot",
     "build.prod": "ng build --aot --environment=prod --target=production",
-    "test": "ng test",
+    "test": "ng test --watch=false",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
