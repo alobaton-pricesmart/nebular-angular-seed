@@ -11,8 +11,8 @@ export class AuthGuard implements CanActivate {
   }
   /**
    * True if user is authenticated, false otherwise.
-   * @param next
-   * @param state
+   * @param next Activated route.
+   * @param state Router state.
    */
   canActivate(
     next: ActivatedRouteSnapshot,

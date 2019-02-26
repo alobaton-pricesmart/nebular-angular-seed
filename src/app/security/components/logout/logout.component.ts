@@ -7,5 +7,5 @@ import { NbLogoutComponent } from '@nebular/auth';
     styleUrls: ['logout.component.scss']
 })
 export class LogoutComponent extends NbLogoutComponent {
-    
+
 }

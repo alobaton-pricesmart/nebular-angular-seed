@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpErrorHandler } from '../../helpers/http-error-handler';
 
 @Injectable()
-export class RolesService extends BaseService<any>{
+export class RolesService extends BaseService<any> {
 
   constructor(protected http: HttpClient, protected httpErrorHandler: HttpErrorHandler) {
     super(http, httpErrorHandler, 'RolesService');

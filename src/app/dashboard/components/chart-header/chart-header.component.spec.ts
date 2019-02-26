@@ -14,11 +14,11 @@ describe('ChartHeaderComponent', () => {
         SharedModule.forRoot(),
         ThemeModule.forRoot(),
       ],
-      declarations: [ 
+      declarations: [
         ChartHeaderComponent
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

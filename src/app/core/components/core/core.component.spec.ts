@@ -4,7 +4,6 @@ import { CoreComponent } from './core.component';
 import { HeaderComponent } from '../header/header.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SidebarComponent } from '../sidebar/sidebar.component';
-import { SwitcherComponent } from '../../../theme/components/switcher/switcher.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { MenuService } from '../../../shared/services/menu/menu.service';
 import { LangService } from '../../../shared/services/lang/lang.service';
@@ -25,8 +24,8 @@ describe('CoreComponent', () => {
         CookieModule.forRoot(),
         TranslateModule.forRoot(),
       ],
-      declarations: [ 
-        CoreComponent, 
+      declarations: [
+        CoreComponent,
         HeaderComponent,
         SidebarComponent,
       ],
@@ -35,7 +34,7 @@ describe('CoreComponent', () => {
         LangService,
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

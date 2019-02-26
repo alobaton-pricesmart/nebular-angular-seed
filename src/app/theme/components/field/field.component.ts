@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, TemplateRef } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
+import { Component, Input, TemplateRef } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
     selector: 'app-field',

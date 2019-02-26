@@ -1,7 +1,7 @@
-import { OnInit, Component } from "@angular/core";
-import { UserService } from "../../../security/services/user/user.service";
-import { Router } from "@angular/router";
-import { FormGroup, FormBuilder, FormControl, Validators } from "@angular/forms";
+import { OnInit, Component } from '@angular/core';
+import { UserService } from '../../../security/services/user/user.service';
+import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -33,9 +33,9 @@ export class BasicInformationComponent implements OnInit {
             } else {
                 // this.router.navigate(['/core/404']);
             }
-        });        
+        });
     }
 
-    ngOnInit() {        
+    ngOnInit() {
     }
 }

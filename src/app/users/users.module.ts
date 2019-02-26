@@ -9,7 +9,7 @@ import { BasicInformationComponent } from './components/basic-information/basic-
 import { BusinessModule } from '../business/business.module';
 
 const USERS_MODULES = [
-  UsersRoutingModule,  
+  UsersRoutingModule,
   SharedModule.forRoot(),
   ThemeModule.forRoot(),
   BusinessModule.forRoot(),

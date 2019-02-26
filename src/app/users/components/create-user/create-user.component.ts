@@ -68,7 +68,7 @@ export class CreateUserComponent implements OnInit, OnDestroy {
     this.roles = [];
     this.rolesService.getRoles().subscribe((roles: any) => {
       this.roles = roles.map((role: any) => {
-        return { value: role.code, title: role.name.es }
+        return { value: role.code, title: role.name.es };
       });
     }, (err: any) => {
       this.toast.error('general.errors.serverMomentarilyOutOfService', 'general.errors.title');
@@ -87,7 +87,7 @@ export class CreateUserComponent implements OnInit, OnDestroy {
       role: roles,
     };
 
-    this.usersService.createUser(user).subscribe(user => {
+    this.usersService.createUser(user).subscribe((u: any) => {
       this.toast.info('users.create.messages.success', 'general.messages.title');
     }, (err: any) => {
       this.toast.error('general.errors.serverMomentarilyOutOfService', 'general.errors.title');
