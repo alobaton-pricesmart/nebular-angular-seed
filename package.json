@@ -4,9 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --aot --watch=true",
-    "start.prod": "ng serve --aot --environment=prod --target=production",
+    "start.prod": "ng serve --aot --prod",
     "build": "ng build --aot",
-    "build.prod": "ng build --aot --environment=prod --target=production",
+    "build.prod": "ng build --aot --prod",
     "test": "ng test --watch=false",
     "lint": "ng lint",
     "e2e": "ng e2e"
