@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChartHeaderComponent } from './chart-header.component';
+import { ThemeModule } from 'src/app/theme/theme.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 describe('ChartHeaderComponent', () => {
   let component: ChartHeaderComponent;
@@ -8,7 +10,13 @@ describe('ChartHeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChartHeaderComponent ]
+      imports: [
+        SharedModule.forRoot(),
+        ThemeModule.forRoot(),
+      ],
+      declarations: [ 
+        ChartHeaderComponent
+      ]
     })
     .compileComponents();
   }));
