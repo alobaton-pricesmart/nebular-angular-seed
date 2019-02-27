@@ -5,6 +5,7 @@
 # nebular-angular-seed
 
 [![Build Status](https://travis-ci.org/alobaton/nebular-angular-seed.svg?branch=master)](https://travis-ci.org/alobaton/nebular-angular-seed)
+[![codecov](https://codecov.io/gh/alobaton/nebular-angular-seed/branch/master/graph/badge.svg)](https://codecov.io/gh/alobaton/nebular-angular-seed)
 
 This project is an Angular CLI seed integrated with [Nebular](https://github.com/akveo/nebular) framework.
 

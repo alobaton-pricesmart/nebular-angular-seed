@@ -40,4 +40,5 @@ script:
   - npm run lint
   - npm run test
   - npm run build.prod
+  - npm run post.test
   - npm install codecov -g
