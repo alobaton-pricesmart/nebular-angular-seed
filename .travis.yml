@@ -18,7 +18,7 @@ after_failure:
   - cat /home/travis/build/alobaton/nebular-angular-seed/npm-debug.log
 
 after_success:
-  - codecov
+  - codecov -f coverage/*.json
 
 branches:
   only: master

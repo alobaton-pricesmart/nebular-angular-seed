@@ -8,7 +8,7 @@
     "build": "ng build --aot",
     "build.prod": "ng build --aot --prod",
     "test": "ng test --watch=false",
-    "post.test": "nyc report --reporter=json > coverage/coverage.json",
+    "post.test": "nyc report --reporter=json",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -38,6 +38,7 @@
     "@ngx-translate/http-loader": "^4.0.0",
     "angular2-chartjs": "^0.5.1",
     "bootstrap": "^4.3.1",
+    "codecov": "^3.2.0",
     "core-js": "^2.6.5",
     "jquery": "^3.3.1",
     "ng-multiselect-dropdown": "^0.2.3",
