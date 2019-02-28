@@ -8,7 +8,7 @@
     "build": "ng build --aot",
     "build.prod": "ng build --aot --prod",
     "test": "ng test --watch=false",
-    "post.test": "nyc report --reporter=json",
+    "test.coverage": "ng test --watch=false --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

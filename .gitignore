@@ -1,5 +1,4 @@
 # logs
-logs
 *.log
 
 # dependency directory
@@ -8,4 +7,3 @@ node_modules
 # folders
 dist
 tmp
-.nyc_output

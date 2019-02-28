@@ -18,7 +18,7 @@ after_failure:
   - cat /home/travis/build/alobaton/nebular-angular-seed/npm-debug.log
 
 after_success:
-  - codecov -f coverage/*.json
+  - codecov
 
 branches:
   only: master
@@ -35,11 +35,9 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3
   - fluxbox >/dev/null 2>&1 &
-  - mkdir .nyc_output
 
 script:
   - npm run lint
-  - npm run test
+  - npm run test.coverage
   - npm run build.prod
-  - npm run post.test
   - npm install codecov -g
