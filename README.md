@@ -9,7 +9,7 @@
 
 This project is an Angular CLI seed integrated with [Nebular](https://github.com/akveo/nebular) framework.
 
-## How to start
+## How to start?
 
 In order to start the seed use:
 
@@ -33,6 +33,13 @@ $ npm run build
 # prod build, will output the production application in `dist/prod`
 # the produced code can be deployed (rsynced) to a remote server
 $ npm run build.prod
+```
+
+# How to test?
+
+In order to test the seed user:
+```bash
+$ npm run test
 ```
 
 ## Dockerization
