@@ -1,13 +1,11 @@
-<p align="center">  
-  <img src="https://github.com/alobaton/nebular-angular-seed/blob/master/docs/img/angular.png" width="100" title="Angular">
-</p>
-
 # nebular-angular-seed
 
 [![Build Status](https://travis-ci.org/alobaton/nebular-angular-seed.svg?branch=master)](https://travis-ci.org/alobaton/nebular-angular-seed)
 [![codecov](https://codecov.io/gh/alobaton/nebular-angular-seed/branch/master/graph/badge.svg)](https://codecov.io/gh/alobaton/nebular-angular-seed)
 
 This project is an Angular CLI seed integrated with [Nebular](https://github.com/akveo/nebular) framework.
+
+[Live Demo](https://alobaton.github.io/nebular-angular-seed/#/)
 
 ## How to start?
 
