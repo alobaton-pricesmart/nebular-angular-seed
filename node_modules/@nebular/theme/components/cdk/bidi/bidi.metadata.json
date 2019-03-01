@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":4,"metadata":{"NbDirectionality":{"__symbolic":"class","extends":{"__symbolic":"reference","module":"@angular/cdk/bidi","name":"Directionality","line":4,"character":38},"decorators":[{"__symbolic":"call","expression":{"__symbolic":"reference","module":"@angular/core","name":"Injectable","line":3,"character":1}}]}}}]

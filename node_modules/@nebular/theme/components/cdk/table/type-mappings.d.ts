@@ -1,0 +1,14 @@
+import { CdkCell, CdkCellDef, CdkColumnDef, CdkFooterCell, CdkFooterCellDef, CdkFooterRow, CdkFooterRowDef, CdkHeaderCell, CdkHeaderCellDef, CdkHeaderRow, CdkHeaderRowDef, CdkRow, CdkRowDef } from '@angular/cdk/table';
+export declare const NbCdkRowDef: typeof CdkRowDef;
+export declare const NbCdkRow: typeof CdkRow;
+export declare const NbCdkCellDef: typeof CdkCellDef;
+export declare const NbCdkHeaderRowDef: typeof CdkHeaderRowDef;
+export declare const NbCdkHeaderRow: typeof CdkHeaderRow;
+export declare const NbCdkHeaderCellDef: typeof CdkHeaderCellDef;
+export declare const NbCdkFooterRowDef: typeof CdkFooterRowDef;
+export declare const NbCdkFooterRow: typeof CdkFooterRow;
+export declare const NbCdkFooterCellDef: typeof CdkFooterCellDef;
+export declare const NbCdkColumnDef: typeof CdkColumnDef;
+export declare const NbCdkCell: typeof CdkCell;
+export declare const NbCdkHeaderCell: typeof CdkHeaderCell;
+export declare const NbCdkFooterCell: typeof CdkFooterCell;

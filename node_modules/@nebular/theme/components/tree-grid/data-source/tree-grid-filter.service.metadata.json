@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":4,"metadata":{"NbTreeGridFilterService":{"__symbolic":"class","arity":1,"decorators":[{"__symbolic":"call","expression":{"__symbolic":"reference","module":"@angular/core","name":"Injectable","line":15,"character":1}}],"members":{"filter":[{"__symbolic":"method"}],"filterPredicate":[{"__symbolic":"method"}]}}}}]
