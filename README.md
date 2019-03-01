@@ -33,7 +33,7 @@ $ npm run build
 $ npm run build.prod
 ```
 
-# How to test?
+## How to test?
 
 In order to test the seed user:
 ```bash
