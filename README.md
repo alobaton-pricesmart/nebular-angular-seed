@@ -15,9 +15,6 @@ In order to start the seed use:
 $ git clone https://github.com/alobaton/nebular-angular-seed.git
 $ cd nebular-angular-seed
 
-# delete docs folder
-$ rm -R docs
-
 # install the project's dependencies
 $ npm install
 
