@@ -2,10 +2,17 @@
   <div class="row w-100">
     <div class="col text-right">
       <div class="d-inline-block">
-        <!-- Use ng-multiselect-dropdown insted of nb-select. -->
-        <ng-multiselect-dropdown [data]="periods" [(ngModel)]="period"
-          [settings]="settings" (onSelect)="changePeriod($event)">
-        </ng-multiselect-dropdown>
+        <div ngbDropdown>
+          <button class="btn btn-primary" id="periodsDropdown" ngbDropdownToggle>
+            {{ period.text }}
+          </button>
+          <div ngbDropdownMenu aria-labelledby="periodsDropdown">
+            <button class="btn btn-primary btn-block" ngbDropdownItem *ngFor="let period of periods"
+              (click)="changePeriod(period)">
+              {{ period.text }}
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -31,8 +31,8 @@ $nb-themes: nb-register-theme(
     link-color-hover: $custom-primary-light,
     menu-active-fg: white !important,
     menu-active-bg: color-primary,
-    menu-icon-font-size: 2rem !important,
-    menu-icon-margin: 0 0.5rem 0 !important,
+    menu-icon-font-size: 20px !important,
+    menu-icon-margin: 0px 10px 0px 5px !important,
     menu-submenu-active-border-color: color-primary,
     menu-submenu-active-fg: white !important,
     menu-submenu-active-bg: color-primary !important,
@@ -78,8 +78,8 @@ $nb-themes: nb-register-theme(
     link-color-hover: $custom-primary-light,
     menu-active-fg: white !important,
     menu-active-bg: color-primary,
-    menu-icon-font-size: 2rem !important,
-    menu-icon-margin: 0 0.5rem 0 !important,
+    menu-icon-font-size: 20px !important,
+    menu-icon-margin: 0px 10px 0px 5px !important,
     menu-submenu-active-border-color: color-primary,
     menu-submenu-active-fg: white !important,
     menu-submenu-active-bg: color-primary,
@@ -119,8 +119,8 @@ $nb-themes: nb-register-theme(
     link-color-hover: $custom-primary-light,
     menu-active-fg: white !important,
     menu-active-bg: color-primary,
-    menu-icon-font-size: 2rem !important,
-    menu-icon-margin: 0 0.5rem 0 !important,
+    menu-icon-font-size: 20px !important,
+    menu-icon-margin: 0px 10px 0px 5px !important,
     menu-submenu-active-border-color: color-primary,
     menu-submenu-active-fg: white !important,
     menu-submenu-active-bg: color-primary,
@@ -219,4 +219,11 @@ $nb-themes: nb-register-theme(
 /deep/ .nb-theme-cosmic .multiselect-dropdown .dropdown-list,
 /deep/ .nb-theme-corporate .multiselect-dropdown .dropdown-list {
   z-index: 1024;
+}
+// Fix bug #8
+/deep/ .nb-theme-default nb-menu ul.menu-items .menu-item a .menu-icon:first-child,
+/deep/ .nb-theme-cosmic nb-menu ul.menu-items .menu-item a .menu-icon:first-child,
+/deep/ .nb-theme-corporate nb-menu ul.menu-items .menu-item a .menu-icon:first-child {
+  padding-left: 0px !important;
+  margin-left: 0px !important;
 }

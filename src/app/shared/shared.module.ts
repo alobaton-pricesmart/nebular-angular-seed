@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgbModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbModalModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
@@ -28,11 +28,13 @@ const EXPORTS_BASE_MODULES = [
 const IMPORTS_NGB_MODULES = [
   NgbModule,
   NgbModalModule,
+  NgbDropdownModule,
 ];
 
 const EXPORTS_NGB_MODULES = [
   NgbModule,
   NgbModalModule,
+  NgbDropdownModule,
 ];
 
 const IMPORTS_SHARED_MODULE = [

@@ -29,7 +29,8 @@ export class CreateUserComponent implements OnInit, OnDestroy {
     selectAllText: 'Select All',
     unSelectAllText: 'UnSelect All',
     itemsShowLimit: 5,
-    allowSearchFilter: true
+    allowSearchFilter: true,
+    noDataAvailablePlaceholderText: 'No se encontraron roles'
   };
 
   commonSelectedItem: any;

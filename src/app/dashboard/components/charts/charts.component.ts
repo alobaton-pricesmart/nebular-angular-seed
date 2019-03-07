@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChartsComponent implements OnInit {
 
-  period = [{ value: 'week', text: 'Semanal' }];
   summary: Array<any> = [{ title: 'Ventas', value: 100 }];
   sales: any;
   profits: any;

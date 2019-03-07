@@ -17,6 +17,7 @@ import {
   NbToastrModule,
   NbDatepickerModule,
   NbSpinnerModule,
+  NbSelectModule,
 } from '@nebular/theme';
 import { DEFAULT_THEME } from './styles/theme-default';
 import { COSMIC_THEME } from './styles/theme-cosmic';
@@ -51,6 +52,7 @@ const IMPORTS_NB_MODULES = [
   NbToastrModule.forRoot(),
   NbDatepickerModule.forRoot(),
   NbSpinnerModule,
+  NbSelectModule,
 ];
 
 const EXPORTS_NB_MODULES = [
@@ -71,6 +73,7 @@ const EXPORTS_NB_MODULES = [
   NbToastrModule,
   NbDatepickerModule,
   NbSpinnerModule,
+  NbSelectModule
 ];
 
 const IMPORTS_THEME_MODULE = [

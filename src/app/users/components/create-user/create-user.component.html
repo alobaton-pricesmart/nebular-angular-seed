@@ -165,9 +165,15 @@
                             {{ 'users.view.roles' | translate }}
                         </label>
                         <div class="col-sm-9">
-                            <ng-multiselect-dropdown placeholder="{{ 'users.view.roles' | translate }}" [data]="roles"
-                                formControlName="role" [settings]="settings">
-                            </ng-multiselect-dropdown>
+                            <nb-select multiple placeholder="{{ 'users.view.roles' | translate }}"
+                                formControlName="role">
+                                <nb-option disables>
+                                    {{ 'users.view.roles' | translate }}
+                                </nb-option>
+                                <nb-option [value]="role.value" *ngFor="let role of roles">
+                                    {{ role.title }}
+                                </nb-option>
+                            </nb-select>
                         </div>
                     </div>
                 </form>
