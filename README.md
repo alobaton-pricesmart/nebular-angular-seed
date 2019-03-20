@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/alobaton/nebular-angular-seed.svg?branch=master)](https://travis-ci.org/alobaton/nebular-angular-seed)
 [![codecov](https://codecov.io/gh/alobaton/nebular-angular-seed/branch/master/graph/badge.svg)](https://codecov.io/gh/alobaton/nebular-angular-seed)
+[![dependencies Status](https://david-dm.org/alobaton/nebular-angular-seed/status.svg)](https://david-dm.org/alobaton/nebular-angular-seed)
+[![devDependencies Status](https://david-dm.org/alobaton/nebular-angular-seed/dev-status.svg)](https://david-dm.org/alobaton/nebular-angular-seed?type=dev)
 
 This project is an Angular CLI seed integrated with [Nebular](https://github.com/akveo/nebular) framework.
 
