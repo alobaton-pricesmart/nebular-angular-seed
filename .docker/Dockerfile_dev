@@ -4,6 +4,7 @@ WORKDIR /home/node/nebular-angular-seed
 
 # NB: Only copy files that are required by 'npm install'
 # The 'src' directory will be mounted as a shared volume by docker-compose (allowing for live-reload)
+COPY angular.json .
 COPY package.json .
 COPY package-lock.json .
 COPY tsconfig.json .
