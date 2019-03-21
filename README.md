@@ -7,7 +7,7 @@
 
 This project is an Angular CLI seed integrated with [Nebular](https://github.com/akveo/nebular) framework.
 
-[Live Demo](https://alobaton.github.io/nebular-angular-seed/#/)
+[Live Demo](https://alobaton.github.io/nebular-angular-seed/nebular-angular-seed/#/)
 
 ## How to start?
 
