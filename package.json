@@ -1,6 +1,12 @@
 {
   "name": "nebular-angular-seed",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": [
+    "nebular",
+    "angular",
+    "seed"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve --watch=true",
@@ -12,7 +18,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~7.2.10",
     "@angular/cdk": "^7.3.3",
