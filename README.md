@@ -97,6 +97,16 @@ git remote add upstream https://github.com/alobaton/nebular-angular-seed
 git pull upstream master
 ```
 
+## How to publish to Github Pages?
+
+In order to ublish to Github Pages user:
+
+```bash
+$ ng build --aot --prod --base-href "https://alobaton.github.io/nebular-angular-seed/"
+
+$ npx ngh --dir=dist/nebular-angular-seed
+```
+
 ## Contributing
 
 Please see the [CONTRIBUTING](https://github.com/alobaton/nebular-angular-seed/blob/master/CONTRIBUTING.md) file for guidelines.
@@ -104,8 +114,6 @@ Please see the [CONTRIBUTING](https://github.com/alobaton/nebular-angular-seed/b
 ## Contributors
 
 [<img alt="alobaton" src="https://avatars1.githubusercontent.com/u/9356067?s=460&v=4" width="117">](https://github.com/alobaton)
-
-## Change Log
 
 ## License
 
