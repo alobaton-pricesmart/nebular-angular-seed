@@ -6,16 +6,12 @@ services:
     build:
       context: .
       dockerfile: ./.docker/Dockerfile_dev
+    hostname: web.dev.local
+    network_mode: host
     command: npm start
     container_name: nebular-angular-seed-dev
     image: nebular-angular-seed/dev
     volumes:
       - ./src:/home/node/nebular-angular-seed/src
-    networks:
-      - dev-network
     ports:
-      - '5555:5555'
-
-networks:
-  dev-network:
-    driver: bridge
+      - '4200:4200'
