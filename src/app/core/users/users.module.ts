@@ -1,12 +1,12 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { SharedModule } from '../shared/shared.module';
-import { ThemeModule } from '../theme/theme.module';
+import { SharedModule } from '../../shared/shared.module';
+import { ThemeModule } from '../../theme/theme.module';
 import { UsersComponent } from './components/users/users.component';
 import { UsersRoutingModule } from './users-routing.module';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BasicInformationComponent } from './components/basic-information/basic-information.component';
-import { BusinessModule } from '../business/business.module';
+import { BusinessModule } from '../../business/business.module';
 
 const USERS_MODULES = [
   UsersRoutingModule,

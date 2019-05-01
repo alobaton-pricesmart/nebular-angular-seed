@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NbMenuItem } from '@nebular/theme';
-import { MenuService } from '../../../shared/services/menu/menu.service';
-import { UserService } from '../../../security/services/user/user.service';
+import { MenuService } from '../../../../shared/services/menu/menu.service';
+import { UserService } from '../../../../security/services/user/user.service';
 
 const PROFILE_ITEMS: NbMenuItem[] = [
     {

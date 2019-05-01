@@ -5,8 +5,8 @@ import { ChartSummaryComponent } from './components/chart-summary/chart-summary.
 import { ChartHeaderComponent } from './components/chart-header/chart-header.component';
 import { ProfitChartComponent } from './components/profit-chart/profit-chart.component';
 import { SalesChartComponent } from './components/sales-chart/sales-chart.component';
-import { SharedModule } from '../shared/shared.module';
-import { ThemeModule } from '../theme/theme.module';
+import { SharedModule } from '../../shared/shared.module';
+import { ThemeModule } from '../../theme/theme.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 
 const DASHBOARD_MODULES = [

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, ExtraOptions } from '@angular/router';
-import { CoreModule } from './core/core.module';
 
 const config: ExtraOptions = {
     useHash: true,

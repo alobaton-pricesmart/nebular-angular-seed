@@ -14,11 +14,11 @@ export const routes: Routes = [
             },
             {
                 path: 'dashboard',
-                loadChildren: '../dashboard/dashboard.module#DashboardModule'
+                loadChildren: './dashboard/dashboard.module#DashboardModule'
             },
             {
                 path: 'users',
-                loadChildren: '../users/users.module#UsersModule'
+                loadChildren: './users/users.module#UsersModule'
             },
         ]
     }
