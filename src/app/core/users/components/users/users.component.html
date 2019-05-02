@@ -17,8 +17,21 @@
                 </div>
             </nb-card-header>
             <nb-card-body>
-                <ng2-smart-table [settings]="settings" [source]="source" (edit)="onEdit($event)" (delete)="onDelete($event)">
-                </ng2-smart-table>
+                <table datatable class="row-border hover">
+                    <thead>
+                        <tr>
+                            <th>{{ 'users.view.id' | translate }}</th>
+                            <th>{{ 'users.view.name' | translate }}</th>
+                            <th>{{ 'users.view.lastName' | translate }}</th>
+                            <th>{{ 'users.view.email' | translate }}</th>
+                            <th>{{ 'users.view.roles' | translate }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        </tr>
+                    </tbody>
+                </table>
             </nb-card-body>
         </nb-card>
     </nb-layout-column>
