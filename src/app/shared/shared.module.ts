@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { NgbModule, NgbModalModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ChartModule } from 'angular2-chartjs';
 import { CookieModule } from 'ngx-cookie';
 import { LangService } from './services/lang/lang.service';
@@ -40,7 +39,6 @@ const EXPORTS_NGB_MODULES = [
 
 const IMPORTS_SHARED_MODULE = [
   FontAwesomeModule,
-  Ng2SmartTableModule,
   ChartModule,
   CookieModule.forRoot(),
   NgMultiSelectDropDownModule.forRoot(),
@@ -50,7 +48,6 @@ const IMPORTS_SHARED_MODULE = [
 const EXPORTS_SHARED_MODULE = [
   TranslateModule,
   FontAwesomeModule,
-  Ng2SmartTableModule,
   ChartModule,
   CookieModule,
   NgMultiSelectDropDownModule,
