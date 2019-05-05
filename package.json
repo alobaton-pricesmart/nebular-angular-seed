@@ -57,6 +57,7 @@
     "rxjs": "^6.3.3",
     "rxjs-compat": "^6.4.0",
     "sweetalert2": "^8.8.7",
+    "tar": "^4.4.8",
     "webpack-dev-server": "^3.2.0",
     "zone.js": "~0.8.26"
   },
