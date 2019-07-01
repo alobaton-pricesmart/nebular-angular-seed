@@ -2,7 +2,7 @@
 @import "../../../../../node_modules/@nebular/theme/styles/core/mixins";
 @import "../../../../../node_modules/@nebular/theme/styles/core/functions";
 @include nb-install-component() {
-  /deep/ .switcher {
+   .switcher {
     display: flex;
     font-size: 1.25rem;
     padding: 0.8rem 1.25rem;

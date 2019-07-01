@@ -41,7 +41,7 @@
         }
     }
     @include media-breakpoint-down(sm) {
-        nb-user /deep/ .user-name {
+        nb-user  .user-name {
             display: none;
         }
     }

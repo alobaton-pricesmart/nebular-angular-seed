@@ -16,7 +16,7 @@ export class SwitcherComponent {
     @Input()
     icon: any;
 
-    @ViewChild(NbPopoverDirective)
+    @ViewChild(NbPopoverDirective, { static: true })
     popover: NbPopoverDirective;
 
     constructor() { }

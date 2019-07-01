@@ -23,8 +23,10 @@ $nb-themes: nb-register-theme(
     color-primary: $custom-primary,
     context-menu-active-bg: color-primary,
     context-menu-border: color-primary,
-    font-main: unquote('"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'),
-    font-secondary: unquote('"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'),
+    font-main:
+      unquote('"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'),
+    font-secondary:
+      unquote('"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'),
     form-control-selected-border-color: color-primary,
     layout-content-width: 1400px,
     link-color: color-primary,
@@ -65,8 +67,10 @@ $nb-themes: nb-register-theme(
     color-fg: #a4abb3,
     context-menu-active-bg: color-primary,
     context-menu-border: color-primary,
-    font-main: unquote('"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'),
-    font-secondary: unquote('"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'),
+    font-main:
+      unquote('"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'),
+    font-secondary:
+      unquote('"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'),
     form-control-bg: #101821,
     form-control-focus-bg: #101821,
     form-control-selected-border-color: color-primary,
@@ -111,8 +115,10 @@ $nb-themes: nb-register-theme(
     color-primary: $custom-primary,
     context-menu-active-bg: color-primary,
     context-menu-border: color-primary,
-    font-main: unquote('"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'),
-    font-secondary: unquote('"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'),
+    font-main:
+      unquote('"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'),
+    font-secondary:
+      unquote('"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'),
     form-control-selected-border-color: color-primary,
     layout-content-width: 1400px,
     link-color: color-primary,
@@ -152,9 +158,9 @@ $nb-themes: nb-register-theme(
     color: white !important;
   }
 }
-/deep/ .nb-theme-default nb-menu .menu-item .menu-items .menu-item,
-/deep/ .nb-theme-cosmic nb-menu .menu-item .menu-items .menu-item,
-/deep/ .nb-theme-corporate nb-menu .menu-item .menu-items .menu-item {
+.nb-theme-default nb-menu .menu-item .menu-items .menu-item,
+.nb-theme-cosmic nb-menu .menu-item .menu-items .menu-item,
+.nb-theme-corporate nb-menu .menu-item .menu-items .menu-item {
   margin: 0px !important;
   padding: 0px;
   & a:hover,
@@ -175,13 +181,13 @@ $nb-themes: nb-register-theme(
     background: $custom-primary;
   }
 }
-/deep/ .nb-theme-default .breadcrumb {
+.nb-theme-default .breadcrumb {
   background: white;
 }
-/deep/ .nb-theme-cosmic .breadcrumb {
+.nb-theme-cosmic .breadcrumb {
   background: #141d26;
 }
-/deep/ .nb-theme-corporate .breadcrumb {
+.nb-theme-corporate .breadcrumb {
   background: white;
   border: 1px solid #d5dbe0;
   border-radius: 0.17rem;
@@ -190,40 +196,40 @@ $nb-themes: nb-register-theme(
   margin-top: 0.5rem;
   color: #ff386a;
 }
-/deep/ .nb-theme-default nb-toast.info,
-/deep/ .nb-theme-cosmic nb-toast.info,
-/deep/ .nb-theme-corporate nb-toast.info {
+.nb-theme-default nb-toast.info,
+.nb-theme-cosmic nb-toast.info,
+.nb-theme-corporate nb-toast.info {
   background-color: #4ca6ff;
   color: white !important;
 }
-/deep/ .nb-theme-default nb-toast.success,
-/deep/ .nb-theme-cosmic nb-toast.success,
-/deep/ .nb-theme-corporate nb-toast.success {
+.nb-theme-default nb-toast.success,
+.nb-theme-cosmic nb-toast.success,
+.nb-theme-corporate nb-toast.success {
   background-color: #40dc7e;
   color: white !important;
 }
-/deep/ .nb-theme-default nb-toast.warning,
-/deep/ .nb-theme-cosmic nb-toast.warning,
-/deep/ .nb-theme-corporate nb-toast.warning {
+.nb-theme-default nb-toast.warning,
+.nb-theme-cosmic nb-toast.warning,
+.nb-theme-corporate nb-toast.warning {
   background-color: #ffa100;
   color: white !important;
 }
-/deep/ .nb-theme-default nb-toast.danger,
-/deep/ .nb-theme-cosmic nb-toast.danger,
-/deep/ .nb-theme-corporate nb-toast.danger {
+.nb-theme-default nb-toast.danger,
+.nb-theme-cosmic nb-toast.danger,
+.nb-theme-corporate nb-toast.danger {
   background-color: #ff4c6a;
   color: white !important;
 }
 // ng-multiselect-dropdown fix
-/deep/ .nb-theme-default .multiselect-dropdown .dropdown-list,
-/deep/ .nb-theme-cosmic .multiselect-dropdown .dropdown-list,
-/deep/ .nb-theme-corporate .multiselect-dropdown .dropdown-list {
+.nb-theme-default .multiselect-dropdown .dropdown-list,
+.nb-theme-cosmic .multiselect-dropdown .dropdown-list,
+.nb-theme-corporate .multiselect-dropdown .dropdown-list {
   z-index: 1024;
 }
 // Fix bug #8
-/deep/ .nb-theme-default nb-menu ul.menu-items .menu-item a .menu-icon:first-child,
-/deep/ .nb-theme-cosmic nb-menu ul.menu-items .menu-item a .menu-icon:first-child,
-/deep/ .nb-theme-corporate nb-menu ul.menu-items .menu-item a .menu-icon:first-child {
+.nb-theme-default nb-menu ul.menu-items .menu-item a .menu-icon:first-child,
+.nb-theme-cosmic nb-menu ul.menu-items .menu-item a .menu-icon:first-child,
+.nb-theme-corporate nb-menu ul.menu-items .menu-item a .menu-icon:first-child {
   padding-left: 0px !important;
   margin-left: 0px !important;
 }
