@@ -19,8 +19,9 @@
     "theme": {
         "themes": "Temas",
         "default": "Claro",
-        "cosmic": "Oscuro",
-        "corporate": "Corporativo"
+        "cosmic": "Cosmico",
+        "corporate": "Corporativo",
+        "dark": "Oscuro"
     },
     "auth": {
         "logOut": {

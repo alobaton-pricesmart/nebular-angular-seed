@@ -5,13 +5,11 @@ import { MenuService } from '../../../shared/services/menu/menu.service';
 const SIDEBAR_ITEMS: NbMenuItem[] = [
   {
     title: 'dashboard.dashboard',
-    icon: 'fas fa-clipboard',
     link: '/core/dashboard',
     home: true,
   },
   {
     title: 'users.users',
-    icon: 'fas fa-users',
     link: '/core/users',
   },
 ];

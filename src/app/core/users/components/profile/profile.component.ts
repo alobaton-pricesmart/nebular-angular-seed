@@ -11,7 +11,6 @@ const PROFILE_ITEMS: NbMenuItem[] = [
     },
     {
         title: 'users.view.basicInformation',
-        icon: 'fas fa-user',
         link: '/core/users/profile/basic-information',
         home: true,
     }

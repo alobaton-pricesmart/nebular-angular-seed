@@ -7,10 +7,10 @@
             {{ period.text }}
           </button>
           <div ngbDropdownMenu aria-labelledby="periodsDropdown">
-            <button class="btn btn-primary btn-block" ngbDropdownItem *ngFor="let period of periods"
+            <a class="" ngbDropdownItem *ngFor="let period of periods"
               (click)="changePeriod(period)">
               {{ period.text }}
-            </button>
+            </a>
           </div>
         </div>
       </div>

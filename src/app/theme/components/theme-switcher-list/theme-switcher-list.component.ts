@@ -17,7 +17,8 @@ export class ThemeSwitcherListComponent implements OnInit {
     themes: NbMenuItem[] = [
         { title: 'theme.default', data: 'default' },
         { title: 'theme.cosmic', data: 'cosmic' },
-        { title: 'theme.corporate', data: 'corporate' }
+        { title: 'theme.corporate', data: 'corporate' },
+        { title: 'theme.dark', data: 'dark' }
     ];
 
     constructor(private themeService: NbThemeService, private menu: MenuService) { }

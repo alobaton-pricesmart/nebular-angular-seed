@@ -28,6 +28,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FONT_AWSOME_ICONS } from './styles/icons';
 import { SwitcherComponent } from './components/switcher/switcher.component';
 import { FieldComponent } from './components/field/field.component';
+//import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { NbIconModule } from '@nebular/theme';
 
 const IMPORTS_NB_MODULES = [
   NbThemeModule.forRoot(
@@ -53,6 +55,8 @@ const IMPORTS_NB_MODULES = [
   NbDatepickerModule.forRoot(),
   NbSpinnerModule,
   NbSelectModule,
+  //NbEvaIconsModule,
+  NbIconModule
 ];
 
 const EXPORTS_NB_MODULES = [
@@ -73,7 +77,9 @@ const EXPORTS_NB_MODULES = [
   NbToastrModule,
   NbDatepickerModule,
   NbSpinnerModule,
-  NbSelectModule
+  NbSelectModule,
+  //NbEvaIconsModule,
+  NbIconModule
 ];
 
 const IMPORTS_THEME_MODULE = [
