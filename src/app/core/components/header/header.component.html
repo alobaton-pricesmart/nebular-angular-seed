@@ -1,18 +1,23 @@
-<div class="header-container">
-    <div class="logo-containter">
-        <a (click)="toggleSidebar()" href="#" class="navigation">
-        </a>
-        <div class="logo" (click)="goToHome()">
-            Logo
+<div class="header">
+    <div class="header-container">
+        <div class="logo-containter">
+            <a (click)="toggleSidebar()" href="#" class="navigation">
+                <nb-icon icon="menu-outline"></nb-icon>
+            </a>
+            <a class="logo" (click)="goToHome()">
+                Logo
+            </a>
         </div>
+        <app-switcher [icon]="['color-palette-outline']" [title]="'theme.themes'"
+            [switcherListComponent]="themeSwitcherListComponent"></app-switcher>
     </div>
-    <app-switcher [icon]="['fas', 'magic']" [title]="'theme.themes'" [switcherListComponent]="themeSwitcherListComponent"></app-switcher>
-</div>
-<div class="header-container">
-    <app-switcher [icon]="['fas', 'language']" [title]="lang" [switcherListComponent]="langSwitcherListComponent"></app-switcher>
-    <nb-actions size="medium">
-        <nb-action>
-            <nb-user name="Jonh Doe" title="Engineer" [nbContextMenu]="userMenu"></nb-user>
-        </nb-action>
-    </nb-actions>
+    <div class="header-container">
+        <app-switcher [icon]="['globe-2-outline']" [title]="lang" [switcherListComponent]="langSwitcherListComponent">
+        </app-switcher>
+        <nb-actions size="medium">
+            <nb-action>
+                <nb-user name="Jonh Doe" title="Engineer" [nbContextMenu]="userMenu"></nb-user>
+            </nb-action>
+        </nb-actions>
+    </div>
 </div>

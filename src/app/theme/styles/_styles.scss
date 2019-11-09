@@ -16,12 +16,8 @@
 @import './bootstrap-rtl.scss';
 // Append the install mixin inside of the nb-install
 @include nb-install() {
-   @include nb-theme-global();
+  @include nb-theme-global();
   @include nb-auth-global();
   @include nb-bootstrap-global();
-
-  .custom-control .custom-control-indicator {
-    border-radius: 50%;
-  }
   @include bootstrap-rtl();
 }

@@ -6,11 +6,13 @@ const SIDEBAR_ITEMS: NbMenuItem[] = [
   {
     title: 'dashboard.dashboard',
     link: '/core/dashboard',
+    icon: 'grid-outline',
     home: true,
   },
   {
     title: 'users.users',
     link: '/core/users',
+    icon: 'person-outline'
   },
 ];
 

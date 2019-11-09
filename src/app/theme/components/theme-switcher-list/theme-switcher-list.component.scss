@@ -1,36 +1,16 @@
-@import "../../styles/themes";
-@import "../../../../../node_modules/@nebular/theme/styles/core/mixins";
-@import "../../../../../node_modules/bootstrap/scss/mixins/breakpoints";
-@import "../../../../../node_modules/@nebular/theme/styles/global/breakpoints";
-$icon-color-default: #0bbb79;
-$icon-color-cosmic: #7958fa;
-$icon-color-corporate: #a7a2be;
-$icon-top-color-default: #01dbb5;
-$icon-top-color-cosmic: #a258fe;
-$icon-top-color-corporate: #e9e8eb;
-@include nb-install-component() {
-   .themes-switcher-list {
-    padding: 1rem 2rem 1.25rem 0.5rem;
-    margin: 0;
-    @include nb-ltr(text-align, start);
-    @include nb-rtl(text-align, end);
-    .themes-switcher-item {
-      list-style: none;
-      cursor: pointer;
-      &:hover span {
-        opacity: 0.5;
-      }     
-      span {
-        font-weight: 300;
-        vertical-align: super;
-        padding-left: 1rem;
-        color: nb-theme(color-fg-heading);
-      }
+.themes-switcher-list {
+  padding: 1rem 2rem 1.25rem 0.5rem;
+  margin: 0;
+  .themes-switcher-item {
+    list-style: none;
+    cursor: pointer;
+    &:hover span {
+      opacity: 0.5;
     }
-  }
-  @include media-breakpoint-down(is) {
-     .themes-switcher-list {
-      display: none;
+    span {
+      font-weight: 300;
+      vertical-align: super;
+      padding-left: 1rem;
     }
   }
 }

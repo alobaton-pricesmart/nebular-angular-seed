@@ -15,11 +15,13 @@ export class HeaderComponent implements OnInit {
   userMenu: NbMenuItem[] = [
     {
       title: 'users.profile',
-      link: '/core/users/profile'
+      link: '/core/users/profile',
+      icon: 'person-outline'
     },
     {
       title: 'auth.logOut.title',
-      link: '/auth/logout'
+      link: '/auth/logout',
+      icon: 'power-outline'
     }
   ];
 

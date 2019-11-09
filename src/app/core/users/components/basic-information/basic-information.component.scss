@@ -1,13 +1,9 @@
-@import "../../../../theme/styles/themes";
-
-@include nb-install-component() {
-  .field-group label {
-    float: left;
-    margin-left: -145px;
-    padding: 5px 0 0;
-    position: relative;
-    text-align: right;
-    width: 130px;
-    word-wrap: break-word;
-  }
+.field-group label {
+  float: left;
+  margin-left: -145px;
+  padding: 5px 0 0;
+  position: relative;
+  text-align: right;
+  width: 130px;
+  word-wrap: break-word;
 }

@@ -24,11 +24,9 @@ import { COSMIC_THEME } from './styles/theme-cosmic';
 import { CORPORATE_THEME } from './styles/theme-corporate';
 import { ThemeSwitcherListComponent } from './components/theme-switcher-list/theme-switcher-list.component';
 import { SharedModule } from '../shared/shared.module';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FONT_AWSOME_ICONS } from './styles/icons';
 import { SwitcherComponent } from './components/switcher/switcher.component';
 import { FieldComponent } from './components/field/field.component';
-//import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbIconModule } from '@nebular/theme';
 
 const IMPORTS_NB_MODULES = [
@@ -55,7 +53,7 @@ const IMPORTS_NB_MODULES = [
   NbDatepickerModule.forRoot(),
   NbSpinnerModule,
   NbSelectModule,
-  //NbEvaIconsModule,
+  NbEvaIconsModule,
   NbIconModule
 ];
 
@@ -78,7 +76,7 @@ const EXPORTS_NB_MODULES = [
   NbDatepickerModule,
   NbSpinnerModule,
   NbSelectModule,
-  //NbEvaIconsModule,
+  NbEvaIconsModule,
   NbIconModule
 ];
 
@@ -133,6 +131,5 @@ export class ThemeModule {
   }
 
   constructor() {
-    library.add(...FONT_AWSOME_ICONS);
   }
 }

@@ -2,7 +2,6 @@ import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA
 import { CommonModule } from '@angular/common';
 import { NgbModule, NgbModalModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ChartModule } from 'angular2-chartjs';
 import { CookieModule } from 'ngx-cookie';
 import { LangService } from './services/lang/lang.service';
@@ -38,7 +37,6 @@ const EXPORTS_NGB_MODULES = [
 ];
 
 const IMPORTS_SHARED_MODULE = [
-  FontAwesomeModule,
   ChartModule,
   CookieModule.forRoot(),
   NgMultiSelectDropDownModule.forRoot(),
@@ -47,7 +45,6 @@ const IMPORTS_SHARED_MODULE = [
 
 const EXPORTS_SHARED_MODULE = [
   TranslateModule,
-  FontAwesomeModule,
   ChartModule,
   CookieModule,
   NgMultiSelectDropDownModule,

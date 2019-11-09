@@ -1,58 +1,26 @@
-@import '../../../theme/styles/themes';
-@import '../../../../../node_modules/bootstrap/scss/mixins/breakpoints';
-@import '../../../../../node_modules/@nebular/theme/styles/global/breakpoints';
-@include nb-install-component() {
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  .header-container {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    align-items: center;
+    width: auto;
     .logo-containter {
-        display: flex;
-        align-items: center;
-        width: calc(#{nb-theme(sidebar-width)} - #{nb-theme(header-padding)});
+      display: flex;
+      align-items: center;
+      .navigation {
+        font-size: 1.5rem;
+        text-decoration: none;
+        i {
+          display: block;
+        }
+      }
+      .logo {
+        padding: 0 nb-theme(padding);
+        font-size: 1.75rem;
+        white-space: nowrap;
+      }
     }
-    .header-container {
-        display: flex;
-        align-items: center;
-        width: auto;
-        .navigation {
-            @include nb-ltr(padding-right, nb-theme(padding));
-            @include nb-rtl(padding-left, nb-theme(padding));
-            font-size: 1.5rem;
-            text-decoration: none;
-            i {
-                display: block;
-            }
-        }
-        .logo {
-            padding: 0 nb-theme(padding);
-            font-size: 1.75rem;
-            font-weight: nb-theme(font-weight-bolder);
-            @include nb-ltr(border-left, 1px solid nb-theme(separator));
-            @include nb-rtl(border-right, 1px solid nb-theme(separator));
-            white-space: nowrap;
-            span {
-                font-weight: nb-theme(font-weight-normal);
-            }
-        }
-    }
-    @include media-breakpoint-down(md) {
-        nb-action:not(.toggle-layout) {
-            border: none;
-        }
-    }
-    @include media-breakpoint-down(sm) {
-        nb-user  .user-name {
-            display: none;
-        }
-    }
-    @include media-breakpoint-down(is) {
-        .header-container {
-            .logo {
-                font-size: 1.25rem;
-            }
-        }
-        nb-action:not(.toggle-layout) {
-            padding: 0;
-        }
-    }
+  }
 }

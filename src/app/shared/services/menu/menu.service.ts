@@ -20,7 +20,9 @@ export class MenuService {
         if (menuItem.children != null) {
             menuItem.children.forEach(item => this.translateMenuItem(item));
         }
-        menuItem.title = this.translate.instant(menuItem.title);
+        this.translate.get(menuItem.title).subscribe((respuesta: string) => {
+            menuItem.title = respuesta;
+        });
     }
 }
 

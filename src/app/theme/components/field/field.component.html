@@ -1,8 +1,8 @@
 <div class="field-group form-group row">
-    <label for="{{ id }}" class="col-sm-3 form-control-label">
+    <label for="{{ id }}" class="col-md-3 form-control-label">
         {{ label | translate }}
     </label>
-    <div class="field-value col-sm-9">
+    <div class="field-value col-md-9">
         <ng-template *ngIf="readonly; else editable">
             <span>{{ value | translate }}</span>
         </ng-template>
