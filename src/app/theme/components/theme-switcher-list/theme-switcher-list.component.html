@@ -1,5 +1,7 @@
 <ul class="themes-switcher-list">
     <li class="themes-switcher-item" *ngFor="let theme of themes" (click)="onToggleTheme(theme.data)">
-        <span>{{ theme.title }}</span>
+        <a class="themes-switcher-item-container">
+            <span>{{ theme.title }}</span>
+        </a>
     </li>
 </ul>

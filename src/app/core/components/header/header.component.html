@@ -1,7 +1,7 @@
 <div class="header">
     <div class="header-container">
-        <div class="logo-containter">
-            <a (click)="toggleSidebar()" href="#" class="navigation">
+        <div class="logo-containter mr-3">
+            <a (click)="toggleSidebar()" href="#" class="navigation border-right pr-3 mr-3">
                 <nb-icon icon="menu-outline"></nb-icon>
             </a>
             <a class="logo" (click)="goToHome()">
@@ -12,7 +12,8 @@
             [switcherListComponent]="themeSwitcherListComponent"></app-switcher>
     </div>
     <div class="header-container">
-        <app-switcher [icon]="['globe-2-outline']" [title]="lang" [switcherListComponent]="langSwitcherListComponent">
+        <app-switcher [icon]="['globe-2-outline']" [title]="lang" [switcherListComponent]="langSwitcherListComponent"
+            class="mr-3">
         </app-switcher>
         <nb-actions size="medium">
             <nb-action>

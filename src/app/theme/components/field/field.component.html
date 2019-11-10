@@ -7,8 +7,10 @@
             <span>{{ value | translate }}</span>
         </ng-template>
         <ng-template #editable>
-            <input nbInput id="{{ id }}" [type]="type" placeholder="{{ label | translate }}" class="form-control"
-                [formControl]="control" [attr.aria-invalid]="control.invalid && control.touched ? true : null" [status]="control.dirty || control.touched ? (control.invalid  ? 'danger' : 'success') : ''">
+            <input nbInput id="{{ id }}" fullWidth [type]="type" placeholder="{{ label | translate }}"
+                class="form-control" [formControl]="control"
+                [attr.aria-invalid]="control.invalid && control.touched ? true : null"
+                [status]="control.dirty || control.touched ? (control.invalid  ? 'danger' : 'success') : ''">
             <ng-container *ngTemplateOutlet="template"></ng-container>
         </ng-template>
     </div>

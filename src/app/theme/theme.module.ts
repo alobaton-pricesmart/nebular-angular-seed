@@ -28,6 +28,8 @@ import { SwitcherComponent } from './components/switcher/switcher.component';
 import { FieldComponent } from './components/field/field.component';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbIconModule } from '@nebular/theme';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { InputErrorComponent } from './components/input-error/input-error.component';
 
 const IMPORTS_NB_MODULES = [
   NbThemeModule.forRoot(
@@ -100,7 +102,9 @@ const NB_THEME_PROVIDERS = [
 const THEME_COMPONENTS = [
   SwitcherComponent,
   ThemeSwitcherListComponent,
-  FieldComponent
+  FieldComponent,
+  BreadcrumbComponent,
+  InputErrorComponent
 ];
 
 @NgModule({

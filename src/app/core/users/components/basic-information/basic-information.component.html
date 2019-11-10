@@ -1,15 +1,13 @@
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a [routerLink]="['/core/users/profile']">
-                {{ 'users.profile' | translate }}
-            </a>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page">
-            {{ 'users.view.basicInformation' | translate }}
-        </li>
-    </ol>
-</nav>
+<app-breadcrumb>
+    <li class="breadcrumb-item">
+        <a [routerLink]="['/core/users/profile']">
+            {{ 'users.profile' | translate }}
+        </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+        {{ 'users.view.basicInformation' | translate }}
+    </li>
+</app-breadcrumb>
 
 <nb-card>
     <nb-card-header>
@@ -24,9 +22,9 @@
             </app-field>
             <ng-template #nameTemplate>
                 <ng-container *ngIf="name.invalid && name.touched">
-                    <p class="error-message" *ngIf="name.errors?.required">
+                    <app-input-error [controlName]="'name'" [errorKey]="'required'">
                         {{ 'auth.register.errors.requiredName' | translate }}
-                    </p>
+                    </app-input-error>
                 </ng-container>
             </ng-template>
             <app-field [id]="'lastName'" [label]="'users.view.lastName'" [value]="user.lastName" [type]="'text'"
@@ -34,22 +32,22 @@
             </app-field>
             <ng-template #lastNameTemplate>
                 <ng-container *ngIf="lastName.invalid && lastName.touched">
-                    <p class="error-message" *ngIf="lastName.errors?.required">
+                    <app-input-error [controlName]="'lastName'" [errorKey]="'required'">
                         {{ 'auth.register.errors.requiredLastName' | translate }}
-                    </p>
+                    </app-input-error>
                 </ng-container>
             </ng-template>
-            <app-field [id]="'email'" [label]="'users.view.email'" [value]="user.email" [type]="'email'" [control]="email"
-                [template]="emailTemplate">
+            <app-field [id]="'email'" [label]="'users.view.email'" [value]="user.email" [type]="'email'"
+                [control]="email" [template]="emailTemplate">
             </app-field>
             <ng-template #emailTemplate>
                 <ng-container *ngIf="email.invalid && email.touched">
-                    <p class="error-message" *ngIf="email.errors?.required">
+                    <app-input-error [controlName]="'email'" [errorKey]="'required'">
                         {{ 'auth.logIn.errors.requiredEmail' | translate }}
-                    </p>
-                    <p class="error-message" *ngIf="email.errors?.email">
+                    </app-input-error>
+                    <app-input-error [controlName]="'email'" [errorKey]="'email'">
                         {{ 'auth.logIn.errors.invalidEmail' | translate }}
-                    </p>
+                    </app-input-error>
                 </ng-container>
             </ng-template>
         </form>

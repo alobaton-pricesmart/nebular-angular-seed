@@ -1,0 +1,7 @@
+@import "../../../theme/styles/themes";
+@include nb-install-component() {
+  .breadcrumb {
+    background-color: transparent !important;
+    margin: 0px;
+  }
+}

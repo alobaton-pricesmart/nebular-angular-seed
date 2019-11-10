@@ -11,6 +11,8 @@ import { MenuService } from './services/menu/menu.service';
 import { ToastService } from './services/toast/toast.service';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { DataTablesModule } from 'angular-datatables';
+import { EmptyPipe } from './pipes/empty.pipe';
+import { CustomCurrencyPipe } from './pipes/custom-currency.pipe';
 
 const IMPORTS_BASE_MODULES = [
   CommonModule,
@@ -56,6 +58,8 @@ const SHARED_MODULE_PROVIDERS = [
   TitleService,
   MenuService,
   ToastService,
+  EmptyPipe,
+  CustomCurrencyPipe
 ];
 
 @NgModule({

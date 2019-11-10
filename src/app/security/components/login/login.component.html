@@ -37,10 +37,10 @@
             placeholder="{{ 'users.view.email' | translate }}" autofocus [status]="email.dirty || email.touched ? (email.invalid  ? 'danger' : 'success') : ''"
             [required]="getConfigValue('forms.validation.email.required')" [attr.aria-invalid]="email.invalid && email.touched ? true : null">
         <ng-container *ngIf="email.invalid && email.touched">
-            <p class="error-message" *ngIf="email.errors?.required">
+            <p class="text-danger mt-2" *ngIf="email.errors?.required">
                 {{ 'auth.logIn.errors.requiredEmail' | translate }}
             </p>
-            <p class="error-message" *ngIf="email.errors?.pattern">
+            <p class="text-danger mt-2" *ngIf="email.errors?.pattern">
                 {{ 'auth.logIn.errors.invalidEmail' | translate }}
             </p>
         </ng-container>
@@ -55,10 +55,10 @@
             [required]="getConfigValue('forms.validation.password.required')" [minlength]="getConfigValue('forms.validation.password.minLength')"
             [maxlength]="getConfigValue('forms.validation.password.maxLength')" [attr.aria-invalid]="password.invalid && password.touched ? true : null">
         <ng-container *ngIf="password.invalid && password.touched ">
-            <p class="error-message" *ngIf="password.errors?.required">
+            <p class="text-danger mt-2" *ngIf="password.errors?.required">
                 {{ 'auth.logIn.errors.requiredPassword' | translate }}
             </p>
-            <p class="error-message" *ngIf="password.errors?.minlength || password.errors?.maxlength">
+            <p class="text-danger mt-2" *ngIf="password.errors?.minlength || password.errors?.maxlength">
                 {{ 'auth.logIn.errors.invalidPassword' | translate:
                 {
                 minLength: getConfigValue('forms.validation.password.minLength'),

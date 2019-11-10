@@ -1,0 +1,21 @@
+// Custom global styles here...
+// Use this way only if there are no existing nebular theme variables!
+// TODO(alobaton): /deep/, ::ng-deep and >>> will be deprecated!
+.border {
+  border: 1px solid nb-theme(border-basic-color-3) !important;
+}
+.border-right {
+  border-right: 1px solid nb-theme(border-basic-color-3) !important;
+}
+.border-left {
+  border-left: 1px solid nb-theme(border-basic-color-3) !important;
+}
+.border-top {
+  border-top: 1px solid nb-theme(border-basic-color-3) !important;
+}
+.border-bottom {
+  border-bottom: 1px solid nb-theme(border-basic-color-3) !important;
+}
+.text-danger {
+  color: nb-theme(color-danger-500) !important;
+}

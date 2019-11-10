@@ -1,11 +1,18 @@
-.switcher {
-  display: flex;
-  font-size: 1.25rem;
-  padding: 0.8rem 1.25rem;
-  align-items: center;
-  cursor: pointer;
-  span {
-    margin: 0 1.2rem;
-    font-weight: normal;
+@import "../../../theme/styles/themes";
+@include nb-install-component() {
+  .border {
+    border: 1px solid nb-theme(border-basic-color-3) !important;
+  }
+  .switcher {
+    display: flex;
+    font-size: 1.25rem;
+    padding: 0.8rem 1.25rem;
+    align-items: center;
+    cursor: pointer;
+    span {
+      margin: 0 1.2rem;
+      font-weight: normal;
+      font-size: nb-theme(text-subtitle-font-size);
+    }
   }
 }

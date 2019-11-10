@@ -5,12 +5,14 @@
                 <div class="row show-grid">
                     <div class="col-md-8">
                         <a href="#" (click)="back()" class="btn btn-link" aria-label="Back">
+                            <nb-icon icon="arrow-back-outline"></nb-icon>
                         </a>
                     </div>
                     <div class="col-md-4 d-flex justify-content-end">
-                        <app-switcher [icon]="['fas', 'magic']" [title]="'theme.themes'" [switcherListComponent]="themeSwitcherListComponent"
-                            class="mr-2"></app-switcher>
-                        <app-switcher [icon]="['fas', 'language']" [title]="lang" [switcherListComponent]="langSwitcherListComponent"></app-switcher>
+                        <app-switcher [icon]="['color-palette-outline']" [title]="'theme.themes'"
+                            [switcherListComponent]="themeSwitcherListComponent" class="mr-2"></app-switcher>
+                        <app-switcher [icon]="['globe-2-outline']" [title]="lang"
+                            [switcherListComponent]="langSwitcherListComponent"></app-switcher>
                     </div>
                 </div>
             </nb-card-header>
