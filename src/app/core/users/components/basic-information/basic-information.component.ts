@@ -2,6 +2,12 @@ import { OnInit, Component } from '@angular/core';
 import { UserService } from '../../../../security/services/user/user.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormComponent } from 'src/app/shared/util/form.component';
+import { User } from 'src/app/models/users.interfaces';
+import { CanComponentDeactivate } from 'src/app/core/guards/can-deactive.guard';
+import { TranslateService } from '@ngx-translate/core';
+import { AlertService } from 'src/app/shared/services/alert/alert.service';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -9,23 +15,19 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
     templateUrl: 'basic-information.component.html',
     styleUrls: ['basic-information.component.scss']
 })
-export class BasicInformationComponent implements OnInit {
+export class BasicInformationComponent extends FormComponent implements OnInit, CanComponentDeactivate {
     user: any = {};
 
     form: FormGroup;
-    name: FormControl;
-    lastName: FormControl;
-    email: FormControl;
+    isForm: Promise<any>;
 
-    constructor(private userService: UserService, private router: Router, private fb: FormBuilder) {
-        this.name = new FormControl(this.user.name, [Validators.required]);
-        this.lastName = new FormControl(this.user.lastName, [Validators.required]);
-        this.email = new FormControl(this.user.email, [Validators.required, Validators.email]);
-        this.form = this.fb.group({
-            name: this.name,
-            lastName: this.lastName,
-            email: this.email,
-        });
+    constructor(
+        private userService: UserService,
+        private router: Router,
+        private formBuilder: FormBuilder,
+        private alertService: AlertService,
+        private translate: TranslateService) {
+        super();
 
         this.userService.getUser().subscribe((user: any) => {
             if (user) {
@@ -37,5 +39,34 @@ export class BasicInformationComponent implements OnInit {
     }
 
     ngOnInit() {
+        const user = {
+            id: 'alobaton',
+            nickname: 'alobaton',
+            name: 'Alvaro',
+            lastName: 'Lobaton',
+            email: 'alobaton.restrepo@gmail.com'
+        };
+        this.initForm(user);
+    }
+
+    private initForm(user?: User) {
+        this.isForm = Promise.resolve(
+            this.form = this.formBuilder.group({
+                id: new FormControl(user ? user.id : null, [Validators.required]),
+                name: new FormControl(user ? user.name : null, [Validators.required]),
+                lastName: new FormControl(user ? user.lastName : null, [Validators.required]),
+                email: new FormControl(user ? user.email : null, [Validators.required, Validators.email])
+            })
+        );
+
+        this.form.controls.id.disable();
+    }
+
+    canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
+        if (this.isPristine(this.form)) {
+            return this.alertService.confirm(this.translate.instant('general.messages.onDeactive'), 'info');
+        }
+
+        return true;
     }
 }

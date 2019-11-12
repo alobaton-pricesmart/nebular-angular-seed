@@ -1,12 +1,20 @@
-import { Component, Input, TemplateRef } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, Input, TemplateRef, EventEmitter, Output, forwardRef, Optional, Host, SkipSelf, OnInit } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, ControlContainer, AbstractControl } from '@angular/forms';
+import { FormComponent } from 'src/app/shared/util/form.component';
 
 @Component({
     selector: 'app-field',
     templateUrl: 'field.component.html',
-    styleUrls: ['field.component.scss']
+    styleUrls: ['field.component.scss'],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => FieldComponent),
+            multi: true
+        }
+    ]
 })
-export class FieldComponent {
+export class FieldComponent implements OnInit, ControlValueAccessor {
 
     @Input()
     id: string;
@@ -15,17 +23,59 @@ export class FieldComponent {
     label: string;
 
     @Input()
-    readonly?: boolean;
-
-    @Input()
-    value?: any;
+    formControlName: string;
 
     @Input()
     type?: string;
 
     @Input()
-    control?: FormControl;
+    readonly?: boolean;
+
+    @Input()
+    disabled?: boolean;
+
+    @Input()
+    status?: any;
 
     @Input()
     template?: TemplateRef<any>;
+
+    model: any;
+
+    onChange = (_: any) => { };
+
+    onTouched = () => { };
+
+    constructor() {
+    }
+
+    ngOnInit() {
+    }
+
+    writeValue(model: any): void {
+        this.model = model || null;
+        this.onChange(this.model);
+    }
+
+    registerOnChange(fn: (modelo: any) => void): void {
+        this.onChange = fn;
+    }
+
+    registerOnTouched(fn: () => void): void {
+        this.onTouched = fn;
+    }
+
+    setDisabledState(isDisabled: boolean): void {
+        this.disabled = isDisabled;
+    }
+
+    get value(): any {
+        return this.model;
+    }
+
+    set setValue(modelo: any) {
+        if (modelo === this.model) {
+            this.model = modelo;
+        }
+    }
 }

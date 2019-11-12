@@ -3,14 +3,12 @@
         {{ label | translate }}
     </label>
     <div class="field-value col-md-9">
-        <ng-template *ngIf="readonly; else editable">
-            <span>{{ value | translate }}</span>
+        <ng-template [ngIf]="readonly" [ngIfElse]="editable">
+            <span>{{ model | emptyPipe }}</span>
         </ng-template>
         <ng-template #editable>
             <input nbInput id="{{ id }}" fullWidth [type]="type" placeholder="{{ label | translate }}"
-                class="form-control" [formControl]="control"
-                [attr.aria-invalid]="control.invalid && control.touched ? true : null"
-                [status]="control.dirty || control.touched ? (control.invalid  ? 'danger' : 'success') : ''">
+                class="form-control" [status]="status" [(ngModel)]="model">
             <ng-container *ngTemplateOutlet="template"></ng-container>
         </ng-template>
     </div>

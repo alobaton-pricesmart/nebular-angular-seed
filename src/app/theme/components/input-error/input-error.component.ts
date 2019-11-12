@@ -7,7 +7,7 @@ import { FormGroupDirective } from '@angular/forms';
 })
 export class InputErrorComponent {
   @Input() controlName: string;
-  @Input() errorKey: string;
+  @Input() errorKeys: string[];
 
   constructor(
     @Host() @SkipSelf() private form: FormGroupDirective
@@ -16,6 +16,11 @@ export class InputErrorComponent {
 
   get isInvalid() {
     const control = this.form.form.get(this.controlName);
-    return control.hasError(this.errorKey) && (control.dirty || this.form.submitted);
+    let isInvalid = (control.dirty || control.touched || this.form.submitted) && control.invalid;
+    // Validamos el conjunto de error keys.
+    this.errorKeys.forEach((errorKey: string) => {
+      isInvalid = isInvalid && control.hasError(errorKey);
+    });
+    return isInvalid;
   }
 }

@@ -13,6 +13,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { DataTablesModule } from 'angular-datatables';
 import { EmptyPipe } from './pipes/empty.pipe';
 import { CustomCurrencyPipe } from './pipes/custom-currency.pipe';
+import { AlertService } from './services/alert/alert.service';
 
 const IMPORTS_BASE_MODULES = [
   CommonModule,
@@ -50,7 +51,9 @@ const EXPORTS_SHARED_MODULE = [
   ChartModule,
   CookieModule,
   NgMultiSelectDropDownModule,
-  DataTablesModule
+  DataTablesModule,
+  EmptyPipe,
+  CustomCurrencyPipe
 ];
 
 const SHARED_MODULE_PROVIDERS = [
@@ -58,6 +61,12 @@ const SHARED_MODULE_PROVIDERS = [
   TitleService,
   MenuService,
   ToastService,
+  AlertService,
+  EmptyPipe,
+  CustomCurrencyPipe
+];
+
+const SHARED_MODULE_DECLARATIONS = [
   EmptyPipe,
   CustomCurrencyPipe
 ];
@@ -76,7 +85,9 @@ const SHARED_MODULE_PROVIDERS = [
     ...EXPORTS_NGB_MODULES,
     ...EXPORTS_SHARED_MODULE,
   ],
-  declarations: [],
+  declarations: [
+    ...SHARED_MODULE_DECLARATIONS
+  ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
     NO_ERRORS_SCHEMA,

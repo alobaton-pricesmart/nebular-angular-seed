@@ -14,47 +14,42 @@
         {{ 'users.view.basicInformation' | translate }}
     </nb-card-header>
     <nb-card-body>
-        <form class="form-horizontal" [formGroup]="form">
-            <app-field [id]="'id'" [label]="'users.view.id'" [readonly]="true" [value]="user.id">
+        <form class="form-horizontal" [formGroup]="form" *ngIf="isForm | async as isForm;">
+            <app-field [id]="'id'" [label]="'users.view.id'" [readonly]="true" formControlName="id" name="'id'"
+                ngDefaultControl>
             </app-field>
-            <app-field [id]="'name'" [label]="'users.view.name'" [value]="user.name" [type]="'text'" [control]="name"
-                [template]="nameTemplate">
+            <app-field [id]="'name'" [label]="'users.view.name'" [type]="'text'" formControlName="name"
+                [template]="nameTemplate" [status]="getStatus(form, 'name')" name="'name'" ngDefaultControl>
             </app-field>
             <ng-template #nameTemplate>
-                <ng-container *ngIf="name.invalid && name.touched">
-                    <app-input-error [controlName]="'name'" [errorKey]="'required'">
-                        {{ 'auth.register.errors.requiredName' | translate }}
-                    </app-input-error>
-                </ng-container>
+                <app-input-error [controlName]="'name'" [errorKeys]="['required']">
+                    {{ 'auth.register.errors.requiredName' | translate }}
+                </app-input-error>
             </ng-template>
-            <app-field [id]="'lastName'" [label]="'users.view.lastName'" [value]="user.lastName" [type]="'text'"
-                [control]="lastName" [template]="lastNameTemplate">
+            <app-field [id]="'lastName'" [label]="'users.view.lastName'" [type]="'text'" formControlName="lastName"
+                [template]="lastNameTemplate" [status]="getStatus(form, 'lastName')" name="'lastName'" ngDefaultControl>
             </app-field>
             <ng-template #lastNameTemplate>
-                <ng-container *ngIf="lastName.invalid && lastName.touched">
-                    <app-input-error [controlName]="'lastName'" [errorKey]="'required'">
-                        {{ 'auth.register.errors.requiredLastName' | translate }}
-                    </app-input-error>
-                </ng-container>
+                <app-input-error [controlName]="'lastName'" [errorKeys]="['required']">
+                    {{ 'auth.register.errors.requiredLastName' | translate }}
+                </app-input-error>
             </ng-template>
-            <app-field [id]="'email'" [label]="'users.view.email'" [value]="user.email" [type]="'email'"
-                [control]="email" [template]="emailTemplate">
+            <app-field [id]="'email'" [label]="'users.view.email'" [type]="'email'" formControlName="email"
+                [template]="emailTemplate" [status]="getStatus(form, 'email')" name="'email'" ngDefaultControl>
             </app-field>
             <ng-template #emailTemplate>
-                <ng-container *ngIf="email.invalid && email.touched">
-                    <app-input-error [controlName]="'email'" [errorKey]="'required'">
-                        {{ 'auth.logIn.errors.requiredEmail' | translate }}
-                    </app-input-error>
-                    <app-input-error [controlName]="'email'" [errorKey]="'email'">
-                        {{ 'auth.logIn.errors.invalidEmail' | translate }}
-                    </app-input-error>
-                </ng-container>
+                <app-input-error [controlName]="'email'" [errorKeys]="['required']">
+                    {{ 'auth.logIn.errors.requiredEmail' | translate }}
+                </app-input-error>
+                <app-input-error [controlName]="'email'" [errorKeys]="['email']">
+                    {{ 'auth.logIn.errors.invalidEmail' | translate }}
+                </app-input-error>
             </ng-template>
         </form>
     </nb-card-body>
     <nb-card-footer>
         <div class="float-right">
-            <button nbButton [disabled]="!form.valid">
+            <button nbButton [disabled]="form.invalid">
                 {{ 'general.update' | translate }}
             </button>
         </div>

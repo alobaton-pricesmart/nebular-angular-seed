@@ -7,6 +7,7 @@ import { CoreRoutingModule } from './core-routing.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LangSwitcherListComponent } from './components/lang-switcher-list/lang-switcher-list.component';
 import { ThemeModule } from '../theme/theme.module';
+import { CanDeactivateGuard } from './guards/can-deactive.guard';
 
 const CORE_MODULES = [
   CoreRoutingModule,
@@ -30,7 +31,9 @@ const EXPORTS_CORE_COMPONENTS = [
   LangSwitcherListComponent,
 ];
 
-const CORE_MODULE_PROVIDERS: [] = [];
+const CORE_MODULE_PROVIDERS = [
+  CanDeactivateGuard
+];
 
 @NgModule({
   imports: [

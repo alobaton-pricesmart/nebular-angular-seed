@@ -11,148 +11,118 @@
                 </div>
             </nb-card-header>
             <nb-card-body>
-                <form class="form-horizontal" [formGroup]="form">
+                <form class="form-horizontal" [formGroup]="form" *ngIf="isForm | async as isForm;">
                     <div class="form-group row">
-                        <label for="inputID" class="col-sm-3 form-control-label">
+                        <label for="id" class="col-sm-3 form-control-label">
                             {{ 'users.view.id' | translate }}
                         </label>
                         <div class="col-sm-9">
-                            <input nbInput type="text" class="form-control" id="inputID"
+                            <input nbInput fullWidth type="text" class="form-control" id="id"
                                 placeholder="{{ 'users.view.id' | translate }}" formControlName="id"
-                                [attr.aria-invalid]="id.invalid && id.touched ? true : null"
-                                [status]="id.dirty || id.touched ? (id.invalid  ? 'danger' : 'success') : ''">
-                            <ng-container *ngIf="id.invalid && id.touched">
-                                <app-input-error [controlName]="'id'" [errorKey]="'required'">
-                                    {{ 'users.create.errors.requiredID' | translate }}
-                                </app-input-error>
-                            </ng-container>
+                                [status]="getStatus(form, 'id')">
+                            <app-input-error [controlName]="'id'" [errorKeys]="['required']">
+                                {{ 'users.create.errors.requiredID' | translate }}
+                            </app-input-error>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputName" class="col-sm-3 form-control-label">
+                        <label for="name" class="col-sm-3 form-control-label">
                             {{ 'users.view.name' | translate }}
                         </label>
                         <div class="col-sm-9">
-                            <input nbInput type="text" class="form-control" id="inputName"
+                            <input nbInput fullWidth type="text" class="form-control" id="name"
                                 placeholder="{{ 'users.view.name' | translate }}" formControlName="name"
-                                [attr.aria-invalid]="name.invalid && name.touched ? true : null"
-                                [status]="name.dirty || name.touched ? (name.invalid  ? 'danger' : 'success') : ''">
-                            <ng-container *ngIf="name.invalid && name.touched">
-                                <app-input-error [controlName]="'name'" [errorKey]="'required'">
-                                    {{ 'auth.register.errors.requiredName' | translate }}
-                                </app-input-error>
-                            </ng-container>
+                                [status]="getStatus(form, 'name')">
+                            <app-input-error [controlName]="'name'" [errorKeys]="['required']">
+                                {{ 'auth.register.errors.requiredName' | translate }}
+                            </app-input-error>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputLastName" class="col-sm-3 form-control-label">
+                        <label for="lastName" class="col-sm-3 form-control-label">
                             {{ 'users.view.lastName' | translate }}
                         </label>
                         <div class="col-sm-9">
-                            <input nbInput type="text" class="form-control" id="inputLastName"
+                            <input nbInput fullWidth type="text" class="form-control" id="lastName"
                                 placeholder="{{ 'users.view.lastName' | translate }}" formControlName="lastName"
-                                [attr.aria-invalid]="lastName.invalid && lastName.touched ? true : null"
-                                [status]="lastName.dirty || lastName.touched ? (lastName.invalid  ? 'danger' : 'success') : ''">
-                            <ng-container *ngIf="lastName.invalid && lastName.touched">
-                                <app-input-error [controlName]="'lastName'" [errorKey]="'required'">
-                                    {{ 'auth.register.errors.requiredLastName' | translate }}
-                                </app-input-error>
-                            </ng-container>
+                                [status]="getStatus(form, 'lastName')">
+                            <app-input-error [controlName]="'lastName'" [errorKeys]="['required']">
+                                {{ 'auth.register.errors.requiredLastName' | translate }}
+                            </app-input-error>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail" class="col-sm-3 form-control-label">
+                        <label for="email" class="col-sm-3 form-control-label">
                             {{ 'users.view.email' | translate }}
                         </label>
                         <div class="col-sm-9">
-                            <input nbInput type="text" class="form-control" id="inputEmail"
+                            <input nbInput fullWidth type="text" class="form-control" id="email"
                                 placeholder="{{ 'users.view.email' | translate }}" formControlName="email"
-                                [attr.aria-invalid]="email.invalid && email.touched ? true : null"
-                                [status]="email.dirty || email.touched ? (email.invalid  ? 'danger' : 'success') : ''">
-                            <ng-container *ngIf="email.invalid && email.touched">
-                                <app-input-error [controlName]="'email'" [errorKey]="'required'">
-                                    {{ 'auth.logIn.errors.requiredEmail' | translate }}
-                                </app-input-error>
-                                <app-input-error [controlName]="'email'" [errorKey]="'email'">
-                                    {{ 'auth.logIn.errors.invalidEmail' | translate }}
-                                </app-input-error>
-                            </ng-container>
+                                [status]="getStatus(form, 'email')">
+                            <app-input-error [controlName]="'email'" [errorKeys]="['required']">
+                                {{ 'auth.logIn.errors.requiredEmail' | translate }}
+                            </app-input-error>
+                            <app-input-error [controlName]="'email'" [errorKeys]="['email']">
+                                {{ 'auth.logIn.errors.invalidEmail' | translate }}
+                            </app-input-error>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmailConfirm" class="col-sm-3 form-control-label">
+                        <label for="emailConfirm" class="col-sm-3 form-control-label">
                             {{ 'users.view.emailConfirm' | translate }}
                         </label>
                         <div class="col-sm-9">
-                            <input nbInput type="email" class="form-control" id="inputEmailConfirm"
+                            <input nbInput fullWidth type="email" class="form-control" id="emailConfirm"
                                 placeholder="{{ 'users.view.emailConfirm' | translate }}" formControlName="emailConfirm"
-                                [attr.aria-invalid]="emailConfirm.invalid && emailConfirm.touched ? true : null"
-                                [status]="emailConfirm.dirty || emailConfirm.touched ? (emailConfirm.invalid  ? 'danger' : 'success') : ''">
-                            <ng-container *ngIf="emailConfirm.invalid && emailConfirm.touched">
-                                <app-input-error [controlName]="'emailConfirm'" [errorKey]="'required'">
-                                    {{ 'users.create.errors.requiredEmailConfirm' | translate }}
-                                </app-input-error>
-                                <app-input-error [controlName]="'emailConfirm'" [errorKey]="'email'">
-                                    {{ 'auth.logIn.errors.invalidEmail' | translate }}
-                                </app-input-error>
-                                <p class="text-danger mt-2"
-                                    *ngIf="email.value != emailConfirm.value && !emailConfirm.errors?.required">
-                                    {{ 'users.create.errors.notMatchPasswordConfirm' | translate }}
-                                </p>
-                            </ng-container>
+                                [status]="getStatus(form, 'emailConfirm')">
+                            <app-input-error [controlName]="'emailConfirm'" [errorKeys]="['required']">
+                                {{ 'users.create.errors.requiredEmailConfirm' | translate }}
+                            </app-input-error>
+                            <app-input-error [controlName]="'emailConfirm'" [errorKeys]="['email']">
+                                {{ 'auth.logIn.errors.invalidEmail' | translate }}
+                            </app-input-error>
+                            <p class="text-danger mt-2"
+                                *ngIf="form.controls.email.value != form.controls.emailConfirm.value && !form.controls.emailConfirm.errors?.required">
+                                {{ 'users.create.errors.notMatchPasswordConfirm' | translate }}
+                            </p>
                         </div>
                     </div>
+
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-3 form-control-label">
+                        <label for="password" class="col-sm-3 form-control-label">
                             {{ 'users.view.password' | translate }}
                         </label>
                         <div class="col-sm-9">
-                            <input nbInput type="password" class="form-control" id="inputPassword"
+                            <input nbInput fullWidth type="password" class="form-control" id="password"
                                 placeholder="{{ 'users.view.password' | translate }}" formControlName="password"
-                                [attr.aria-invalid]="password.invalid && password.touched ? true : null"
-                                [status]="password.dirty || password.touched ? (password.invalid  ? 'danger' : 'success') : ''">
-                            <ng-container *ngIf="password.invalid && password.touched ">
-                                <app-input-error [controlName]="'password'" [errorKey]="'required'">
-                                    {{ 'auth.logIn.errors.requiredPassword' | translate }}
-                                </app-input-error>
-                                <app-input-error [controlName]="'password'" [errorKey]="'minlength'">
-                                    {{ 'auth.logIn.errors.invalidPassword' | translate:
+                                [status]="getStatus(form, 'password')">
+                            <app-input-error [controlName]="'password'" [errorKeys]="['required']">
+                                {{ 'auth.logIn.errors.requiredPassword' | translate }}
+                            </app-input-error>
+                            <app-input-error [controlName]="'password'" [errorKeys]="['minlength', 'maxlength']">
+                                {{ 'auth.logIn.errors.invalidPassword' | translate:
                                             {
                                             minLength: getConfigValue('forms.validation.password.minLength'),
                                             maxLength: getConfigValue('forms.validation.password.maxLength')
-                                            }
-                                            }}
-                                </app-input-error>
-                                <app-input-error [controlName]="'password'" [errorKey]="'maxlength'">
-                                    {{ 'auth.logIn.errors.invalidPassword' | translate:
-                                            {
-                                            minLength: getConfigValue('forms.validation.password.minLength'),
-                                            maxLength: getConfigValue('forms.validation.password.maxLength')
-                                            }
-                                            }}
-                                </app-input-error>
-                            </ng-container>
+                                            } }}
+                            </app-input-error>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputPasswordConfirm" class="col-sm-3 form-control-label">
+                        <label for="passwordConfirm" class="col-sm-3 form-control-label">
                             {{ 'users.view.passwordConfirm' | translate }}
                         </label>
                         <div class="col-sm-9">
-                            <input nbInput type="password" class="form-control" id="inputPasswordConfirm"
+                            <input nbInput fullWidth type="password" class="form-control" id="passwordConfirm"
                                 placeholder="{{ 'users.view.passwordConfirm' | translate }}"
-                                formControlName="passwordConfirm"
-                                [attr.aria-invalid]="passwordConfirm.invalid && passwordConfirm.touched ? true : null"
-                                [status]="passwordConfirm.dirty || passwordConfirm.touched ? (passwordConfirm.invalid  ? 'danger' : 'success') : ''">
-                            <ng-container *ngIf="passwordConfirm.invalid && passwordConfirm.touched ">
-                                <app-input-error [controlName]="'passwordConfirm'" [errorKey]="'required'">
-                                    {{ 'auth.register.errors.requiredPasswordConfirm' | translate }}
-                                </app-input-error>
-                                <p class="text-danger mt-2"
-                                    *ngIf="password.value != passwordConfirm.value && !passwordConfirm.errors?.required">
-                                    {{ 'auth.register.errors.notMatchPasswordConfirm' | translate }}
-                                </p>
-                            </ng-container>
+                                formControlName="passwordConfirm" [status]="getStatus(form, 'passwordConfirm')">
+                            <app-input-error [controlName]="'passwordConfirm'" [errorKeys]="['required']">
+                                {{ 'auth.register.errors.requiredPasswordConfirm' | translate }}
+                            </app-input-error>
+                            <p class="text-danger mt-2" *ngIf="form.controls.password.value != form.controls.passwordConfirm.value && 
+                                !form.controls.passwordConfirm.errors?.required">
+                                {{ 'auth.register.errors.notMatchPasswordConfirm' | translate }}
+                            </p>
                         </div>
                     </div>
                     <div class="form-group row">
