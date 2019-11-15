@@ -19,3 +19,12 @@
 .text-danger {
   color: nb-theme(color-danger-500) !important;
 }
+.swal2-popup.swal2-modal.swal2-show {
+  background: nb-theme(background-basic-color-1) !important;
+}
+.bg-light {
+  background: nb-theme(background-basic-color-2) !important;
+}
+.text {
+  color: nb-theme(text-basic-color) !important;
+}

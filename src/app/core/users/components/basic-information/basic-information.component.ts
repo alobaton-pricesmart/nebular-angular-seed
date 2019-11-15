@@ -56,7 +56,7 @@ export class BasicInformationComponent extends FormComponent implements OnInit, 
     }
 
     canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
-        if (this.isPristine(this.form)) {
+        if (!this.isPristine(this.form)) {
             return this.alertService.confirm(this.translate.instant('general.messages.onDeactive'), 'info');
         }
 

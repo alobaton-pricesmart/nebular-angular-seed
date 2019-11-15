@@ -44,7 +44,7 @@ export class AlertService {
         <div class="my-2">
         <i class="eva eva-${icon} bg-light p-3 rounded-circle"></i>
         </div>
-        ${text}
+        <span class="text">${text}</span>
         </div>`;
         const swalConfig = Swal.mixin(_options);
         return this.alert(text, title, 'success', swalConfig);
@@ -59,7 +59,7 @@ export class AlertService {
         <div class="my-2">
         <i class="eva eva-${icon} bg-light p-3 rounded-circle"></i>
         </div>
-        ${text}
+        <span class="text">${text}</span>
         </div>`;
         const swalConfig = Swal.mixin(_options);
         return this.alert(text, title, 'info', swalConfig);
@@ -74,7 +74,7 @@ export class AlertService {
         <div class="my-2">
         <i class="eva eva-${icon} bg-light p-3 rounded-circle"></i>
         </div>
-        ${text}
+        <span class="text">${text}</span>
         </div>`;
         const swalConfig = Swal.mixin(_options);
         return this.alert(text, title, 'warning', swalConfig);
@@ -89,7 +89,7 @@ export class AlertService {
         <div class="my-2">
         <i class="eva eva-${icon} bg-light p-3 rounded-circle"></i>
         </div>
-        ${text}
+        <span class="text">${text}</span>
         </div>`;
         const swalConfig = Swal.mixin(_options);
         return this.alert(text, title, 'error', swalConfig);
@@ -120,7 +120,7 @@ export class AlertService {
         <div class="my-2">
         <i class="eva eva-${icon} bg-light p-3 rounded-circle"></i>
         </div>
-        ${text}
+        <span class="text">${text}</span>
         </div>`;
 
         const swalConfig = Swal.mixin(_options);
