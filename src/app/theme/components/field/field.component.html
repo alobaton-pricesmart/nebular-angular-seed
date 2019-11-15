@@ -8,7 +8,7 @@
         </ng-template>
         <ng-template #editable>
             <input nbInput id="{{ id }}" fullWidth [type]="type" placeholder="{{ label | translate }}"
-                class="form-control" [status]="status" [(ngModel)]="model">
+                class="form-control" [status]="status" [(ngModel)]="model" (ngModelChange)="writeValue($event)">
             <ng-container *ngTemplateOutlet="template"></ng-container>
         </ng-template>
     </div>

@@ -39,14 +39,7 @@ export class BasicInformationComponent extends FormComponent implements OnInit, 
     }
 
     ngOnInit() {
-        const user = {
-            id: 'alobaton',
-            nickname: 'alobaton',
-            name: 'Alvaro',
-            lastName: 'Lobaton',
-            email: 'alobaton.restrepo@gmail.com'
-        };
-        this.initForm(user);
+        this.initForm();
     }
 
     private initForm(user?: User) {
@@ -68,5 +61,8 @@ export class BasicInformationComponent extends FormComponent implements OnInit, 
         }
 
         return true;
+    }
+
+    update() {
     }
 }

@@ -1,6 +1,5 @@
-import { Component, Input, TemplateRef, EventEmitter, Output, forwardRef, Optional, Host, SkipSelf, OnInit } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, ControlContainer, AbstractControl } from '@angular/forms';
-import { FormComponent } from 'src/app/shared/util/form.component';
+import { Component, Input, TemplateRef, forwardRef, OnInit } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
     selector: 'app-field',
@@ -21,9 +20,6 @@ export class FieldComponent implements OnInit, ControlValueAccessor {
 
     @Input()
     label: string;
-
-    @Input()
-    formControlName: string;
 
     @Input()
     type?: string;
