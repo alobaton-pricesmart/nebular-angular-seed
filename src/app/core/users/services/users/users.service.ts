@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { HttpErrorHandler } from '../../helpers/http-error-handler';
-import { User } from '../../../models/users.interfaces';
-import { BasePagedService } from '../base/base-paged.service';
+import { User } from '../../models/users.interfaces';
+import { BasePagedService } from '../../../services/base/base-paged.service';
+import { HttpErrorHandler } from 'src/app/core/helpers/http-error-handler';
 
 @Injectable()
 export class UsersService extends BasePagedService<User> {

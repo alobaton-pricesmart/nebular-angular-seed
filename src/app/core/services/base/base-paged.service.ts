@@ -2,8 +2,8 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { BaseService } from './base.service';
+import { Page } from '../../models/page.interfaces';
 import { HttpErrorHandler } from '../../helpers/http-error-handler';
-import { Page } from '../../../models/page.interfaces';
 
 export class BasePagedService<T> extends BaseService<T> {
 

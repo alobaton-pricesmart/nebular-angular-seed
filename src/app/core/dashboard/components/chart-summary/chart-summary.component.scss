@@ -1,3 +1,5 @@
+@import '../../../../theme/styles/themes';
+
 .summary-container {
   display: flex;
   flex: 1;
@@ -6,6 +8,7 @@
   margin-bottom: 1rem;
   border-left: none;
   border-right: none;
+  background: nb-theme(background-basic-color-2) !important;
 }
 .value {
   font-size: 2rem;

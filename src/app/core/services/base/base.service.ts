@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { HandleError, HttpErrorHandler } from '../../helpers/http-error-handler';
+import { HttpErrorHandler, HandleError } from '../../helpers/http-error-handler';
 
 const BASE_URI = 'api/';
 

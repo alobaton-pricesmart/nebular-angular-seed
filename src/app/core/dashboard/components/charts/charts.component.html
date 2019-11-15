@@ -1,6 +1,6 @@
 <nb-card>
   <nb-tabset fullWidth (changeTab)="changeTab($event)">
-    <nb-tab tabTitle="Ventas">
+    <nb-tab tabTitle="Ventas" class="m-0 p-0">
       <div class="chart-container">
         <app-chart-summary [summary]="summary"></app-chart-summary>
         <app-chart-header (periodChange)="onPeriodChange($event)">
@@ -8,7 +8,7 @@
         <app-sales-chart #salesChart [sales]="sales"></app-sales-chart>
       </div>
     </nb-tab>
-    <nb-tab tabTitle="Ganancias" [lazyLoad]="true">
+    <nb-tab tabTitle="Ganancias" [lazyLoad]="true" class="m-0 p-0">
       <div class="chart-container">
         <app-chart-summary [summary]="summary"></app-chart-summary>
         <app-chart-header (periodChange)="onPeriodChange($event)">

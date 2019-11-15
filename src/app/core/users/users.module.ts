@@ -6,13 +6,12 @@ import { UsersRoutingModule } from './users-routing.module';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BasicInformationComponent } from './components/basic-information/basic-information.component';
-import { BusinessModule } from '../../business/business.module';
+import { UsersService } from './services/users/users.service';
 
 const USERS_MODULES = [
   UsersRoutingModule,
   SharedModule.forRoot(),
-  ThemeModule.forRoot(),
-  BusinessModule.forRoot(),
+  ThemeModule.forRoot()
 ];
 
 const USERS_COMPONENTS = [
@@ -24,6 +23,10 @@ const USERS_COMPONENTS = [
 
 const EXPORTS_USERS_COMPONENTS = [
   CreateUserComponent,
+];
+
+const USERS_PROVIDERS = [
+  UsersService
 ];
 
 @NgModule({
@@ -45,6 +48,7 @@ export class UsersModule {
     return {
       ngModule: UsersModule,
       providers: [
+        ...USERS_PROVIDERS
       ]
     };
   }

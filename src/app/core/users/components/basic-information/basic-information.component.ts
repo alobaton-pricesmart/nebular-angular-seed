@@ -3,7 +3,7 @@ import { UserService } from '../../../../security/services/user/user.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { FormComponent } from 'src/app/shared/util/form.component';
-import { User } from 'src/app/models/users.interfaces';
+import { User } from 'src/app/core/users/models/users.interfaces';
 import { CanComponentDeactivate } from 'src/app/core/guards/can-deactive.guard';
 import { TranslateService } from '@ngx-translate/core';
 import { AlertService } from 'src/app/shared/services/alert/alert.service';

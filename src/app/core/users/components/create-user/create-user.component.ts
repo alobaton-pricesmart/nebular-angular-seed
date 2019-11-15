@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { UsersService } from '../../../../business/services/users/users.service';
-import { RolesService } from '../../../../business/services/roles/roles.service';
+import { UsersService } from '../../services/users/users.service';
+import { RolesService } from '../../../services/roles/roles.service';
 import { ToastService } from '../../../../shared/services/toast/toast.service';
-import { User } from 'src/app/models/users.interfaces';
+import { User } from 'src/app/core/users/models/users.interfaces';
 import { FormComponent } from 'src/app/shared/util/form.component';
 import { EnvironmentUtil } from 'src/app/shared/util/environment.util';
 
