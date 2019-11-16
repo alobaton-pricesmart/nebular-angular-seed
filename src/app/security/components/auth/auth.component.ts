@@ -4,6 +4,7 @@ import { LangSwitcherListComponent } from '../../../core/components/lang-switche
 import { LangService } from '../../../shared/services/lang/lang.service';
 import { Location } from '@angular/common';
 import { ThemeSwitcherListComponent } from '../../../theme/components/theme-switcher-list/theme-switcher-list.component';
+import { NbThemeService } from '@nebular/theme';
 
 @Component({
     selector: 'app-auth',
@@ -13,15 +14,16 @@ import { ThemeSwitcherListComponent } from '../../../theme/components/theme-swit
 export class AuthComponent extends NbAuthComponent implements OnInit {
 
     themeSwitcherListComponent = ThemeSwitcherListComponent;
-
-    lang: string;
     langSwitcherListComponent = LangSwitcherListComponent;
 
-    constructor(authService: NbAuthService, location: Location, private langService: LangService) {
+    constructor(
+        public authService: NbAuthService, 
+        public location: Location, 
+        public langService: LangService,
+        public theme : NbThemeService) {
         super(authService, location);
     }
 
     ngOnInit() {
-        this.lang = this.langService.get({ translated: true });
     }
 }

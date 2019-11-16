@@ -9,10 +9,11 @@
                         </a>
                     </div>
                     <div class="col-md-4 d-flex justify-content-end">
-                        <app-switcher [icon]="['color-palette-outline']" [title]="'theme.themes'"
+                        <app-switcher [icon]="['color-palette-outline']" [title]="'theme.' + theme.currentTheme "
                             [switcherListComponent]="themeSwitcherListComponent" class="mr-2"></app-switcher>
-                        <app-switcher [icon]="['globe-2-outline']" [title]="lang"
-                            [switcherListComponent]="langSwitcherListComponent"></app-switcher>
+                        <app-switcher [icon]="['globe-2-outline']" [title]="langService.get({ translated: true })"
+                            [switcherListComponent]="langSwitcherListComponent" class="mr-3">
+                        </app-switcher>
                     </div>
                 </div>
             </nb-card-header>
