@@ -6,13 +6,17 @@ import { ToastService } from '../../../../shared/services/toast/toast.service';
 import { User } from 'src/app/core/users/models/users.interfaces';
 import { FormComponent } from 'src/app/shared/util/form.component';
 import { EnvironmentUtil } from 'src/app/shared/util/environment.util';
+import { Observable } from 'rxjs';
+import { CanComponentDeactivate } from 'src/app/core/guards/can-deactive.guard';
+import { AlertService } from 'src/app/shared/services/alert/alert.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-create-user',
   templateUrl: 'create-user.component.html',
   styleUrls: ['create-user.component.scss']
 })
-export class CreateUserComponent extends FormComponent implements OnInit, OnDestroy {
+export class CreateUserComponent extends FormComponent implements OnInit, OnDestroy, CanComponentDeactivate {
 
   form: FormGroup;
   isForm: Promise<any>;
@@ -35,7 +39,9 @@ export class CreateUserComponent extends FormComponent implements OnInit, OnDest
     private formBuilder: FormBuilder,
     private usersService: UsersService,
     private rolesService: RolesService,
-    private toast: ToastService) {
+    private toast: ToastService,
+    private alertService: AlertService,
+    private translate: TranslateService) {
     super();
   }
 
@@ -97,6 +103,14 @@ export class CreateUserComponent extends FormComponent implements OnInit, OnDest
 
   private getConfigValue(configKey: string) {
     return EnvironmentUtil.getConfigValue(configKey);
+  }
+
+  canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
+    if (!this.isPristine(this.form)) {
+      return this.alertService.confirm(this.translate.instant('general.messages.onDeactive'), 'info');
+    }
+
+    return true;
   }
 
 }

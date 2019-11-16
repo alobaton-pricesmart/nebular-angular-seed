@@ -11,7 +11,8 @@
                 </div>
             </nb-card-header>
             <nb-card-body>
-                <form class="form-horizontal" [formGroup]="form" *ngIf="isForm | async as isForm;">
+                <form class="form-horizontal" (ngSubmit)="update()" [formGroup]="form"
+                    *ngIf="isForm | async as isForm;">
                     <div class="form-group row">
                         <label for="id" class="col-sm-3 form-control-label">
                             {{ 'users.view.id' | translate }}
@@ -141,15 +142,13 @@
                             </nb-select>
                         </div>
                     </div>
+                    <div class="float-right">
+                        <button nbButton type="submit" [disabled]="form.invalid">
+                            {{ 'general.create' | translate }}
+                        </button>
+                    </div>
                 </form>
             </nb-card-body>
-            <nb-card-footer>
-                <div class="float-right">
-                    <button nbButton [disabled]="!form.valid">
-                        {{ 'general.create' | translate }}
-                    </button>
-                </div>
-            </nb-card-footer>
         </nb-card>
     </nb-layout-column>
 </nb-layout>

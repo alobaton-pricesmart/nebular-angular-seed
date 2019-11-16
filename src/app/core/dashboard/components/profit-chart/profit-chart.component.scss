@@ -1,10 +1,15 @@
-.profit-chart {
-  display: block;
-  min-height: 150px;
-  width: 100%;
-}
-chart {
-  display: block;
-  height: 100%;
-  width: 100%;
+@import "../../../../theme/styles/themes";
+@include nb-install-component() {
+  .profit-chart {
+    display: block;
+    height: nb-theme(card-height-medium);
+    min-height: 150px;
+    width: 100%;
+  }
+  chart {
+    display: block;
+    min-height: nb-theme(card-height-medium);
+    height: 100%;
+    width: 100%;
+  }
 }
