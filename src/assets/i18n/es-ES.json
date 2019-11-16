@@ -31,7 +31,7 @@
             "successfulCreate": "Se ha guardado el registro exitosamente",
             "successfulDelete": "Se ha eliminado el registro exitosamente",
             "noSearchDataMessage": "No se encontraron registros para los criterios de búsqueda ingresados",
-            "noTableDataMessage": "No se encontraron registros"
+            "noTableDataMessage": "No hay {{title}} registrados en el sistema"
         },
         "errors": {
             "title": "Oh oh!",

@@ -1,8 +1,13 @@
 import { TranslateService } from '@ngx-translate/core';
+/** Elements per page */
+export const PER_PAGE = 10;
+export const DELETE_BUTTON_CONTENT = `<div class="fs-18 mx-1 my-1">
+<i class="eva eva-trash-2-outline rounded-circle p-2 bg-light text-danger"></i>
+</div>`;
 
 export class TableComponent {
 
-    constructor(public translate: TranslateService) {}
+    constructor(public translate: TranslateService) { }
 
     public translateColumns(columns: any) {
         const items = Object.values(columns);
@@ -13,9 +18,17 @@ export class TableComponent {
         });
     }
 
-    public translateField(object: any, field: string) {
+    public translateField(object: any, field: string, params?: any) {
+        if (params) {
+            for (var key in params) {
+                this.translate.get(params[key]).subscribe((respuesta: string) => {
+                    params[key] = respuesta;
+                });
+            }
+        }
+
         const title = object[field];
-        this.translate.get(title).subscribe((respuesta: string) => {
+        this.translate.get(title, params).subscribe((respuesta: string) => {
             object[field] = respuesta;
         });
     }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/core/users/models/users.interfaces';
 import { TranslateService } from '@ngx-translate/core';
-import { TableComponent } from 'src/app/shared/util/table.component';
+import { TableComponent, PER_PAGE, DELETE_BUTTON_CONTENT } from 'src/app/shared/util/table.component';
 
 @Component({
     selector: 'app-users',
@@ -29,7 +29,16 @@ export class UsersComponent extends TableComponent implements OnInit {
             columnTitle: 'general.actions',
             add: false,
             edit: false,
-            delete: true
+            delete: true,
+            position: 'right'
+        },
+        delete: {
+            confirmDelete: true,
+            deleteButtonContent: DELETE_BUTTON_CONTENT
+        },
+        pager: {
+            display: true,
+            perPage: PER_PAGE
         },
         noDataMessage: 'general.messages.noTableDataMessage'
     };
@@ -43,6 +52,6 @@ export class UsersComponent extends TableComponent implements OnInit {
     ngOnInit() {
         this.translateColumns(this.settings.columns);
         this.translateField(this.settings.actions, 'columnTitle');
-        this.translateField(this.settings, 'noDataMessage');
+        this.translateField(this.settings, 'noDataMessage', {title: 'users.users'});
     }
 }
