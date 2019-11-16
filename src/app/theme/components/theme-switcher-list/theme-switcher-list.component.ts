@@ -12,8 +12,6 @@ export class ThemeSwitcherListComponent implements OnInit {
     @Input()
     popover: NbPopoverDirective;
 
-    theme: NbJSThemeOptions;
-
     themes: NbMenuItem[] = [
         { title: 'theme.default', data: 'default' },
         { title: 'theme.cosmic', data: 'cosmic' },

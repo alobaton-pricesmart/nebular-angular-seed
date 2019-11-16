@@ -13,7 +13,8 @@ export const routes: Routes = [
     },
     {
         path: 'create',
-        component: CreateUserComponent
+        component: CreateUserComponent,
+        canDeactivate: [CanDeactivateGuard]
     },
     {
         path: 'profile',
