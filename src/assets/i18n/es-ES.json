@@ -27,10 +27,11 @@
             "title": "En hora buena!",
             "onCancel": "¿Está seguro de cancelar?",
             "onDeactive": "¿Desea descartar los cambios?",
-            "actualizacionExitosaMensaje": "Se ha actualizado el registro exitosamente",
-            "guardadoExitosoMensaje": "Se ha guardado el registro exitosamente",
-            "eliminadoExitosoMensaje": "Se ha eliminado el registro exitosamente",
-            "noSeEncontraronRegistrosMensaje": "No se encontraron registros para los criterios de búsqueda ingresados"
+            "successfulUpdate": "Se ha actualizado el registro exitosamente",
+            "successfulCreate": "Se ha guardado el registro exitosamente",
+            "successfulDelete": "Se ha eliminado el registro exitosamente",
+            "noSearchDataMessage": "No se encontraron registros para los criterios de búsqueda ingresados",
+            "noTableDataMessage": "No se encontraron registros"
         },
         "errors": {
             "title": "Oh oh!",

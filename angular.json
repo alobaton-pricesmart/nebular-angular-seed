@@ -28,12 +28,14 @@
             "styles": [
               "src/styles.scss",
               "node_modules/datatables.net-dt/css/jquery.dataTables.css",
-              "node_modules/eva-icons/style/eva-icons.css"
+              "node_modules/eva-icons/style/eva-icons.css",
+              "node_modules/chart.js/dist/Chart.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
               "node_modules/datatables.net/js/jquery.dataTables.js",
-              "node_modules/eva-icons/eva.min.js"
+              "node_modules/eva-icons/eva.min.js",
+              "node_modules/chart.js/dist/Chart.min.js"
             ]
           },
           "configurations": {

@@ -16,21 +16,7 @@
                 </div>
             </nb-card-header>
             <nb-card-body>
-                <table datatable class="row-border hover">
-                    <thead>
-                        <tr>
-                            <th>{{ 'users.view.id' | translate }}</th>
-                            <th>{{ 'users.view.name' | translate }}</th>
-                            <th>{{ 'users.view.lastName' | translate }}</th>
-                            <th>{{ 'users.view.email' | translate }}</th>
-                            <th>{{ 'users.view.roles' | translate }}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        </tr>
-                    </tbody>
-                </table>
+                <ng2-smart-table [settings]="settings"></ng2-smart-table>
             </nb-card-body>
         </nb-card>
     </nb-layout-column>

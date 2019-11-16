@@ -8,6 +8,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LangSwitcherListComponent } from './components/lang-switcher-list/lang-switcher-list.component';
 import { ThemeModule } from '../theme/theme.module';
 import { CanDeactivateGuard } from './guards/can-deactive.guard';
+import { HttpErrorHandler } from './helpers/http-error-handler';
+import { RolesService } from './services/roles/roles.service';
 
 const CORE_MODULES = [
   CoreRoutingModule,
@@ -32,7 +34,9 @@ const EXPORTS_CORE_COMPONENTS = [
 ];
 
 const CORE_MODULE_PROVIDERS = [
-  CanDeactivateGuard
+  CanDeactivateGuard,
+  HttpErrorHandler,
+  RolesService
 ];
 
 @NgModule({

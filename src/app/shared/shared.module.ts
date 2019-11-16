@@ -14,6 +14,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { EmptyPipe } from './pipes/empty.pipe';
 import { CustomCurrencyPipe } from './pipes/custom-currency.pipe';
 import { AlertService } from './services/alert/alert.service';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 const IMPORTS_BASE_MODULES = [
   CommonModule,
@@ -43,7 +44,8 @@ const IMPORTS_SHARED_MODULE = [
   ChartModule,
   CookieModule.forRoot(),
   NgMultiSelectDropDownModule.forRoot(),
-  DataTablesModule
+  DataTablesModule,
+  Ng2SmartTableModule
 ];
 
 const EXPORTS_SHARED_MODULE = [
@@ -52,6 +54,7 @@ const EXPORTS_SHARED_MODULE = [
   CookieModule,
   NgMultiSelectDropDownModule,
   DataTablesModule,
+  Ng2SmartTableModule,
   EmptyPipe,
   CustomCurrencyPipe
 ];

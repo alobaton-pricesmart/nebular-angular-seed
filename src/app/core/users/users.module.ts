@@ -37,10 +37,13 @@ const USERS_PROVIDERS = [
     ...USERS_COMPONENTS
   ],
   exports: [
-    ...EXPORTS_USERS_COMPONENTS,
+    ...EXPORTS_USERS_COMPONENTS
   ],
   entryComponents: [
     ...EXPORTS_USERS_COMPONENTS,
+  ],
+  providers: [
+    ...USERS_PROVIDERS
   ]
 })
 export class UsersModule {

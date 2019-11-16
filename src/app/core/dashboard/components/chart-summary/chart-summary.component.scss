@@ -1,15 +1,19 @@
-@import '../../../../theme/styles/themes';
-
-.summary-container {
-  display: flex;
-  flex: 1;
-  justify-content: space-between;
-  padding: 1.5rem 4rem 1rem;
-  margin-bottom: 1rem;
-  border-left: none;
-  border-right: none;
-  background: nb-theme(background-basic-color-2) !important;
-}
-.value {
-  font-size: 2rem;
+@import "../../../../theme/styles/themes";
+@include nb-install-component() {
+  .summary-container {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    padding: 1.5rem 4rem 1rem;
+    margin-bottom: 1rem;
+    border-left: none;
+    border-right: none;
+    background: nb-theme(background-basic-color-2) !important;
+    .value {
+      font-size: 2rem;
+    }
+  }
+  .border-bottom {
+    border-bottom: 1px solid nb-theme(border-basic-color-3) !important;
+  }
 }
