@@ -5,12 +5,8 @@ dist: trusty
 sudo: true
 
 addons:
-  firefox: latest
-
-env:
-  global:
-    - CHROME_BIN=/usr/bin/google-chrome
-    - DISPLAY=:99.0
+  firefox: stable
+  chrome: stable
 
 after_failure:
   - cat /home/travis/build/alobaton/nebular-angular-seed/npm-debug.log
