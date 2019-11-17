@@ -12,9 +12,6 @@ addons:
     packages:
      - google-chrome-stable fluxbox
 
-os:
-  - linux
-
 after_failure:
   - cat /home/travis/build/alobaton/nebular-angular-seed/npm-debug.log
 
