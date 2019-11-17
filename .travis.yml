@@ -1,6 +1,7 @@
 language: node_js
 node_js: stable
 
+dist: trusty
 sudo: false
 
 addons:
@@ -29,9 +30,6 @@ notifications:
 cache:
   directories:
     - "$HOME/.npm"
-
-before_script:
-  - chmod -R 777 ./
 
 script:
   - npm run lint
