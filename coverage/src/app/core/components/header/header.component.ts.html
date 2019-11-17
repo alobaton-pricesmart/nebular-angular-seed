@@ -3,12 +3,12 @@
 <head>
     <title>Code coverage report for src/app/core/components/header/header.component.ts</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="..\..\..\..\..\prettify.css" />
-    <link rel="stylesheet" href="..\..\..\..\..\base.css" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(..\..\..\..\..\sort-arrow-sprite.png);
+            background-image: url(../../../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -16,7 +16,7 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\..\..\..\..\index.html">All files</a> / <a href="index.html">src/app/core/components/header</a> header.component.ts
+      <a href="../../../../../index.html">All files</a> / <a href="index.html">src/app/core/components/header</a> header.component.ts
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
@@ -35,9 +35,9 @@
         <span class='fraction'>3/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80% </span>
+        <span class="strong">82.35% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>12/15</span>
+        <span class='fraction'>14/17</span>
       </div>
     </div>
     <p class="quiet">
@@ -96,7 +96,8 @@
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -125,15 +126,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -147,7 +149,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit } from '@angular/core';
-import { NbMenuItem, NbSidebarService, NbMenuService } from '@nebular/theme';
+import { NbMenuItem, NbSidebarService, NbMenuService, NbThemeService } from '@nebular/theme';
 import { MenuService } from '../../../shared/services/menu/menu.service';
 import { LangService } from '../../../shared/services/lang/lang.service';
 import { LangSwitcherListComponent } from '../lang-switcher-list/lang-switcher-list.component';
@@ -163,27 +165,28 @@ export class HeaderComponent implements OnInit {
   userMenu: NbMenuItem[] = [
     {
       title: 'users.profile',
-      icon: 'fas fa-user',
-      link: '/core/users/profile'
+      link: '/core/users/profile',
+      icon: 'person-outline'
     },
     {
       title: 'auth.logOut.title',
-      icon: 'fas fa-sign-out-alt',
-      link: '/auth/logout'
+      link: '/auth/logout',
+      icon: 'power-outline'
     }
   ];
 &nbsp;
   themeSwitcherListComponent = ThemeSwitcherListComponent;
 &nbsp;
-  lang: string;
   langSwitcherListComponent = LangSwitcherListComponent;
 &nbsp;
-  constructor(private sidebarService: NbSidebarService, private menuService: NbMenuService, private menu: MenuService,
-    private langService: LangService) { }
+  constructor(
+    private sidebarService: NbSidebarService,
+    private menuService: NbMenuService,
+    private menu: MenuService,
+    public langService: LangService,
+    public theme: NbThemeService) { }
 &nbsp;
   ngOnInit() {
-    this.lang = this.langService.get({ translated: true });
-&nbsp;
     this.menu.translateMenuItems(this.userMenu);
   }
 &nbsp;
@@ -202,10 +205,10 @@ export class HeaderComponent implements OnInit {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Jul 07 2019 11:50:59 GMT-0500 (GMT-05:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Nov 16 2019 20:39:57 GMT-0500 (Colombia Standard Time)
 </div>
 </div>
-<script src="..\..\..\..\..\prettify.js"></script>
+<script src="../../../../../prettify.js"></script>
 <script>
 window.onload = function () {
         if (typeof prettyPrint === 'function') {
@@ -213,7 +216,7 @@ window.onload = function () {
         }
 };
 </script>
-<script src="..\..\..\..\..\sorter.js"></script>
-<script src="..\..\..\..\..\block-navigation.js"></script>
+<script src="../../../../../sorter.js"></script>
+<script src="../../../../../block-navigation.js"></script>
 </body>
 </html>
