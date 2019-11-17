@@ -99,7 +99,7 @@ git pull upstream master
 
 ## How to publish to Github Pages?
 
-In order to ublish to Github Pages user:
+In order to publish to Github Pages user:
 
 ```bash
 $ ng build --aot --prod --base-href "https://alobaton.github.io/nebular-angular-seed/"
