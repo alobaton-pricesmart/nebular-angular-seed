@@ -31,7 +31,7 @@ cache:
     - "$HOME/.npm"
 
 before_script:
-  - launchctl unload ~/Library/LaunchAgents/com.github.facebook.watchman.plist
+  - chmod -R 777 ./
 
 script:
   - npm run lint

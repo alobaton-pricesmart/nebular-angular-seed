@@ -30,8 +30,8 @@ export class HeaderComponent implements OnInit {
   langSwitcherListComponent = LangSwitcherListComponent;
 
   constructor(
-    private sidebarService: NbSidebarService, 
-    private menuService: NbMenuService, 
+    private sidebarService: NbSidebarService,
+    private menuService: NbMenuService,
     private menu: MenuService,
     public langService: LangService,
     public theme: NbThemeService) { }
