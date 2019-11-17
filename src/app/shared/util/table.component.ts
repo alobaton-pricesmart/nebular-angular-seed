@@ -20,10 +20,12 @@ export class TableComponent {
 
     public translateField(object: any, field: string, params?: any) {
         if (params) {
-            for (var key in params) {
-                this.translate.get(params[key]).subscribe((respuesta: string) => {
-                    params[key] = respuesta;
-                });
+            for (const key in params) {
+                if (params[key]) {
+                    this.translate.get(params[key]).subscribe((respuesta: string) => {
+                        params[key] = respuesta;
+                    });
+                }
             }
         }
 

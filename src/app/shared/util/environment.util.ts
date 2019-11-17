@@ -1,4 +1,4 @@
-import { environment } from "src/environments/environment";
+import { environment } from 'src/environments/environment';
 
 export class EnvironmentUtil {
 
@@ -16,5 +16,4 @@ export class EnvironmentUtil {
             return nestedObject;
         }
     }
-
 }

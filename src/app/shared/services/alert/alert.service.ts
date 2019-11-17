@@ -36,7 +36,7 @@ export class AlertService {
     }
 
     success(text: string = null, title?: string, options?: any): Promise<any> {
-        const _options = { ...options, ...this.baseOptions }
+        const _options = { ...options, ...this.baseOptions };
         _options.customClass.confirmButton = 'btn btn-success mx-3';
 
         const icon = 'checkmark-circle-2-outline text-success';
@@ -51,7 +51,7 @@ export class AlertService {
     }
 
     info(text: string, title?: string, options?: any): Promise<any> {
-        const _options = { ...options, ...this.baseOptions }
+        const _options = { ...options, ...this.baseOptions };
         _options.customClass.confirmButton = 'btn btn-primary mx-3';
 
         const icon = 'alert-circle-outline text-primary';
@@ -66,7 +66,7 @@ export class AlertService {
     }
 
     warning(text: string, title?: string, options?: any): Promise<any> {
-        const _options = { ...options, ...this.baseOptions }
+        const _options = { ...options, ...this.baseOptions };
         _options.customClass.confirmButton = 'btn btn-warning mx-3';
 
         const icon = 'alert-triangle-outline text-warning';
@@ -81,7 +81,7 @@ export class AlertService {
     }
 
     error(text: string, title?: string, options?: any): Promise<any> {
-        const _options = { ...options, ...this.baseOptions }
+        const _options = { ...options, ...this.baseOptions };
         _options.customClass.confirmButton = 'btn btn-danger mx-3';
 
         const icon = 'checkmark-circle-2-outline text-success';
@@ -96,7 +96,7 @@ export class AlertService {
     }
 
     confirm(text: string, type: SweetAlertType, title?: string, options?: any): Promise<any> {
-        const _options = { ...options, ...this.baseOptions }
+        const _options = { ...options, ...this.baseOptions };
         let icon = 'alert-circle-outline text-primary';
         switch (type) {
             case 'warning':

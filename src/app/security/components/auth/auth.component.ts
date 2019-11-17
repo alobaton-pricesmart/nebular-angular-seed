@@ -17,10 +17,10 @@ export class AuthComponent extends NbAuthComponent implements OnInit {
     langSwitcherListComponent = LangSwitcherListComponent;
 
     constructor(
-        public authService: NbAuthService, 
-        public location: Location, 
+        public authService: NbAuthService,
+        public location: Location,
         public langService: LangService,
-        public theme : NbThemeService) {
+        public theme: NbThemeService) {
         super(authService, location);
     }
 

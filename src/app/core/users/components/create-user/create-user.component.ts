@@ -83,7 +83,7 @@ export class CreateUserComponent extends FormComponent implements OnInit, OnDest
   create() {
     const form: any = this.form.value;
 
-    const roles = []
+    const roles = [];
     const user = {
       id: form.id,
       nickname: form.id,
