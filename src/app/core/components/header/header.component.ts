@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit {
     private menuService: NbMenuService, 
     private menu: MenuService,
     public langService: LangService,
-    private theme: NbThemeService) { }
+    public theme: NbThemeService) { }
 
   ngOnInit() {
     this.menu.translateMenuItems(this.userMenu);
