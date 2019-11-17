@@ -8,19 +8,43 @@
         "close": "Cerrar",
         "save": "Guardar",
         "update": "Actualizar",
+        "cancel": "Cancelar",        
+        "edit": "Editar",
+        "delete": "Eliminar",
+        "actions": "Acciones",
+        "send": "Enviar",
+        "required": "El campo {{campo}} es requerido",
+        "clean": "Limpiar",
+        "search": "Buscar",
+        "add": "Agregar nuevo",
+        "status": "Estado",
+        "observations": "Observaciones",
+        "back": "Atrás",
+        "next": "Siguiente",
+        "si": "Sí",
+        "no": "No",
         "messages": {
-            "title": "En hora buena!"
+            "title": "En hora buena!",
+            "onCancel": "¿Está seguro de cancelar?",
+            "onDeactive": "¿Desea descartar los cambios?",
+            "successfulUpdate": "Se ha actualizado el registro exitosamente",
+            "successfulCreate": "Se ha guardado el registro exitosamente",
+            "successfulDelete": "Se ha eliminado el registro exitosamente",
+            "noSearchDataMessage": "No se encontraron registros para los criterios de búsqueda ingresados",
+            "noTableDataMessage": "No hay {{title}} registrados en el sistema"
         },
         "errors": {
             "title": "Oh oh!",
+            "validateForm": "Existen campos por completar o alguno de los campos es inválido, por favor verificar",
             "serverMomentarilyOutOfService": "El servidor se encuentra momentaneamente fuera de servicio"
         }
     },
     "theme": {
         "themes": "Temas",
         "default": "Claro",
-        "cosmic": "Oscuro",
-        "corporate": "Corporativo"
+        "cosmic": "Cosmico",
+        "corporate": "Corporativo",
+        "dark": "Oscuro"
     },
     "auth": {
         "logOut": {
