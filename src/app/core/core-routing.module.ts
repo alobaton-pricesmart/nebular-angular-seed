@@ -14,11 +14,11 @@ export const routes: Routes = [
             },
             {
                 path: 'dashboard',
-                loadChildren: './dashboard/dashboard.module#DashboardModule'
+                loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
             },
             {
                 path: 'users',
-                loadChildren: './users/users.module#UsersModule'
+                loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
             },
         ]
     }

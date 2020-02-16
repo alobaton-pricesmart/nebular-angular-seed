@@ -47,7 +47,7 @@ const USERS_PROVIDERS = [
   ]
 })
 export class UsersModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<UsersModule> {
     return {
       ngModule: UsersModule,
       providers: [

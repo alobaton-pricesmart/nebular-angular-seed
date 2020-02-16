@@ -34,7 +34,7 @@ const DASHBOARD_COMPONENTS = [
 })
 export class DashboardModule {
 
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<DashboardModule> {
     return {
       ngModule: DashboardModule,
       providers: [

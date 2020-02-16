@@ -8,7 +8,7 @@ const config: ExtraOptions = {
 export const routes: Routes = [
     {
         path: 'core',
-        loadChildren: './core/core.module#CoreModule',
+        loadChildren: () => import('./core/core.module').then(m => m.CoreModule),
     },
     {
         path: '**',

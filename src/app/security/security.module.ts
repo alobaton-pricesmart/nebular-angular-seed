@@ -76,7 +76,7 @@ const SECURITY_COMPONENTS = [
   ]
 })
 export class SecurityModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<SecurityModule> {
     return {
       ngModule: SecurityModule,
       providers: [
