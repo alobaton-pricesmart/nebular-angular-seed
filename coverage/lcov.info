@@ -235,7 +235,7 @@ FNDA:1,(anonymous_3)
 FNDA:3,ProfitChartComponent
 FNDA:3,(anonymous_5)
 FNDA:3,(anonymous_6)
-FNDA:3,(anonymous_7)
+FNDA:2,(anonymous_7)
 DA:9,1
 DA:11,1
 DA:17,3
@@ -245,7 +245,7 @@ DA:21,3
 DA:23,3
 DA:36,3
 DA:68,1
-DA:69,3
+DA:69,2
 DA:72,1
 LF:11
 LH:11
