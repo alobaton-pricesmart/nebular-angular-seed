@@ -17,7 +17,7 @@ export class HttpErrorHandler {
     handleError<T>(serviceName = '', operation = 'operation', result = {} as T) {
 
         return (error: HttpErrorResponse): Observable<T> => {
-            // TODO(soportesolicitudesmantenimiento): Send to external logger.
+            // TODO(alobaton): Send to external logger.
             const message = (error.error instanceof ErrorEvent) ?
                 error.error.message :
                 `server returned code ${error.status} with body "${error.error}"`;

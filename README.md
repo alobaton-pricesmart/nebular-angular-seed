@@ -14,7 +14,7 @@ This project is an Angular CLI seed integrated with [Nebular](https://github.com
 
 Clone the repository:
 ```bash
-$ git clone https://github.com/soportesolicitudesmantenimiento/app-name.git
+$ git clone https://github.com/alobaton/app-name.git
 $ cd app-name/app-name-web
 ```
 

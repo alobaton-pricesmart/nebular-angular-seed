@@ -8,7 +8,7 @@ export class MenuService {
     constructor(private translate: TranslateService) {
     }
 
-    // TODO(soportesolicitudesmantenimiento): Implementar llamado para solicitar menus a la API.
+    // TODO(alobaton): Implementar llamado para solicitar menus a la API.
 
     translateMenuItems(menu: NbMenuItem[]) {
         menu.forEach(item => {
