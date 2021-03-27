@@ -1,36 +1,10 @@
-FROM node:9.11 as builder
-
-WORKDIR /home/node/nebular-angular-seed
-
-# try to make good use of docker cache: don't copy our source files until after install
-# because there is no need to bust the "npm install" cache layer if only the app source files have changed
-COPY angular.json .
-COPY package.json .
-COPY package-lock.json .
-COPY tsconfig.json .
-COPY tslint.json .
-COPY .docker/rm.optional.deps.js ./.docker/rm.optional.deps.js
-
-# before switching to non-root user, change ownership of home
-RUN chown -R node:node .
-USER node
-
-# NB: this is a workaround due to the fact that npm '--no-optional' flag doesn't work (open script below for more)
-RUN node .docker/rm.optional.deps.js
-
-RUN npm install --no-optional
-
-COPY src ./src/
-COPY .docker/rm.optional.types.js ./.docker/rm.optional.types.js
-
-# temporarily switch back to root user to fix ownership of the newly added files
-USER root
-RUN chown -R node:node src .docker/rm.optional.types.js
-USER node
-
-RUN node .docker/rm.optional.types.js
+FROM node:12.16.0 AS builder
+WORKDIR /home/node/solicitudes-mantenimiento-web
+COPY package.json package-lock.json ./
+RUN npm install
+COPY . .
 RUN npm run build.prod
 
 FROM nginx:1.13
-COPY --from=builder /home/node/nebular-angular-seed/dist/prod /var/www/dist/prod
-COPY ./.docker/nginx.conf /etc/nginx/conf.d/nebular-angular-seed.template
+COPY --from=builder /home/node/solicitudes-mantenimiento-web/dist/solicitudes-mantenimiento-web /var/www/dist/solicitudes-mantenimiento-web
+COPY ./.docker/nginx.conf /etc/nginx/conf.d/solicitudes-mantenimiento-web.template
