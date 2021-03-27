@@ -12,6 +12,6 @@ services:
     container_name: nebular-angular-seed-dev
     image: nebular-angular-seed/dev
     volumes:
-      - ./src:/home/node/nebular-angular-seed/src
+      - ./src:/home/node/nebular-angular-seedd/src
     ports:
       - '4200:4200'

@@ -1,4 +1,4 @@
-# app-name-web
+# nebular-angular-seed
 
 [![Build Status](https://travis-ci.org/alobaton/nebular-angular-seed.svg?branch=master)](https://travis-ci.org/alobaton/nebular-angular-seed)
 [![codecov](https://codecov.io/gh/alobaton/nebular-angular-seed/branch/master/graph/badge.svg)](https://codecov.io/gh/alobaton/nebular-angular-seed)
@@ -14,8 +14,8 @@ This project is an Angular CLI seed integrated with [Nebular](https://github.com
 
 Clone the repository:
 ```bash
-$ git clone https://github.com/alobaton/app-name.git
-$ cd app-name/app-name-web
+$ git clone https://github.com/alobaton/nebular-angular-seed.git
+$ cd nebular-angular-seed/nebular-angular-seed
 ```
 
 Install the project's dependencies
