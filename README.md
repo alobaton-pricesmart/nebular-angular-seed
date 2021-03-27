@@ -70,8 +70,8 @@ $ docker-compose -f docker-compose.dev.yml up -d --build
 
 ## How to update?
 ```
-git remote add upstream https://github.com/alobaton/nebular-angular-seed
-git pull upstream master
+$ git remote add upstream https://github.com/alobaton/nebular-angular-seed
+$ git pull upstream master
 ```
 
 ## How to publish to Github Pages?
@@ -80,7 +80,6 @@ In order to publish to Github Pages user:
 
 ```bash
 $ ng build --aot --prod --base-href "https://alobaton.github.io/nebular-angular-seed/"
-
 $ npx ngh --dir=dist/nebular-angular-seed
 ```
 
