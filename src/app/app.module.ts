@@ -1,13 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SecurityModule } from './security/security.module';
+import { HttpErrorHandler } from './helpers/http-error-handler';
+import { JwtInterceptor } from './helpers/jwt-interceptor';
+import { AuthService } from './services/auth/auth.service';
+import localeEs from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localeEs, 'es');
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -41,6 +48,17 @@ const EXPORTS_APP_MODULES = [
   SecurityModule,
 ];
 
+const APP_MODULE_PROVIDERS = [
+  HttpErrorHandler,
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: JwtInterceptor,
+    multi: true,
+  },
+  AuthService,
+  { provide: LOCALE_ID, useValue: 'es' }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +71,7 @@ const EXPORTS_APP_MODULES = [
     ...EXPORTS_BASE_MODULES,
     ...EXPORTS_APP_MODULES,
   ],
-  providers: [],
+  providers: [...APP_MODULE_PROVIDERS],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,6 @@
+const baseUrl = 'http://localhost:8080/';
 export const environment = {
-  production: true
+  production: false,
+  auth: `${baseUrl}auth`,
+  core: `${baseUrl}core`
 };

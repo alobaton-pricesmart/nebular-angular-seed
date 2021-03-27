@@ -1,0 +1,11 @@
+.footer {
+    width: 100%;
+    .footer-container {
+        align-items: center;
+        .svg {
+            fill: var(--text-basic-color);
+            height: 80px;
+            width: 80px;
+        }
+    }
+}

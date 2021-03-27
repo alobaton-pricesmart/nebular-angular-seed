@@ -1,35 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import { NbMenuItem } from '@nebular/theme';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { MenuService } from '../../../shared/services/menu/menu.service';
-
-const SIDEBAR_ITEMS: NbMenuItem[] = [
-  {
-    title: 'dashboard.dashboard',
-    link: '/core/dashboard',
-    icon: 'grid-outline',
-    home: true,
-  },
-  {
-    title: 'users.users',
-    link: '/core/users',
-    icon: 'person-outline'
-  },
-];
+import { MenuItem } from '../../models/menu-item';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: 'sidebar.component.html',
   styleUrls: ['sidebar.component.scss']
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent implements OnInit, OnDestroy {
 
-  sidebarMenu = SIDEBAR_ITEMS;
+  @Input()
+  items: MenuItem[] = [];
+  subs: Subscription[] = [];
 
-  constructor(private menu: MenuService) {
+  constructor(
+    private readonly menuService: MenuService) {
   }
 
   ngOnInit() {
-    this.menu.translateMenuItems(this.sidebarMenu);
+    this.menuService.translateMenuItems(this.items);
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach(sub => sub.unsubscribe());
   }
 
 }

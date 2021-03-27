@@ -1,0 +1,181 @@
+<nb-layout>
+    <nb-layout-column>
+        <nb-card>
+            <nb-card-header>
+                <div class="row show-grid">
+                    <div class="col-md-10">
+                        <h2 *ngIf="!isEdit">
+                            {{ 'management.users.create.title' | translate }}
+                        </h2>
+                        <h2 *ngIf="isEdit">
+                            {{ 'management.users.update.title' | translate }}
+                        </h2>
+                    </div>
+                </div>
+            </nb-card-header>
+            <nb-card-body>
+                <form class="form-horizontal" (ngSubmit)="onSubmit()" [formGroup]="form"
+                    *ngIf="isForm | async as isForm;" autocomplete="false" autocomplete="off" novalidate role="form">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group my-2">
+                                <label for="name" class="label">
+                                    {{ 'management.users.view.name' | translate }}
+                                </label>
+                                <input nbInput fullWidth type="text" class="form-control" fieldSize="medium" id="name"
+                                    placeholder="{{ 'management.users.view.name' | translate }}" formControlName="name"
+                                    [status]="getStatus(form, 'name')">
+                                <app-input-error [controlName]="'name'" [errorKeys]="['required']">
+                                    {{ 'auth.register.errors.requiredName' | translate }}
+                                </app-input-error>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group my-2">
+                                <label for="lastName" class="label">
+                                    {{ 'management.users.view.lastName' | translate }}
+                                </label>
+                                <input nbInput fullWidth type="text" class="form-control" fieldSize="medium"
+                                    id="lastName" placeholder="{{ 'management.users.view.lastName' | translate }}"
+                                    formControlName="lastName" [status]="getStatus(form, 'lastName')">
+                                <app-input-error [controlName]="'lastName'" [errorKeys]="['required']">
+                                    {{ 'auth.register.errors.requiredLastName' | translate }}
+                                </app-input-error>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group my-2">
+                                <label for="email" class="label">
+                                    {{ 'management.users.view.email' | translate }}
+                                </label>
+                                <input nbInput fullWidth type="text" class="form-control" fieldSize="medium" id="email"
+                                    placeholder="{{ 'management.users.view.email' | translate }}"
+                                    formControlName="email" [status]="getStatus(form, 'email')"
+                                    autocomplete="new-email">
+                                <app-input-error [controlName]="'email'" [errorKeys]="['required']">
+                                    {{ 'auth.logIn.errors.requiredEmail' | translate }}
+                                </app-input-error>
+                                <app-input-error [controlName]="'email'" [errorKeys]="['email']">
+                                    {{ 'auth.logIn.errors.invalidEmail' | translate }}
+                                </app-input-error>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group my-2">
+                                <label for="emailConfirm" class="label">
+                                    {{ 'management.users.view.emailConfirm' | translate }}
+                                </label>
+                                <input nbInput fullWidth type="email" class="form-control" fieldSize="medium"
+                                    id="emailConfirm"
+                                    placeholder="{{ 'management.users.view.emailConfirm' | translate }}"
+                                    formControlName="emailConfirm" [status]="getStatus(form, 'emailConfirm')">
+                                <app-input-error [controlName]="'emailConfirm'" [errorKeys]="['required']">
+                                    {{ 'management.users.create.errors.requiredEmailConfirm' | translate }}
+                                </app-input-error>
+                                <app-input-error [controlName]="'emailConfirm'" [errorKeys]="['email']">
+                                    {{ 'auth.logIn.errors.invalidEmail' | translate }}
+                                </app-input-error>
+                                <p class="text-danger mt-2"
+                                    *ngIf="form.controls.email.value != form.controls.emailConfirm.value && !form.controls.emailConfirm.errors?.required">
+                                    {{ 'management.users.create.errors.notMatchEmailConfirm' | translate }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                            <div class="form-group my-2">
+                                <p class="sub-title">
+                                    {{ 'management.users.create.messages.nickname' | translate }}
+                                </p>
+                                <label for="emailConfirm" class="label">
+                                    {{ 'management.users.view.nickname' | translate }}
+                                </label>
+                                <p class="fs-6">
+                                    {{ getNickname(form.controls.email) }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group my-2">
+                                <label for="password" class="label">
+                                    {{ 'management.users.view.password' | translate }}
+                                </label>
+                                <input nbInput fullWidth type="password" class="form-control" fieldSize="medium"
+                                    id="password" placeholder="{{ 'management.users.view.password' | translate }}"
+                                    formControlName="password" [status]="getStatus(form, 'password')"
+                                    autocomplete="new-password">
+                                <app-input-error [controlName]="'password'" [errorKeys]="['required']">
+                                    {{ 'auth.logIn.errors.requiredPassword' | translate }}
+                                </app-input-error>
+                                <app-input-error [controlName]="'password'" [errorKeys]="['minlength', 'maxlength']">
+                                    {{ 'auth.logIn.errors.invalidPassword' | translate:
+                                    {
+                                    minLength: getConfigValue('forms.validation.password.minLength'),
+                                    maxLength: getConfigValue('forms.validation.password.maxLength')
+                                    } }}
+                                </app-input-error>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group my-2">
+                                <label for="passwordConfirm" class="label">
+                                    {{ 'management.users.view.passwordConfirm' | translate }}
+                                </label>
+                                <input nbInput fullWidth type="password" class="form-control" fieldSize="medium"
+                                    id="passwordConfirm"
+                                    placeholder="{{ 'management.users.view.passwordConfirm' | translate }}"
+                                    formControlName="passwordConfirm" [status]="getStatus(form, 'passwordConfirm')">
+                                <app-input-error [controlName]="'passwordConfirm'" [errorKeys]="['required']">
+                                    {{ 'auth.register.errors.requiredPasswordConfirm' | translate }}
+                                </app-input-error>
+                                <p class="text-danger mt-2" *ngIf="form.controls.password.value != form.controls.passwordConfirm.value && 
+                                !form.controls.passwordConfirm.errors?.required">
+                                    {{ 'auth.register.errors.notMatchPasswordConfirm' | translate }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group my-2">
+                                <label for=" inputRoles" class="label">
+                                    {{ 'management.users.view.roles' | translate }}
+                                </label>
+                                <nb-select multiple placeholder="{{ 'management.users.view.roles' | translate }}"
+                                    formControlName="roles" fullWidth fieldSize="medium"
+                                    [status]="getStatus(form, 'roles')">
+                                    <nb-option [value]="role.value" *ngFor="let role of roles">
+                                        {{ role.title }}
+                                    </nb-option>
+                                </nb-select>
+                                <app-input-error [controlName]="'roles'" [errorKeys]="['required']">
+                                    {{ 'management.users.create.errors.requiredRoles' | translate }}
+                                </app-input-error>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group my-2">
+                                <label for="phone" class="label">
+                                    {{ 'setting.contractors.view.phone' | translate }}
+                                </label>
+                                <input nbInput fullWidth type="text" class="form-control" fieldSize="medium" id="phone"
+                                    placeholder="{{ 'setting.contractors.view.phone' | translate }}"
+                                    formControlName="phone" [status]="getStatus(form, 'phone')">
+                                <app-input-error [controlName]="'phone'" [errorKeys]="['required']">
+                                    {{ 'setting.contractors.create.errors.requiredPhone' | translate }}
+                                </app-input-error>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-end">
+                            <button nbButton status="primary" type="submit" [disabled]="form.invalid">
+                                <span *ngIf="!isEdit">
+                                    {{ 'general.create' | translate }}
+                                </span>
+                                <span *ngIf="isEdit">
+                                    {{ 'general.edit' | translate }}
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </nb-card-body>
+        </nb-card>
+    </nb-layout-column>
+</nb-layout>

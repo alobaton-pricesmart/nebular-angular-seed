@@ -1,13 +1,22 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import {
+  Router,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
+  CanLoad,
+  CanActivate,
+  Route,
+  UrlSegment
+} from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { NbAuthService } from '@nebular/auth';
 import { tap } from 'rxjs/operators';
 
-@Injectable()
-export class AuthGuard implements CanActivate {
 
-  constructor(private authService: NbAuthService, private router: Router) {
+@Injectable()
+export class AuthGuard implements CanActivate, CanLoad {
+
+  constructor(private nbAuthService: NbAuthService, private router: Router) {
   }
   /**
    * True if user is authenticated, false otherwise.
@@ -17,7 +26,17 @@ export class AuthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    return this.authService.isAuthenticated().pipe(
+    return this.nbAuthService.isAuthenticated().pipe(
+      tap(authenticated => {
+        if (!authenticated) {
+          this.router.navigate(['auth/login']);
+        }
+      }),
+    );
+  }
+
+  canLoad(route: Route, segments: UrlSegment[] = []): Observable<boolean> | Promise<boolean> | boolean {
+    return this.nbAuthService.isAuthenticated().pipe(
       tap(authenticated => {
         if (!authenticated) {
           this.router.navigate(['auth/login']);

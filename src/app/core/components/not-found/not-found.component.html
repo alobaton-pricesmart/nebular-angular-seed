@@ -2,16 +2,22 @@
     <div class="col-md-12">
         <nb-card>
             <nb-card-body>
-                <div class="flex-centered col-xl-4 col-lg-6 col-md-8 col-sm-12">
-                    <h2 class="title">
-                        {{ '404.title' | translate }}
-                    </h2>
-                    <small class="sub-title">
-                        {{ '404.subTitle' | translate }}
-                    </small>
-                    <button nbButton (click)="goToHome()" type="button" class="btn-block">
-                        {{ 'general.home' | translate }}
-                    </button>
+                <div class="container row">
+                    <div class="md-12 d-flex justify-content-center">
+                        <h2 class="title">
+                            {{ '404.title' | translate }}
+                        </h2>
+                    </div>
+                    <div class="md-12 d-flex justify-content-center">
+                        <small class="sub-title">
+                            {{ '404.subTitle' | translate }}
+                        </small>
+                    </div>
+                    <div class="md-12 d-flex justify-content-center">
+                        <button nbButton status="primary" (click)="goToHome()">
+                            {{ 'general.home' | translate }}
+                        </button>
+                    </div>
                 </div>
             </nb-card-body>
         </nb-card>

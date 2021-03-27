@@ -1,4 +1,16 @@
- .nb-theme-corporate nb-card-header {
-  background: #111218;
-  color: #f7fafb;
+nb-card-header {
+    background: #f03636;
+    color: #ffffff;
+    nb-icon {
+        color: #ffffff;
+    }
+    .border-right {
+        border-right: 1px solid #ffffff !important;
+    }
+    .svg {
+        fill: #ffffff !important;
+        height: 100%;
+        width: 50px;
+        margin-left: 15px;
+    }
 }

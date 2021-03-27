@@ -1,6 +1,7 @@
 import { NgModule, ModuleWithProviders, Optional, SkipSelf } from '@angular/core';
 import {
   NbAuthModule,
+  NbOAuth2AuthStrategy,
   NbPasswordAuthStrategy,
 } from '@nebular/auth';
 import { NbSecurityModule, NbRoleProvider } from '@nebular/security';
@@ -11,9 +12,10 @@ import { SharedModule } from '../shared/shared.module';
 import { LoginComponent } from './components/login/login.component';
 import { ThemeModule } from '../theme/theme.module';
 import {
-  EMAIL_PASSWORD_STRATEGY,
-  EMAIL_PASSWORD_FORMS,
-  EMAIL_PASSWORD_ACCESS_CONTROL
+  OAUTH_STRATEGY,
+  SECURITY_FORMS,
+  EMAIL_PASSWORD_ACCESS_CONTROL,
+  PASSWORD_STRATEGY
 } from './security.config';
 import { RequestPassworcComponent } from './components/request-password/request-password.component';
 import { AuthComponent } from './components/auth/auth.component';
@@ -39,16 +41,18 @@ const EXPORTS_NB_AUTH_MODULES = [
 const NB_SECURITY_PROVIDERS = [
   NbAuthModule.forRoot({
     strategies: [
-      NbPasswordAuthStrategy.setup(EMAIL_PASSWORD_STRATEGY),
+      NbOAuth2AuthStrategy.setup(OAUTH_STRATEGY),
+      NbPasswordAuthStrategy.setup(PASSWORD_STRATEGY),
     ],
-    forms: EMAIL_PASSWORD_FORMS,
+    forms: SECURITY_FORMS,
+
   }).providers,
   NbSecurityModule.forRoot({
     accessControl: EMAIL_PASSWORD_ACCESS_CONTROL,
   }).providers,
   AuthGuard,
   { provide: NbRoleProvider, useClass: RoleService },
-  UserService,
+  UserService
 ];
 
 const SECURITY_COMPONENTS = [

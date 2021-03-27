@@ -4,16 +4,18 @@
             <nb-card-header>
                 <div class="row show-grid">
                     <div class="col-md-8">
-                        <a href="#" (click)="back()" class="btn btn-link" aria-label="Back">
-                            <nb-icon icon="arrow-back-outline"></nb-icon>
-                        </a>
+                        <div class="d-flex align-items-center justify-content-start">
+                            <a href="#" (click)="back()" class="btn btn-link border-right pr-3 mr-3" aria-label="Back">
+                                <nb-icon icon="arrow-back-outline"></nb-icon>
+                            </a>
+                            <a class="logo">
+                                <div class="svg" [inlineSVG]="'assets/svg/univalle_blanco.svg'"></div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="col-md-4 d-flex justify-content-end">
+                    <div class="col-md-4 d-flex align-items-center justify-content-end">
                         <app-switcher [icon]="['color-palette-outline']" [title]="'theme.' + theme.currentTheme "
                             [switcherListComponent]="themeSwitcherListComponent" class="mr-2"></app-switcher>
-                        <app-switcher [icon]="['globe-2-outline']" [title]="langService.get({ translated: true })"
-                            [switcherListComponent]="langSwitcherListComponent" class="mr-3">
-                        </app-switcher>
                     </div>
                 </div>
             </nb-card-header>

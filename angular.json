@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "nebular-angular-seed": {
+    "app-name-web": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -18,7 +18,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "aot": true,
-            "outputPath": "dist/nebular-angular-seed",
+            "outputPath": "dist/app-name-web",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -45,16 +45,11 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
-                },
-                {
-                  "replace": "src/index.html",
-                  "with": "src/index.prod.html"
                 }
               ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -77,18 +72,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "nebular-angular-seed:build"
+            "browserTarget": "app-name-web:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "nebular-angular-seed:build:production"
+              "browserTarget": "app-name-web:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "nebular-angular-seed:build"
+            "browserTarget": "app-name-web:build"
           }
         },
         "test": {
@@ -122,7 +117,7 @@
         }
       }
     },
-    "nebular-angular-seed-e2e": {
+    "app-name-web-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -131,11 +126,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "nebular-angular-seed:serve"
+            "devServerTarget": "app-name-web:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "nebular-angular-seed:serve:production"
+              "devServerTarget": "app-name-web:serve:production"
             }
           }
         },
@@ -151,7 +146,7 @@
       }
     }
   },
-  "defaultProject": "nebular-angular-seed",
+  "defaultProject": "app-name-web",
   "cli": {
     "analytics": false
   }

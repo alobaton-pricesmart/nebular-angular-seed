@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import "../../../../node_modules/eva-icons/style/scss/eva-icons.scss";
 /* NOTE: use full path for scss and css imports */
 @import "./themes";
 // Framework component styles which will use our themes
@@ -7,10 +7,9 @@
 @import "../../../../node_modules/@nebular/bootstrap/styles/globals";
 // @nebular prebuilt styles
 @import "../../../../node_modules/@nebular/theme/styles/prebuilt/default.scss";
-@import "../../../../node_modules/@nebular/theme/styles/prebuilt/corporate.scss";
-@import "../../../../node_modules/@nebular/theme/styles/prebuilt/cosmic.scss";
+@import "../../../../node_modules/@nebular/theme/styles/prebuilt/dark.scss";
 // @nebular auth styles
-@import "../../../../node_modules/@nebular/auth/styles/all";
+@import "../../../../node_modules/@nebular/auth/styles/globals";
 // Global app font size
 @import "./font-size.scss";
 @import "./bootstrap-rtl.scss";

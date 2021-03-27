@@ -1,4 +1,4 @@
-@import '../../styles/themes';
+@import "../../styles/themes";
 .themes-switcher-list {
   padding: 0;
   margin: 0;
@@ -19,4 +19,14 @@
       cursor: pointer;
     }
   }
+}
+a,
+a:hover {
+  text-decoration: none;
+}
+a {
+  color: nb-theme(text-basic-color);
+}
+a:hover {
+  color: nb-theme(color-primary-500);
 }

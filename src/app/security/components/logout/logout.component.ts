@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NbLogoutComponent } from '@nebular/auth';
+import { AUTH_APP_TOKEN } from '../../security.config';
 
 @Component({
     selector: 'app-logout',
@@ -7,5 +8,9 @@ import { NbLogoutComponent } from '@nebular/auth';
     styleUrls: ['logout.component.scss']
 })
 export class LogoutComponent extends NbLogoutComponent {
+    ngOnInit() {
+        super.ngOnInit();
+        localStorage.removeItem(AUTH_APP_TOKEN);
+    }
 
 }

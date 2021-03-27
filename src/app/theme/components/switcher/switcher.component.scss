@@ -1,7 +1,19 @@
 @import "../../../theme/styles/themes";
 @include nb-install-component() {
   .border {
-    border: 1px solid nb-theme(border-basic-color-3) !important;
+    border: 1px solid #ffffff !important;
+  }
+  .border-right {
+    border-right: 1px solid #ffffff !important;
+  }
+  .border-left {
+    border-left: 1px solid #ffffff !important;
+  }
+  .border-top {
+    border-top: 1px solid #ffffff !important;
+  }
+  .border-bottom {
+    border-bottom: 1px solid #ffffff !important;
   }
   .switcher {
     display: flex;

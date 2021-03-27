@@ -1,6 +1,5 @@
 // Custom global styles here...
 // Use this way only if there are no existing nebular theme variables!
-// TODO(alobaton): /deep/, ::ng-deep and >>> will be deprecated!
 .border {
   border: 1px solid nb-theme(border-basic-color-3) !important;
 }
@@ -19,6 +18,9 @@
 .text-danger {
   color: nb-theme(color-danger-500) !important;
 }
+h2#swal2-title {
+  color: nb-theme(text-basic-color) !important;
+}
 .swal2-popup.swal2-modal.swal2-show {
   background: nb-theme(background-basic-color-1) !important;
 }
@@ -27,4 +29,69 @@
 }
 .text {
   color: nb-theme(text-basic-color) !important;
+}
+nb-sidebar .scrollable {
+  padding: 0px !important;
+}
+.header {
+  nb-actions.size-medium {
+    nb-user.size-medium.shape-round.context-menu-host {
+      .user-container {
+        .user-picture.initials,
+        .user-name,
+        .user-title {
+          color: #ffffff;
+        }
+        .user-picture.initials {
+          border: 1px solid #ffffff !important;
+        }
+      }
+    }
+  }
+}
+.label {
+  margin-bottom: 0.5rem;
+}
+.table-container {
+  height: auto;
+  overflow-x: auto;
+  width: auto;
+  border-left: 1px solid var(--border-basic-color-3) !important;
+  border-right: 1px solid var(--border-basic-color-3) !important;
+  border-bottom: 1px solid var(--border-basic-color-3) !important;
+  border-top: none !important;
+  .table {
+    margin-bottom: 0px;
+    th {
+      background: nb-theme(background-basic-color-1) !important;
+      border: 1px solid nb-theme(border-basic-color-3) !important;
+      position: sticky;
+      top: 0;
+    }
+    th:first-of-type,
+    td:first-of-type {
+      position: sticky;
+      left: 0;
+    }
+    th:first-of-type {
+      background: nb-theme(background-basic-color-1) !important;
+      border: 1px solid nb-theme(border-basic-color-3) !important;
+      border-left: none !important;
+      // box-shadow: 4px 0px 15px -5px rgba(0, 0, 0, 0.6);
+      z-index: 2;
+    }
+    td:first-of-type {
+      background: nb-theme(background-basic-color-1) !important;
+      border: 1px solid nb-theme(border-basic-color-3) !important;
+      border-left: none !important;
+      // box-shadow: 4px 0px 15px -5px rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+  }
+  ng2-smart-table-pager.ng-star-inserted {
+    position: sticky;
+    left: 0;
+    display: flex !important;
+    justify-content: center !important;
+  }
 }

@@ -5,19 +5,16 @@
                 <nb-icon icon="menu-outline"></nb-icon>
             </a>
             <a class="logo" (click)="goToHome()">
-                Logo
+                <div class="svg" [inlineSVG]="'assets/svg/univalle_blanco.svg'"></div>
             </a>
         </div>
-        <app-switcher [icon]="['color-palette-outline']" [title]="'theme.' + theme.currentTheme "
-            [switcherListComponent]="themeSwitcherListComponent"></app-switcher>
     </div>
     <div class="header-container">
-        <app-switcher [icon]="['globe-2-outline']" [title]="langService.get({ translated: true })" [switcherListComponent]="langSwitcherListComponent"
-            class="mr-3">
-        </app-switcher>
-        <nb-actions size="medium">
+        <app-switcher [icon]="['color-palette-outline']" [title]="'theme.' + theme.currentTheme "
+            [switcherListComponent]="themeSwitcherListComponent"></app-switcher>
+        <nb-actions *ngIf="user !== null && user !== undefined" size="medium">
             <nb-action>
-                <nb-user name="Jonh Doe" title="Engineer" [nbContextMenu]="userMenu"></nb-user>
+                <nb-user [name]="userFullName" [title]="user.nickname" [nbContextMenu]="userMenu"></nb-user>
             </nb-action>
         </nb-actions>
     </div>

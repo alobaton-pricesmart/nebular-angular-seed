@@ -1,0 +1,36 @@
+<nb-layout>
+    <nb-layout-column>
+        <nb-card>
+            <nb-card-header>
+                <div class="row show-grid">
+                    <div class="col-md-10">
+                        <h2>
+                            {{ 'management.users.users' | translate }}
+                        </h2>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="d-flex align-items-center justify-content-end">
+                            <button nbButton status="primary" class="float-right btn"
+                                [routerLink]="['/core/management/users/user']">
+                                {{ 'management.users.create.title' | translate }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nb-card-header>
+            <nb-card-body>
+                <nb-select *ngIf="columns" class="my-3" multiple placeholder="{{ 'general.select' | translate}}"
+                    [(ngModel)]="selectedColumns">
+                    <nb-option [value]="column.field" *ngFor="let column of columns"
+                        (click)="setUpHideColumnOnSettings(column)">
+                        {{ column.title | translate }}
+                    </nb-option>
+                </nb-select>
+                <div class="table-container">
+                    <ng2-smart-table *ngIf="settings" [settings]="settings" [source]="source" (edit)="onEdit($event)"
+                        (delete)="onDelete($event)"></ng2-smart-table>
+                </div>
+            </nb-card-body>
+        </nb-card>
+    </nb-layout-column>
+</nb-layout>

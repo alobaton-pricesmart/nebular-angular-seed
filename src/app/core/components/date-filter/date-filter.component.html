@@ -1,0 +1,6 @@
+<div class="d-flex justify-content-center">
+    <input nbInput placeholder="{{ 'general.select' | translate }}" [nbDatepicker]="rangepicker" [formControl]="formControl">
+    <nb-rangepicker #rangepicker size="small"></nb-rangepicker>
+    <button nbButton status="primary" class="ms-2" (click)="onClean($event)" size="tiny">{{ 'general.clean' | translate
+        }}</button>
+</div>

@@ -1,27 +1,65 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  .header-container {
+@import "../../../theme/styles/themes";
+@include nb-install-component() {
+  .header {
     display: flex;
-    align-items: center;
-    width: auto;
-    .logo-containter {
+    justify-content: space-between;
+    width: 100%;
+    color: #ffffff;
+    .header-container {
       display: flex;
       align-items: center;
-      .navigation {
-        font-size: 1.5rem;
-        text-decoration: none;
-        padding: 10px;
-        i {
-          display: block;
+      width: auto;
+      .logo-containter {
+        display: flex;
+        align-items: center;
+        .navigation {
+          font-size: 1.5rem;
+          text-decoration: none;
+          padding: 10px;
+          i {
+            display: block;
+          }
+        }
+        .logo {
+          padding: 0 nb-theme(padding);
+          font-size: 1.75rem;
+          white-space: nowrap;
+          .svg {
+            fill: #ffffff !important;
+            height: 100%;
+            width: 50px;
+            margin-left: 15px;
+          }
         }
       }
-      .logo {
-        padding: 0 nb-theme(padding);
-        font-size: 1.75rem;
-        white-space: nowrap;
+      nb-actions {
+        nb-action {
+          border: none;
+          a {
+            cursor: pointer;
+            text-decoration: none;
+            color: #ffffff;
+            display: flex;
+            padding: 0.925rem 1.25rem;
+            align-items: center;
+            span {
+              margin: 0 1.2rem;
+              font-weight: normal;
+              font-size: var(--text-subtitle-font-size);
+            }
+          }
+          a:hover {
+            background-color: var(--button-filled-primary-hover-background-color);
+            border-color: var(--button-filled-primary-hover-border-color);
+          }
+        }
       }
     }
+  }
+  nb-icon {
+    color: #ffffff;
+  }
+  .border-right {
+    border-right: 1px solid #ffffff !important;
   }
 }

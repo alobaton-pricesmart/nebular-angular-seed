@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import Swal, { SweetAlertType, SweetAlertOptions } from 'sweetalert2';
+import Swal, { SweetAlertOptions } from 'sweetalert2';
 
 @Injectable()
 export class AlertService {
@@ -18,7 +18,7 @@ export class AlertService {
     private alert(
         text: string,
         title: string,
-        type: SweetAlertType,
+        type: string,
         swalConfig: any,
         fireOptions?: any
     ) {
@@ -26,7 +26,7 @@ export class AlertService {
             ...{
                 title: title ? title : null,
                 text: text ? text : null,
-                type: null,
+                type: type,
                 allowOutsideClick: false,
                 allowEscapeKey: false
             }, ...fireOptions
@@ -84,7 +84,7 @@ export class AlertService {
         const _options = { ...options, ...this.baseOptions };
         _options.customClass.confirmButton = 'btn btn-danger mx-3';
 
-        const icon = 'checkmark-circle-2-outline text-success';
+        const icon = 'alert-triangle-outline text-danger';
         _options.html = `<div class="d-flex flex-column">
         <div class="my-2">
         <i class="eva eva-${icon} bg-light p-3 rounded-circle"></i>
@@ -95,7 +95,7 @@ export class AlertService {
         return this.alert(text, title, 'error', swalConfig);
     }
 
-    confirm(text: string, type: SweetAlertType, title?: string, options?: any): Promise<any> {
+    confirm(text: string, type: string, title?: string, options?: any): Promise<any> {
         const _options = { ...options, ...this.baseOptions };
         let icon = 'alert-circle-outline text-primary';
         switch (type) {

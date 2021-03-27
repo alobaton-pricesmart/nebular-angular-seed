@@ -1,0 +1,5 @@
+<nb-select placeholder="{{ 'general.select' | translate }}" multiple [formControl]="formControl" size="small" [fullWidth]="true">
+    <nb-option *ngFor="let option of options" [value]="option.value" (click)="onClick(option)">
+        {{ option.title | translate }}
+    </nb-option>
+</nb-select>

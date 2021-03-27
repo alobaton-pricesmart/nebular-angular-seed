@@ -5,11 +5,13 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CoreComponent } from './components/core/core.component';
 import { CoreRoutingModule } from './core-routing.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { LangSwitcherListComponent } from './components/lang-switcher-list/lang-switcher-list.component';
 import { ThemeModule } from '../theme/theme.module';
 import { CanDeactivateGuard } from './guards/can-deactive.guard';
-import { HttpErrorHandler } from './helpers/http-error-handler';
 import { RolesService } from './services/roles/roles.service';
+import { MultiselectFilterComponent } from './components/multiselect-filter/multiselect-filter.component';
+import { DateFilterComponent } from './components/date-filter/date-filter.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { UsersService } from './services/users/users.service';
 
 const CORE_MODULES = [
   CoreRoutingModule,
@@ -22,7 +24,9 @@ const CORE_COMPONENTS = [
   HeaderComponent,
   SidebarComponent,
   NotFoundComponent,
-  LangSwitcherListComponent,
+  MultiselectFilterComponent,
+  DateFilterComponent,
+  FooterComponent
 ];
 
 const EXPORTS_CORE_COMPONENTS = [
@@ -30,13 +34,15 @@ const EXPORTS_CORE_COMPONENTS = [
   HeaderComponent,
   SidebarComponent,
   NotFoundComponent,
-  LangSwitcherListComponent,
+  MultiselectFilterComponent,
+  DateFilterComponent,
+  FooterComponent
 ];
 
 const CORE_MODULE_PROVIDERS = [
   CanDeactivateGuard,
-  HttpErrorHandler,
-  RolesService
+  RolesService,
+  UsersService
 ];
 
 @NgModule({

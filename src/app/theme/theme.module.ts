@@ -18,10 +18,10 @@ import {
   NbDatepickerModule,
   NbSpinnerModule,
   NbSelectModule,
+  NbAutocompleteModule
 } from '@nebular/theme';
 import { DEFAULT_THEME } from './styles/theme-default';
-import { COSMIC_THEME } from './styles/theme-cosmic';
-import { CORPORATE_THEME } from './styles/theme-corporate';
+import { DARK_THEME } from './styles/theme-dark';
 import { ThemeSwitcherListComponent } from './components/theme-switcher-list/theme-switcher-list.component';
 import { SharedModule } from '../shared/shared.module';
 import { SwitcherComponent } from './components/switcher/switcher.component';
@@ -36,7 +36,7 @@ const IMPORTS_NB_MODULES = [
     {
       name: 'default',
     },
-    [DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME]
+    [DEFAULT_THEME, DARK_THEME]
   ),
   NbLayoutModule,
   NbSidebarModule,
@@ -55,6 +55,7 @@ const IMPORTS_NB_MODULES = [
   NbDatepickerModule.forRoot(),
   NbSpinnerModule,
   NbSelectModule,
+  NbAutocompleteModule,
   NbEvaIconsModule,
   NbIconModule
 ];
@@ -78,6 +79,7 @@ const EXPORTS_NB_MODULES = [
   NbDatepickerModule,
   NbSpinnerModule,
   NbSelectModule,
+  NbAutocompleteModule,
   NbEvaIconsModule,
   NbIconModule
 ];
@@ -91,7 +93,7 @@ const NB_THEME_PROVIDERS = [
     {
       name: 'default',
     },
-    [DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME]
+    [DEFAULT_THEME, DARK_THEME]
   ).providers,
   ...NbSidebarModule.forRoot().providers,
   ...NbMenuModule.forRoot().providers,
@@ -127,8 +129,8 @@ const THEME_COMPONENTS = [
   ]
 })
 export class ThemeModule {
-  static forRoot(): ModuleWithProviders {
-    return <ModuleWithProviders>{
+  static forRoot(): ModuleWithProviders<ThemeModule> {
+    return <ModuleWithProviders<ThemeModule>>{
       ngModule: ThemeModule,
       providers: [...NB_THEME_PROVIDERS],
     };

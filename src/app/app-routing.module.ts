@@ -8,7 +8,16 @@ const config: ExtraOptions = {
 export const routes: Routes = [
     {
         path: 'core',
-        loadChildren: () => import('./core/core.module').then(m => m.CoreModule),
+        loadChildren: () => import('./core/core.module').then(m => m.CoreModule)        
+    },
+    {
+        path: 'auth',
+        loadChildren: () => import('./security/security.module').then(m => m.SecurityModule)
+    },
+    {
+        path: '',
+        redirectTo: 'core',
+        pathMatch: 'full'
     },
     {
         path: '**',

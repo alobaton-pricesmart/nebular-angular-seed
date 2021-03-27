@@ -8,11 +8,11 @@ import { NbMenuService } from '@nebular/theme';
 })
 export class NotFoundComponent {
 
-    constructor(private menuService: NbMenuService) {
+    constructor(private nbMenuService: NbMenuService) {
     }
 
     goToHome() {
-        this.menuService.navigateHome();
+        this.nbMenuService.navigateHome('sidebarMenu');
     }
 
 }

@@ -1,5 +1,5 @@
 {
-    "title": "nebular-angular-seed",
+    "title": "app-name-web",
     "general": {
         "general": "General",
         "home": "Inicio",
@@ -8,7 +8,7 @@
         "close": "Cerrar",
         "save": "Guardar",
         "update": "Actualizar",
-        "cancel": "Cancelar",        
+        "cancel": "Cancelar",
         "edit": "Editar",
         "delete": "Eliminar",
         "actions": "Acciones",
@@ -23,6 +23,13 @@
         "next": "Siguiente",
         "si": "Sí",
         "no": "No",
+        "select": "Selecciona",
+        "selectAll": "Seleccionar todo(a)s",
+        "createdDate": "Fecha de Creación",
+        "startDate": "Fecha inicio",
+        "endDate": "Fecha fin",
+        "startDateAndEndDate": "Fecha inicio y fecha fin",
+        "description": "Descripción",
         "messages": {
             "title": "En hora buena!",
             "onCancel": "¿Está seguro de cancelar?",
@@ -31,19 +38,21 @@
             "successfulCreate": "Se ha guardado el registro exitosamente",
             "successfulDelete": "Se ha eliminado el registro exitosamente",
             "noSearchDataMessage": "No se encontraron registros para los criterios de búsqueda ingresados",
-            "noTableDataMessage": "No hay {{title}} registrados en el sistema"
+            "noTableDataMessage": "No hay {{title}} para los criterios de búsqueda ingresados",
+            "onSuccessfulCreate": "¿Desea crear otro registro de {{title}}?",
+            "onDelete": "¿Esta seguro de eliminar el registro de {{title}} {{id}}?"
         },
         "errors": {
             "title": "Oh oh!",
             "validateForm": "Existen campos por completar o alguno de los campos es inválido, por favor verificar",
-            "serverMomentarilyOutOfService": "El servidor se encuentra momentaneamente fuera de servicio"
+            "serverMomentarilyOutOfService": "El servidor se encuentra momentaneamente fuera de servicio",
+            "sesionExpired": "Su sesión ha expirado",
+            "foribiddenAccess": "No tiene acceso a esta funcionalidad"
         }
     },
     "theme": {
         "themes": "Temas",
         "default": "Claro",
-        "cosmic": "Cosmico",
-        "corporate": "Corporativo",
         "dark": "Oscuro"
     },
     "auth": {
@@ -55,7 +64,7 @@
         },
         "logIn": {
             "title": "Iniciar Sesión",
-            "subTitle": "Inicia sesión con tu correo electronico",
+            "subTitle": "Inicia sesión con tu nombre de usuario.",
             "messages": {
                 "default": "Has iniciado sesión correctamente",
                 "rememberMe": "Recuerdame",
@@ -63,7 +72,9 @@
                 "doNotHaveAnAccount": "¿No tienes una cuenta?"
             },
             "errors": {
-                "default": "El correo electronico o la contraseña son incorrectos",
+                "default": "El nombre de usuario o la contraseña son incorrectos",
+                "requiredNickname": "Nombre de usuario",
+                "invalidNickname": "Nombre de usuario invalido",
                 "requiredEmail": "Correo electronico requerido",
                 "invalidEmail": "Correo electronico invalido",
                 "requiredPassword": "Contraseña requerida",
@@ -106,44 +117,141 @@
             }
         }
     },
-    "dashboard": {
-        "dashboard": "Tablero Administrativo"
-    },
     "404": {
         "title": "404 Página No Encontrada",
         "subTitle": "La página que estas buscando no existe"
     },
-    "users": {
-        "users": "Usuarios",
-        "user": "User",
-        "profile": "Perfil",
-        "view": {
-            "id": "ID",
-            "name": "Nombres",
-            "lastName": "Apellidos",
-            "email": "Correo Electronico",
-            "emailConfirm": "Confirmar Correo Electronico",
-            "password": "Contraseña",
-            "passwordConfirm": "Confirmar Contraseña",
-            "basicInformation": "Información Basica",
-            "roles": "Roles"
-        },
-        "create": {
-            "title": "Crear Usuario",
-            "messages": {
-                "success": "El usuario se ha creado con exito"
+    "footer": {
+        "heading": "Sección de Sostenibilidad y Mantenimiento",
+        "location": "Ubicación",
+        "phone": "Teléfono: (2) 321 2100",
+        "ext": "Extensión: 2235",
+        "building": "Edificio 301 - Espacio 2057",
+        "campus": "Univaersidad del Valle - Seccional Melendez"
+    },
+    "setting": {
+        "setting": "Configuración",
+        "contractors": {
+            "contractor": "Contratista",
+            "contractors": "Contratistas",
+            "view": {
+                "personType": "Persona",
+                "idType": "Tipo de identificación",
+                "id": "Identificación",
+                "verificationDigit": "DV",
+                "phone": "Teléfono"
             },
-            "errors": {
-                "requiredID": "El ID es requerido",
-                "requiredEmailConfirm": "Confirmación de Correo electronico requerido",
-                "notMatchPasswordConfirm": "El Correo electronico no coincide con la confirmación"
+            "create": {
+                "title": "Crea Contratista",
+                "errors": {
+                    "requiredPersonType": "El tipo de persona es requerido",
+                    "requiredIDType": "El tipo de identificación es requerido",
+                    "requiredID": "La identificación es requerida",
+                    "requiredVerificationDigit": "El dígito de verificación es requerido",
+                    "requiredPhone": "El telefono es requerido"
+                }
+            },
+            "update": {
+                "title": "Actualizar Contractista"
+            },
+            "delete": {
+                "title": "Eliminar Contratista"
             }
         },
-        "update": {
-            "title": "Actualizar Usuario"
+        "contracts": {
+            "contracts": "Contratos",
+            "contract": "Contrato",
+            "view": {
+                "id": "Número de Contrato"
+            },
+            "create": {
+                "title": "Crea Contrato",
+                "errors": {
+                    "requiredID": "El número de contrato requerido",
+                    "requiredDescription": "La descripción es requerida",
+                    "requiredContractor": "El contratista es requerido",
+                    "requiredStartDateAndEndDate": "La fecha de inicio y finalización es requerida",
+                    "invalidContractor": "El contratista ingresado no es valido"
+                }
+            },
+            "update": {
+                "title": "Actualizar Contrato"
+            },
+            "delete": {
+                "title": "Eliminar Contrato"
+            }
         },
-        "delete": {
-            "title": "Eliminar Usuario"
+        "operators": {
+            "operators": "Operarios"
+        },
+        "venues": {
+            "venues": "Sedes"
+        },
+        "buildings": {
+            "buildings": "Edificios"
+        },
+        "novelties": {
+            "novelties": "Novedades"
+        }
+    },
+    "requests": {
+        "requests": "Solicitudes"
+    },
+    "inventory": {
+        "inventory": "Inventario",
+        "alerts": {
+            "alerts": "Alertas"
+        },
+        "suppliers": {
+            "suppliers": "Proveedores"
+        },
+        "trademarks": {
+            "trademarks": "Marcas"
+        },
+        "wineries": {
+            "wineries": "Bodegas"
+        },
+        "products": {
+            "products": "Productos"
+        },
+        "inputsOutputs": {
+            "inputsOutputs": "Entradas y Salidas"
+        }
+    },
+    "management": {
+        "management": "Administración",
+        "users": {
+            "users": "Usuarios",
+            "user": "Usuario",
+            "profile": "Perfil",
+            "view": {
+                "nickname": "Nombre de usuario",
+                "name": "Nombres",
+                "lastName": "Apellidos",
+                "email": "Correo Electronico",
+                "emailConfirm": "Confirmar Correo Electronico",
+                "password": "Contraseña",
+                "passwordConfirm": "Confirmar Contraseña",
+                "basicInformation": "Información Basica",
+                "roles": "Roles"
+            },
+            "create": {
+                "title": "Crear Usuario",
+                "messages": {
+                    "nickname": "El nombre de usuario se crea automáticamente a partir del correo electrónico"
+                },
+                "errors": {
+                    "requiredRoles": "Los roles son requeridos",
+                    "requiredEmailConfirm": "Confirmación de Correo electronico requerido",
+                    "notMatchEmailConfirm": "El Correo electronico no coincide con la confirmación"
+                }
+            },
+            "update": {
+                "title": "Actualizar Usuario"
+            },
+            "delete": {
+                "title": "Eliminar Usuario"
+            }
         }
     }
 }

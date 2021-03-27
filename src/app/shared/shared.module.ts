@@ -15,6 +15,7 @@ import { EmptyPipe } from './pipes/empty.pipe';
 import { CustomCurrencyPipe } from './pipes/custom-currency.pipe';
 import { AlertService } from './services/alert/alert.service';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { InlineSVGModule } from 'ng-inline-svg';
 
 const IMPORTS_BASE_MODULES = [
   CommonModule,
@@ -45,7 +46,8 @@ const IMPORTS_SHARED_MODULE = [
   CookieModule.forRoot(),
   NgMultiSelectDropDownModule.forRoot(),
   DataTablesModule,
-  Ng2SmartTableModule
+  Ng2SmartTableModule,
+  InlineSVGModule.forRoot(),
 ];
 
 const EXPORTS_SHARED_MODULE = [
@@ -56,7 +58,8 @@ const EXPORTS_SHARED_MODULE = [
   DataTablesModule,
   Ng2SmartTableModule,
   EmptyPipe,
-  CustomCurrencyPipe
+  CustomCurrencyPipe,
+  InlineSVGModule
 ];
 
 const SHARED_MODULE_PROVIDERS = [
